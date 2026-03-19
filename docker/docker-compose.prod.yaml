@@ -1,0 +1,6 @@
+services:
+  app:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${APP_NAME}.rule=Host(`${APP_DOMAIN}`)"
+      - "traefik.http.services.${APP_NAME}.loadbalancer.server.port=${APP_PORT}"

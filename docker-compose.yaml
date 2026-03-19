@@ -1,0 +1,43 @@
+services:
+  app:
+    container_name: ${APP_NAME}.${NODE_ENV}
+    image: ${APP_NAME}.${NODE_ENV}:latest
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: ${NODE_ENV}
+      args:
+        - NODE_ENV=${NODE_ENV}
+        - APP_PORT=${APP_PORT}
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app-net
+
+  db:
+    image: mysql:8.0
+    container_name: ${APP_NAME}.db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER:-user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-pass}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-net
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  app-net:
+    driver: bridge
+
+volumes:
+  db_data:

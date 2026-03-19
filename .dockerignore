@@ -1,0 +1,20 @@
+# Node
+node_modules
+.next
+dist
+
+# Git
+.gitignore
+.git
+
+# Docker
+docker/env
+docker/Dockerfile
+docker/docker-compose*
+docker-compose*
+
+# Mac
+.DS_Store
+
+# Env
+.env*

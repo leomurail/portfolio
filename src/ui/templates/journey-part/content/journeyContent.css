@@ -17,7 +17,7 @@
 
 #journey-content .top{
     display:flex;
-    align-items: start;
+    align-items: flex-start;
     gap:var(--s-size);
 }
 

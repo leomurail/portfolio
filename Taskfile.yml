@@ -1,0 +1,62 @@
+version: '3'
+
+dotenv: ['.env']
+
+vars:
+  APP_ENV: '{{.APP_ENV | default "local"}}'
+  ENV_ARG: '--env-file .env'
+  COMPOSE_BIN: 'docker compose'
+  COMPOSE_CMD: '{{.COMPOSE_BIN}} -f ./docker-compose.yaml{{if eq .APP_ENV "local"}} -f ./docker/docker-compose.local.yaml{{end}}{{if eq .APP_ENV "prod"}} -f ./docker/docker-compose.prod.yaml{{end}} {{.ENV_ARG}}'
+
+tasks:
+  install:
+    desc: Setup environment and start containers
+    cmds:
+      - chmod +x ./docker/scripts/install.sh
+      - APP_ENV={{.APP_ENV}} ./docker/scripts/install.sh
+
+  destroy:
+    desc: Stop containers and remove environment
+    cmds:
+      - chmod +x ./docker/scripts/destroy.sh
+      - APP_ENV={{.APP_ENV}} ./docker/scripts/destroy.sh
+
+  up:
+    desc: Build and start containers
+    cmds:
+      - '{{.COMPOSE_CMD}} up -d'
+
+  down:
+    desc: Stop and remove containers
+    cmds:
+      - '{{.COMPOSE_CMD}} down'
+
+  start:
+    desc: Start containers
+    cmds:
+      - '{{.COMPOSE_CMD}} start'
+
+  watch:
+    desc: Watch for changes
+    cmds:
+      - '{{.COMPOSE_CMD}} watch'
+
+  stop:
+    desc: Stop containers
+    cmds:
+      - '{{.COMPOSE_CMD}} stop'
+
+  build:
+    desc: Build Images
+    cmds:
+      - '{{.COMPOSE_CMD}} build'
+
+  db-push:
+    desc: Push prisma schema to database
+    cmds:
+      - '{{.COMPOSE_CMD}} exec app npx prisma db push'
+
+  clean:
+    desc: Stop containers and prune docker system
+    cmds:
+      - '{{.COMPOSE_CMD}} down -v --remove-orphans'

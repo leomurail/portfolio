@@ -1,14 +1,13 @@
 #banner{
-    width:100vw;
-    height:300px;
-
+    width:100%;
+    height:30vh;
     padding-bottom:var(--xl-size);
 
     background-image: var(--banner-bg);
     background-size:cover;
 
     display:flex;
-    align-items: end;
+    align-items: flex-end;
 }
 
 #banner h1{
