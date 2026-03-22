@@ -2,9 +2,10 @@ services:
   app:
     ports:
       - "${APP_PORT}:3000"
+    # Pas de volumes bindés, uniquement le système watch de Docker
     develop:
       watch:
-        - action: sync+restart
+        - action: sync
           path: .
           target: /app
           ignore:

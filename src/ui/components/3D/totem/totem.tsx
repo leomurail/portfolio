@@ -8,7 +8,7 @@ import Model from "../model/model";
 //types
 import type { Vector3 } from "three";
 import { Group, MeshStandardMaterial } from "three";
-import type { StateProps } from "@/app/about/totems-part/totemsPart";
+import type { StateProps } from "@/app/(public)/about/totems-part/totemsPart";
 
 interface props{
     value:{ scale?: Vector3 | undefined; position?: Vector3 | undefined; rotation?: [number, number, number] | undefined; };

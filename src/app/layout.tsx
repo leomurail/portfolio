@@ -14,11 +14,9 @@ interface props{
 
 export default async function RootLayout({children}:props){
   return (
-    <html lang="en">
-        <body className={fonts.montserrat.className}>
-            <Header />
+    <html lang="en" suppressHydrationWarning>
+        <body className={fonts.montserrat.className} suppressHydrationWarning>
               {children}
-            <Footer />
         </body>
     </html>
   )

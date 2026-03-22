@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Reset global.css aggressive styles for Admin */
+  .admin-root {
+    @apply bg-background text-foreground;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    align-items: stretch !important;
+    align-self: stretch !important;
+  }
+
+  /* Force dark mode background and layout on the body when in admin */
+  body:has(.admin-root) {
+    background-color: hsl(var(--background)) !important;
+    align-items: stretch !important;
+    display: block !important;
+    overflow: hidden;
+  }
+
+  /* KILL ALL GLOBAL.CSS POLLUTION FOR ADMIN */
+  .admin-root *, 
+  .admin-root button {
+    color: inherit;
+    box-sizing: border-box;
+    border-color: hsl(var(--border));
+    font-family: inherit;
+    border-style: solid;
+    border-width: 0;
+  }
+
+  /* RESET INPUTS TO SHADCN STANDARDS */
+  .admin-root input, 
+  .admin-root select, 
+  .admin-root textarea {
+    background-image: none !important;
+    box-shadow: none !important;
+    border-radius: var(--radius) !important;
+    border: 1px solid hsl(var(--input)) !important;
+    background-color: transparent !important;
+    padding: 0.5rem 0.75rem !important;
+    color: hsl(var(--foreground)) !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    width: auto;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    height: auto !important;
+  }
+
+  /* Specific Shadcn Primary Button */
+  .admin-root .bg-primary {
+    background-color: hsl(var(--primary)) !important;
+    color: hsl(var(--primary-foreground)) !important;
+    border: none !important;
+  }
+  
+  /* Variant Outline */
+  .admin-root .border-input {
+    background-color: transparent !important;
+    border: 1px solid hsl(var(--input)) !important;
+    color: hsl(var(--foreground)) !important;
+  }
+
+  /* Variant Destructive */
+  .admin-root .bg-destructive {
+    background-color: hsl(var(--destructive)) !important;
+    color: hsl(var(--destructive-foreground)) !important;
+    border: none !important;
+  }
+
+  /* Specific Shadcn Input */
+  .admin-root input.flex.h-10 {
+    width: 100% !important;
+    height: 2.5rem !important;
+  }
+
+  /* REMOVE GRAY BAR & INSET STYLES */
+  .admin-root main {
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: hsl(var(--background)) !important;
+  }
+  
+  /* Kill the SidebarInset special styles */
+  .admin-root [data-sidebar="sidebar"] + main,
+  .admin-root .peer-data-\[variant\=inset\]\:m-2 {
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Reset global.css section, main and desktop constraints */
+  .admin-root section,
+  .admin-root main,
+  .admin-root .desktop {
+    max-width: none !important;
+    margin: 0 !important;
+    width: auto !important;
+    padding: 0 !important;
+    display: flex !important;
+  }
+
+  /* Container for centralizing and padding content as requested */
+  .admin-content-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .admin-root h1, .admin-root h2, .admin-root h3, 
+  .admin-root h4, .admin-root h5, .admin-root h6 {
+    color: hsl(var(--foreground)) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: 700 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+  }
+  
+  .admin-root p, .admin-root span, .admin-root a {
+    color: hsl(var(--foreground)) !important;
+    line-height: normal !important;
+    text-transform: none !important;
+  }
+
+  .admin-root table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+  
+  .admin-root th, .admin-root td {
+    padding: 0.75rem !important;
+    border-bottom: 1px solid hsl(var(--border)) !important;
+  }
+}
