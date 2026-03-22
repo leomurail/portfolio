@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/ui/components/ui/button"
-import { deleteTag } from "@/lib/actions/admin"
+import { TagActions } from "@/lib/actions/admin"
 
 export function DeleteTagButton({ id }: { id: number }) {
   const [loading, setLoading] = useState(false)
@@ -10,7 +10,7 @@ export function DeleteTagButton({ id }: { id: number }) {
   const handleDelete = async () => {
     if (confirm("Êtes-vous sûr de vouloir supprimer ce tag ?")) {
       setLoading(true)
-      const result = await deleteTag(id)
+      const result = await TagActions.delete(id)
       if (!result.success) {
         alert(result.error)
       }

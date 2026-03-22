@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/ui/components/ui/button"
-import { deleteProject } from "@/lib/actions/admin"
+import { ProjectActions } from "@/lib/actions/admin"
 
 export function DeleteProjectButton({ id }: { id: number }) {
   const [loading, setLoading] = useState(false)
@@ -10,7 +10,7 @@ export function DeleteProjectButton({ id }: { id: number }) {
   const handleDelete = async () => {
     if (confirm("Êtes-vous sûr de vouloir supprimer ce projet ?")) {
       setLoading(true)
-      const result = await deleteProject(id)
+      const result = await ProjectActions.delete(id)
       if (!result.success) {
         alert(result.error)
       }

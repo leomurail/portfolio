@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/ui/components/ui/button"
 import { Input } from "@/ui/components/ui/input"
 import { Label } from "@/ui/components/ui/label"
-import { saveProject } from "@/lib/actions/admin"
+import { ProjectActions } from "@/lib/actions/admin"
 
 type Props = {
   project?: any
@@ -27,7 +27,7 @@ export function ProjectForm({ project, categories, thumbnails, tags }: Props) {
     setError("")
 
     const formData = new FormData(e.currentTarget)
-    const result = await saveProject(formData, project?.id)
+    const result = await ProjectActions.save(formData, project?.id)
 
     if (result.success) {
       router.push("/admin/projects")

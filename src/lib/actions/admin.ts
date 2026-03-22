@@ -1,227 +1,215 @@
 "use server"
 
-import { prisma } from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
+import { requireAuth } from "./auth"
+import { z } from "zod"
+import { CategoryRepository } from "@/repositories/category.repository"
+import { TagRepository } from "@/repositories/tag.repository"
+import { ThumbnailRepository } from "@/repositories/thumbnail.repository"
+import { ProjectRepository } from "@/repositories/project.repository"
 
-// CATEGORIES
-export async function getCategories() {
-  return await prisma.categories.findMany()
-}
+// SCHEMAS
+const CategorySchema = z.object({
+  name: z.string().min(1),
+  slug: z.string().min(1),
+  color: z.string().min(1)
+})
 
-export async function getCategory(id: number) {
-  return await prisma.categories.findUnique({ where: { id } })
-}
+const TagSchema = z.object({
+  name: z.string().min(1),
+  slug: z.string().min(1)
+})
 
-export async function deleteCategory(id: number) {
-  try {
-    await prisma.categories.delete({ where: { id } })
-    revalidatePath("/admin/categories")
-    return { success: true }
-  } catch (error) {
-    return { success: false, error: "Erreur, la catégorie est peut-être liée à un projet." }
+const ThumbnailSchema = z.object({
+  path: z.string().min(1),
+  alt: z.string().min(1),
+  width: z.coerce.number().min(1),
+  height: z.coerce.number().min(1)
+})
+
+const ProjectSchema = z.object({
+  name: z.string().min(1),
+  slug: z.string().min(1),
+  url: z.string(),
+  desc: z.string(),
+  category_id: z.coerce.number().min(1),
+  thumbnail_id: z.coerce.number().min(1),
+})
+
+// ACTIONS
+export class CategoryActions {
+  static async getAll() {
+    return await CategoryRepository.getAll()
   }
-}
 
-export async function saveCategory(formData: FormData, id?: number) {
-  try {
-    const name = formData.get("name") as string
-    const slug = formData.get("slug") as string
-    const color = formData.get("color") as string
+  static async getById(id: number) {
+    return await CategoryRepository.getById(id)
+  }
 
-    if (id) {
-      await prisma.categories.update({
-        where: { id },
-        data: { name, slug, color }
-      })
-    } else {
-      await prisma.categories.create({
-        data: { name, slug, color }
-      })
+  static async delete(id: number) {
+    try {
+      await requireAuth()
+      await CategoryRepository.delete(id)
+      revalidatePath("/admin/categories")
+      return { success: true }
+    } catch (error) {
+      return { success: false, error: "Erreur, la catégorie est peut-être liée à un projet." }
     }
-    revalidatePath("/admin/categories")
-    return { success: true }
-  } catch (error) {
-    return { success: false, error: "Erreur lors de la sauvegarde." }
   }
-}
 
-// TAGS
-export async function getTags() {
-  return await prisma.tags.findMany()
-}
-
-export async function getTag(id: number) {
-  return await prisma.tags.findUnique({ where: { id } })
-}
-
-export async function deleteTag(id: number) {
-  try {
-    await prisma.tags.delete({ where: { id } })
-    revalidatePath("/admin/tags")
-    return { success: true }
-  } catch (error) {
-    return { success: false, error: "Erreur, le tag est peut-être lié à un projet." }
-  }
-}
-
-export async function saveTag(formData: FormData, id?: number) {
-  try {
-    const name = formData.get("name") as string
-    const slug = formData.get("slug") as string
-
-    if (id) {
-      await prisma.tags.update({
-        where: { id },
-        data: { name, slug }
+  static async save(formData: FormData, id?: number) {
+    try {
+      await requireAuth()
+      const parsed = CategorySchema.parse({
+        name: formData.get("name"),
+        slug: formData.get("slug"),
+        color: formData.get("color"),
       })
-    } else {
-      await prisma.tags.create({ data: { name, slug } })
-    }
-    revalidatePath("/admin/tags")
-    return { success: true }
-  } catch (error) {
-    return { success: false, error: "Erreur lors de la sauvegarde." }
-  }
-}
 
-// THUMBNAILS
-export async function getThumbnails() {
-  return await prisma.thumbnails.findMany()
-}
-
-export async function getThumbnail(id: number) {
-  return await prisma.thumbnails.findUnique({ where: { id } })
-}
-
-export async function deleteThumbnail(id: number) {
-  try {
-    await prisma.thumbnails.delete({ where: { id } })
-    revalidatePath("/admin/thumbnails")
-    return { success: true }
-  } catch (error) {
-    return { success: false, error: "Erreur, la miniature est liée à un projet." }
-  }
-}
-
-export async function saveThumbnail(formData: FormData, id?: number) {
-  try {
-    const path = formData.get("path") as string
-    const alt = formData.get("alt") as string
-    const width = parseInt(formData.get("width") as string)
-    const height = parseInt(formData.get("height") as string)
-
-    const data = { path, alt, width, height }
-
-    if (id) {
-      await prisma.thumbnails.update({
-        where: { id },
-        data
-      })
-    } else {
-      await prisma.thumbnails.create({ data })
-    }
-    revalidatePath("/admin/thumbnails")
-    return { success: true }
-  } catch (error) {
-    return { success: false, error: "Erreur lors de la sauvegarde." }
-  }
-}
-
-// PROJECTS
-export async function getProjects() {
-  return await prisma.projects.findMany({
-    include: {
-      category: true,
-      thumbnail: true,
-      tags_join: {
-        include: {
-          tags: true
-        }
+      if (id) {
+        await CategoryRepository.update(id, parsed)
+      } else {
+        await CategoryRepository.create(parsed)
       }
+      revalidatePath("/admin/categories")
+      return { success: true }
+    } catch (error) {
+      return { success: false, error: "Erreur lors de la sauvegarde." }
     }
-  })
-}
-
-export async function getProject(id: number) {
-  return await prisma.projects.findUnique({
-    where: { id },
-    include: {
-      tags_join: true
-    }
-  })
-}
-
-export async function saveProject(formData: FormData, id?: number) {
-  try {
-    const name = formData.get("name") as string
-    const slug = formData.get("slug") as string
-    const url = formData.get("url") as string
-    const desc = formData.get("desc") as string
-    const category_id = parseInt(formData.get("category_id") as string)
-    const thumbnail_id = parseInt(formData.get("thumbnail_id") as string)
-    
-    // Multiple tags
-    const tags = formData.getAll("tags") as string[]
-    const tagIds = tags.map(t => parseInt(t))
-
-    const data = {
-      name,
-      slug,
-      url,
-      desc,
-      category_id,
-      thumbnail_id,
-    }
-
-    if (id) {
-      // Update
-      await prisma.projects.update({
-        where: { id },
-        data
-      })
-      // Update tags: delete old ones and insert new ones
-      await prisma.tagsJoin.deleteMany({ where: { project_id: id } })
-      if (tagIds.length > 0) {
-        await prisma.tagsJoin.createMany({
-          data: tagIds.map(tag_id => ({ project_id: id, tag_id }))
-        })
-      }
-    } else {
-      // Create
-      const newProject = await prisma.projects.create({
-        data
-      })
-      if (tagIds.length > 0) {
-        await prisma.tagsJoin.createMany({
-          data: tagIds.map(tag_id => ({ project_id: newProject.id, tag_id }))
-        })
-      }
-    }
-
-    revalidatePath("/admin/projects")
-    return { success: true }
-  } catch (error) {
-    console.error(error)
-    return { success: false, error: "Erreur lors de la sauvegarde." }
   }
 }
 
-// ACTION WRAPPER (for error handling)
-export async function deleteProject(id: number) {
-  try {
-    // Need to delete related TagsJoin first
-    await prisma.tagsJoin.deleteMany({
-      where: { project_id: id }
-    })
-    
-    await prisma.projects.delete({
-      where: { id }
-    })
-    
-    revalidatePath("/admin/projects")
-    return { success: true }
-  } catch (error) {
-    console.error(error)
-    return { success: false, error: "Erreur lors de la suppression." }
+export class TagActions {
+  static async getAll() {
+    return await TagRepository.getAll()
+  }
+
+  static async getById(id: number) {
+    return await TagRepository.getById(id)
+  }
+
+  static async delete(id: number) {
+    try {
+      await requireAuth()
+      await TagRepository.delete(id)
+      revalidatePath("/admin/tags")
+      return { success: true }
+    } catch (error) {
+      return { success: false, error: "Erreur, le tag est peut-être lié à un projet." }
+    }
+  }
+
+  static async save(formData: FormData, id?: number) {
+    try {
+      await requireAuth()
+      const parsed = TagSchema.parse({
+        name: formData.get("name"),
+        slug: formData.get("slug"),
+      })
+
+      if (id) {
+        await TagRepository.update(id, parsed)
+      } else {
+        await TagRepository.create(parsed)
+      }
+      revalidatePath("/admin/tags")
+      return { success: true }
+    } catch (error) {
+      return { success: false, error: "Erreur lors de la sauvegarde." }
+    }
+  }
+}
+
+export class ThumbnailActions {
+  static async getAll() {
+    return await ThumbnailRepository.getAll()
+  }
+
+  static async getById(id: number) {
+    return await ThumbnailRepository.getById(id)
+  }
+
+  static async delete(id: number) {
+    try {
+      await requireAuth()
+      await ThumbnailRepository.delete(id)
+      revalidatePath("/admin/thumbnails")
+      return { success: true }
+    } catch (error) {
+      return { success: false, error: "Erreur, la miniature est liée à un projet." }
+    }
+  }
+
+  static async save(formData: FormData, id?: number) {
+    try {
+      await requireAuth()
+      const parsed = ThumbnailSchema.parse({
+        path: formData.get("path"),
+        alt: formData.get("alt"),
+        width: formData.get("width"),
+        height: formData.get("height"),
+      })
+
+      if (id) {
+        await ThumbnailRepository.update(id, parsed)
+      } else {
+        await ThumbnailRepository.create(parsed)
+      }
+      revalidatePath("/admin/thumbnails")
+      return { success: true }
+    } catch (error) {
+      return { success: false, error: "Erreur lors de la sauvegarde." }
+    }
+  }
+}
+
+export class ProjectActions {
+  static async getAll() {
+    return await ProjectRepository.getAll()
+  }
+
+  static async getById(id: number) {
+    return await ProjectRepository.getById(id)
+  }
+
+  static async save(formData: FormData, id?: number) {
+    try {
+      await requireAuth()
+      const parsed = ProjectSchema.parse({
+        name: formData.get("name"),
+        slug: formData.get("slug"),
+        url: formData.get("url"),
+        desc: formData.get("desc"),
+        category_id: formData.get("category_id"),
+        thumbnail_id: formData.get("thumbnail_id"),
+      })
+      
+      const tags = formData.getAll("tags") as string[]
+      const tagIds = tags.map(t => parseInt(t)).filter(t => !isNaN(t))
+
+      if (id) {
+        await ProjectRepository.update(id, parsed, tagIds)
+      } else {
+        await ProjectRepository.create(parsed, tagIds)
+      }
+
+      revalidatePath("/admin/projects")
+      return { success: true }
+    } catch (error) {
+      console.error(error)
+      return { success: false, error: "Erreur lors de la sauvegarde." }
+    }
+  }
+
+  static async delete(id: number) {
+    try {
+      await requireAuth()
+      await ProjectRepository.delete(id)
+      revalidatePath("/admin/projects")
+      return { success: true }
+    } catch (error) {
+      console.error(error)
+      return { success: false, error: "Erreur lors de la suppression." }
+    }
   }
 }

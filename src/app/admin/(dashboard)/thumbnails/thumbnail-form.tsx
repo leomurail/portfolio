@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { saveThumbnail } from "@/lib/actions/admin"
+import { ThumbnailActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import { Input } from "@/ui/components/ui/input"
 import { Label } from "@/ui/components/ui/label"
@@ -26,7 +26,7 @@ export function ThumbnailForm({ thumbnail }: ThumbnailFormProps) {
   async function handleSubmit(formData: FormData) {
     setLoading(true)
     setError(null)
-    const result = await saveThumbnail(formData, thumbnail?.id)
+    const result = await ThumbnailActions.save(formData, thumbnail?.id)
     if (result.success) {
       router.push("/admin/thumbnails")
       router.refresh()

@@ -1,4 +1,4 @@
-import { getThumbnail } from "@/lib/actions/admin"
+import { ThumbnailActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -10,7 +10,7 @@ export default async function ViewThumbnailPage({ params }: { params: Promise<{ 
   const id = parseInt(resolvedParams.id)
   if (isNaN(id)) return notFound()
 
-  const thumbnail = await getThumbnail(id)
+  const thumbnail = await ThumbnailActions.getById(id)
   if (!thumbnail) return notFound()
 
   return (

@@ -5,7 +5,7 @@ node_modules/
 
 # Build et Sortie
 .next/
-out/
+out/ 
 build/
 dist/
 

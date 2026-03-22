@@ -1,4 +1,4 @@
-import { getCategory } from "@/lib/actions/admin"
+import { CategoryActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -9,7 +9,7 @@ export default async function ViewCategoryPage({ params }: { params: Promise<{ i
   const id = parseInt(resolvedParams.id)
   if (isNaN(id)) return notFound()
 
-  const category = await getCategory(id)
+  const category = await CategoryActions.getById(id)
   if (!category) return notFound()
 
   return (

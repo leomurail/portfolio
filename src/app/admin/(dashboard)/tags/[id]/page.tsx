@@ -1,4 +1,4 @@
-import { getTag } from "@/lib/actions/admin"
+import { TagActions } from "@/lib/actions/admin"
 import { TagForm } from "../tag-form"
 import { notFound } from "next/navigation"
 
@@ -7,7 +7,7 @@ export default async function EditTagPage({ params }: { params: Promise<{ id: st
   const id = parseInt(resolvedParams.id)
   if (isNaN(id)) return notFound()
 
-  const tag = await getTag(id)
+  const tag = await TagActions.getById(id)
   if (!tag) return notFound()
 
   return (

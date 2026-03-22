@@ -1,4 +1,4 @@
-import { getProject, getCategories, getTags, getThumbnails } from "@/lib/actions/admin"
+import { ProjectActions, CategoryActions, TagActions, ThumbnailActions } from "@/lib/actions/admin"
 import { ProjectForm } from "../project-form"
 import { notFound } from "next/navigation"
 
@@ -7,12 +7,12 @@ export default async function EditProjectPage({ params }: { params: Promise<{ id
   const id = parseInt(resolvedParams.id)
   if (isNaN(id)) return notFound()
 
-  const project = await getProject(id)
+  const project = await ProjectActions.getById(id)
   if (!project) return notFound()
 
-  const categories = await getCategories()
-  const thumbnails = await getThumbnails()
-  const tags = await getTags()
+  const categories = await CategoryActions.getAll()
+  const thumbnails = await ThumbnailActions.getAll()
+  const tags = await TagActions.getAll()
 
   return (
     <div className="flex flex-col gap-6">

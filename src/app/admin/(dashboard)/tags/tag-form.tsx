@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { saveTag } from "@/lib/actions/admin"
+import { TagActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import { Input } from "@/ui/components/ui/input"
 import { Label } from "@/ui/components/ui/label"
@@ -24,7 +24,7 @@ export function TagForm({ tag }: TagFormProps) {
   async function handleSubmit(formData: FormData) {
     setLoading(true)
     setError(null)
-    const result = await saveTag(formData, tag?.id)
+    const result = await TagActions.save(formData, tag?.id)
     if (result.success) {
       router.push("/admin/tags")
       router.refresh()

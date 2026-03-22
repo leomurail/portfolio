@@ -1,4 +1,4 @@
-import { getTags } from "@/lib/actions/admin"
+import { TagActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import {
   Table,
@@ -14,7 +14,7 @@ import Link from "next/link"
 export const dynamic = "force-dynamic"
 
 export default async function AdminTagsPage() {
-  const tags = await getTags()
+  const tags = await TagActions.getAll()
 
   return (
     <div className="flex flex-col gap-6">

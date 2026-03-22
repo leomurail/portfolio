@@ -1,4 +1,4 @@
-import { getProject } from "@/lib/actions/admin"
+import { ProjectActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -9,7 +9,7 @@ export default async function ViewProjectPage({ params }: { params: Promise<{ id
   const id = parseInt(resolvedParams.id)
   if (isNaN(id)) return notFound()
 
-  const project = await getProject(id)
+  const project = await ProjectActions.getById(id)
   if (!project) return notFound()
 
   return (

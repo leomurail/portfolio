@@ -1,4 +1,4 @@
-import { getCategories } from "@/lib/actions/admin"
+import { CategoryActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import {
   Table,
@@ -14,7 +14,7 @@ import Link from "next/link"
 export const dynamic = "force-dynamic"
 
 export default async function AdminCategoriesPage() {
-  const categories = await getCategories()
+  const categories = await CategoryActions.getAll()
 
   return (
     <div className="flex flex-col gap-6">

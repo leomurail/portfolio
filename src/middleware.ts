@@ -1,16 +1,25 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { jwtVerify } from 'jose'
 
-export function middleware(request: NextRequest) {
+const secretKey = process.env.JWT_SECRET || "default_secret_for_local_dev_only_change_in_prod"
+const encodedKey = new TextEncoder().encode(secretKey)
+
+export async function middleware(request: NextRequest) {
   const isAdminRoute = request.nextUrl.pathname.startsWith('/admin')
   
   if (isAdminRoute && request.nextUrl.pathname !== '/admin/login') {
-    const adminToken = request.cookies.get('admin_token')
+    const adminToken = request.cookies.get('admin_token')?.value
     
-    // Check if the cookie exists and has the right value.
-    // In a real app, this should be a JWT or an encrypted session,
-    // but a simple static token suffices for a personal portfolio back-office.
-    if (!adminToken || adminToken.value !== 'authenticated') {
+    if (!adminToken) {
+      return NextResponse.redirect(new URL('/admin/login', request.url))
+    }
+
+    try {
+      await jwtVerify(adminToken, encodedKey, {
+        algorithms: ["HS256"],
+      })
+    } catch (error) {
       return NextResponse.redirect(new URL('/admin/login', request.url))
     }
   }

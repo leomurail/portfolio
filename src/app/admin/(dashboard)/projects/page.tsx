@@ -1,4 +1,4 @@
-import { getProjects } from "@/lib/actions/admin"
+import { ProjectActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import {
   Table,
@@ -14,7 +14,7 @@ import { DeleteProjectButton } from "./delete-button"
 export const dynamic = "force-dynamic"
 
 export default async function AdminProjectsPage() {
-  const projects = await getProjects()
+  const projects = await ProjectActions.getAll()
 
   return (
     <div className="flex flex-col gap-6">

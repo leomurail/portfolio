@@ -1,4 +1,4 @@
-import { getTag } from "@/lib/actions/admin"
+import { TagActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -9,7 +9,7 @@ export default async function ViewTagPage({ params }: { params: Promise<{ id: st
   const id = parseInt(resolvedParams.id)
   if (isNaN(id)) return notFound()
 
-  const tag = await getTag(id)
+  const tag = await TagActions.getById(id)
   if (!tag) return notFound()
 
   return (

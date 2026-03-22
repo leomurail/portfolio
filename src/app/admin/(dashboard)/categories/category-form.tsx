@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { saveCategory } from "@/lib/actions/admin"
+import { CategoryActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import { Input } from "@/ui/components/ui/input"
 import { Label } from "@/ui/components/ui/label"
@@ -25,7 +25,7 @@ export function CategoryForm({ category }: CategoryFormProps) {
   async function handleSubmit(formData: FormData) {
     setLoading(true)
     setError(null)
-    const result = await saveCategory(formData, category?.id)
+    const result = await CategoryActions.save(formData, category?.id)
     if (result.success) {
       router.push("/admin/categories")
       router.refresh()

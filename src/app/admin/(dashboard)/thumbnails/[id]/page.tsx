@@ -1,4 +1,4 @@
-import { getThumbnail } from "@/lib/actions/admin"
+import { ThumbnailActions } from "@/lib/actions/admin"
 import { ThumbnailForm } from "../thumbnail-form"
 import { notFound } from "next/navigation"
 
@@ -7,7 +7,7 @@ export default async function EditThumbnailPage({ params }: { params: Promise<{ 
   const id = parseInt(resolvedParams.id)
   if (isNaN(id)) return notFound()
 
-  const thumbnail = await getThumbnail(id)
+  const thumbnail = await ThumbnailActions.getById(id)
   if (!thumbnail) return notFound()
 
   return (

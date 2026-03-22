@@ -1,4 +1,4 @@
-import { getThumbnails } from "@/lib/actions/admin"
+import { ThumbnailActions } from "@/lib/actions/admin"
 import { Button } from "@/ui/components/ui/button"
 import {
   Table,
@@ -15,7 +15,7 @@ import Image from "next/image"
 export const dynamic = "force-dynamic"
 
 export default async function AdminThumbnailsPage() {
-  const thumbnails = await getThumbnails()
+  const thumbnails = await ThumbnailActions.getAll()
 
   return (
     <div className="flex flex-col gap-6">

@@ -1,10 +1,10 @@
-import { getCategories, getTags, getThumbnails } from "@/lib/actions/admin"
+import { CategoryActions, TagActions, ThumbnailActions } from "@/lib/actions/admin"
 import { ProjectForm } from "../project-form"
 
 export default async function NewProjectPage() {
-  const categories = await getCategories()
-  const thumbnails = await getThumbnails()
-  const tags = await getTags()
+  const categories = await CategoryActions.getAll()
+  const thumbnails = await ThumbnailActions.getAll()
+  const tags = await TagActions.getAll()
 
   return (
     <div className="flex flex-col gap-6">
