@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 //npm
 import { useState } from "react";
@@ -10,19 +10,18 @@ import AllProjects from "./all-projects/allProjects";
 //types
 import { Project, Category } from "../type";
 
-interface props{
-    categories:Category[];
-    projectsData:Project[];
+interface props {
+  categories: Category[];
+  projectsData: Project[];
 }
 
-export default function Main({categories,projectsData}:props){
+export default function Main({ categories, projectsData }: props) {
+  const [filter, setFilter] = useState("all");
 
-    const [filter,setFilter] = useState("all");
-
-    return(
-        <>
-            <Filters setCurrent={setFilter} categories={categories}/>
-            <AllProjects current={filter} projectsData={projectsData}/>
-        </>
-    )
+  return (
+    <>
+      <Filters setCurrent={setFilter} categories={categories} />
+      <AllProjects current={filter} projectsData={projectsData} />
+    </>
+  );
 }

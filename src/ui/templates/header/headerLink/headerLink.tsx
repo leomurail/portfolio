@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-//fonts 
+//fonts
 import { fonts } from "@/lib/fonts";
 
 //npm
@@ -14,13 +14,19 @@ import { removeHeader } from "../functions";
 import "./headerLink.css";
 
 interface props {
-    children : React.ReactNode;
-    path:string;
-    icon:string;
+  children: React.ReactNode;
+  path: string;
+  icon: string;
 }
 
-export default function HeaderLink({children,path,icon} : props){
-    return(
-        <Link onClick={removeHeader} href={path} className={`header-link ${fonts.montserrat.className}`}>{children}</Link>
-    )
+export default function HeaderLink({ children, path, icon }: props) {
+  return (
+    <Link
+      onClick={removeHeader}
+      href={path}
+      className={`header-link ${fonts.montserrat.className}`}
+    >
+      {children}
+    </Link>
+  );
 }

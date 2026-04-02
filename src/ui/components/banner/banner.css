@@ -1,38 +1,37 @@
-#banner{
-    width:100%;
-    height:30vh;
-    padding-bottom:var(--xl-size);
+#banner {
+  width: 100%;
+  height: 30vh;
+  padding-bottom: var(--xl-size);
 
-    background-image: var(--banner-bg);
-    background-size:cover;
+  background-image: var(--banner-bg);
+  background-size: cover;
 
-    display:flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
-#banner h1{
-    font-size:50px;
+#banner h1 {
+  font-size: 50px;
 }
 
-#banner p.sub-title{
-    font-size:80px;
-    line-height:40px;
+#banner p.sub-title {
+  font-size: 80px;
+  line-height: 40px;
 }
 
 /*————————————————RESPONSIVE——————————————————-*/
 
-@media(max-width:425px){
+@media (max-width: 425px) {
+  #banner {
+    height: 200px;
+    padding-bottom: var(--m-size);
+  }
 
-    #banner{
-        height:200px;
-        padding-bottom:var(--m-size);
-    }
+  #banner h1.title {
+    font-size: var(--h3-font-size);
+  }
 
-    #banner h1.title{
-        font-size:var(--h3-font-size);
-    }
-
-    #banner div .sub-title{
-        font-size:60px;
-    }
+  #banner div .sub-title {
+    font-size: 60px;
+  }
 }

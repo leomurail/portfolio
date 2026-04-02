@@ -8,16 +8,16 @@ import "./global.css";
 import Header from "@/ui/templates/header/header";
 import Footer from "@/ui/templates/footer/footer";
 
-interface props{
-    children: React.ReactNode
+interface props {
+  children: React.ReactNode;
 }
 
-export default async function RootLayout({children}:props){
+export default async function RootLayout({ children }: props) {
   return (
     <html lang="en" suppressHydrationWarning>
-        <body className={fonts.montserrat.className} suppressHydrationWarning>
-              {children}
-        </body>
+      <body className={fonts.montserrat.className} suppressHydrationWarning>
+        {children}
+      </body>
     </html>
-  )
+  );
 }

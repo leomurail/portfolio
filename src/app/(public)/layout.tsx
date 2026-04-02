@@ -4,13 +4,13 @@ import Footer from "@/ui/templates/footer/footer";
 export default function PublicLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <>
       <Header />
-        {children}
+      {children}
       <Footer />
     </>
-  )
+  );
 }

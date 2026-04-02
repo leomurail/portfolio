@@ -9,15 +9,19 @@ import LastCta from "./last-cta/lastCta";
 //styles
 import "./brand.css";
 
-export default function Page(){
-    return(
-        <section id="brand" className="no-max-width">
-            <Banner title="MA MARQUE" subTitle="Cliver - Self Evolution Begins" bgColor="dark-blue" />
-            <BrandHistory/>
-            <BrandPart/> 
-            <BrandContent/>
-            <AboutBrand/>
-            <LastCta/>
-        </section>
-    )
+export default function Page() {
+  return (
+    <section id="brand" className="no-max-width">
+      <Banner
+        title="MA MARQUE"
+        subTitle="Cliver - Self Evolution Begins"
+        bgColor="dark-blue"
+      />
+      <BrandHistory />
+      <BrandPart />
+      <BrandContent />
+      <AboutBrand />
+      <LastCta />
+    </section>
+  );
 }

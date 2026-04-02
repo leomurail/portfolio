@@ -1,14 +1,14 @@
-import { AppSidebar } from "@/ui/components/app-sidebar"
+import { AppSidebar } from "@/ui/components/app-sidebar";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/ui/components/ui/sidebar"
+} from "@/ui/components/ui/sidebar";
 
 export default function AdminLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <SidebarProvider>
@@ -20,11 +20,9 @@ export default function AdminLayout({
           </div>
         </header>
         <main className="flex-1 overflow-auto">
-          <div className="admin-content-container">
-            {children}
-          </div>
+          <div className="admin-content-container">{children}</div>
         </main>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }

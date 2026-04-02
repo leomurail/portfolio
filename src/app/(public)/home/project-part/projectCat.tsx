@@ -15,37 +15,48 @@ import "./projectCat.css";
 
 //type
 interface props {
-    cat:keyof typeof catsData;
+  cat: keyof typeof catsData;
 }
 
-export default function ProjectCat({cat}:props){
-    const current = catsData[cat];
+export default function ProjectCat({ cat }: props) {
+  const current = catsData[cat];
 
-    let pickedIcon = "";
+  let pickedIcon = "";
 
-    switch(current.slug){
-        case "web-development":
-            pickedIcon = "code-editing";
-            break;
-        case "print-design":
-            pickedIcon = "print-design";
-            break;
-        case "web-design":
-            pickedIcon = "web-design";
-            break;
-    }
-    return(
-        <div className="project-cat">
-            <div className="desktop title">
-                {pickedIcon && <Icon size={45} picked={pickedIcon}/>}
-                <h3>{current.title}</h3>
-            </div>
-            <Suspense fallback={<SkeletonLoading width="90vw" height="440px" borderRadius={20} className="center"/>}>
-                <CardSlider categoryId={current.category_id} step={300}/>
-            </Suspense>
-            <section className="min-width">
-                <Btn path="/projects" color="grey" >Voir plus</Btn>
-            </section>
-        </div>
-    )
+  switch (current.slug) {
+    case "web-development":
+      pickedIcon = "code-editing";
+      break;
+    case "print-design":
+      pickedIcon = "print-design";
+      break;
+    case "web-design":
+      pickedIcon = "web-design";
+      break;
+  }
+  return (
+    <div className="project-cat">
+      <div className="desktop title">
+        {pickedIcon && <Icon size={45} picked={pickedIcon} />}
+        <h3>{current.title}</h3>
+      </div>
+      <Suspense
+        fallback={
+          <SkeletonLoading
+            width="90vw"
+            height="440px"
+            borderRadius={20}
+            className="center"
+          />
+        }
+      >
+        <CardSlider categoryId={current.category_id} step={300} />
+      </Suspense>
+      <section className="min-width">
+        <Btn path="/projects" color="grey">
+          Voir plus
+        </Btn>
+      </section>
+    </div>
+  );
 }

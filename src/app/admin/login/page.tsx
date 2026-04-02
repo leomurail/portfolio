@@ -1,29 +1,36 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { login } from "@/lib/actions/auth"
-import { Button } from "@/ui/components/ui/button"
-import { Input } from "@/ui/components/ui/input"
-import { Label } from "@/ui/components/ui/label"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/ui/components/ui/card"
+import { useState } from "react";
+import { login } from "@/lib/actions/auth";
+import { Button } from "@/ui/components/ui/button";
+import { Input } from "@/ui/components/ui/input";
+import { Label } from "@/ui/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/ui/components/ui/card";
 
 export default function LoginPage() {
-  const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setLoading(true)
-    setError("")
-    
-    const formData = new FormData(e.currentTarget)
-    const result = await login(formData)
-    
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    const result = await login(formData);
+
     if (result.success) {
-      window.location.href = "/admin/projects"
+      window.location.href = "/admin/projects";
     } else {
-      setError(result.error || "Une erreur est survenue")
-      setLoading(false)
+      setError(result.error || "Une erreur est survenue");
+      setLoading(false);
     }
   }
 
@@ -33,7 +40,8 @@ export default function LoginPage() {
         <CardHeader>
           <CardTitle className="text-2xl">Back-Office</CardTitle>
           <CardDescription>
-            Entrez votre mot de passe pour accéder à l'administration du portfolio.
+            Entrez votre mot de passe pour accéder à l'administration du
+            portfolio.
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
@@ -52,5 +60,5 @@ export default function LoginPage() {
         </form>
       </Card>
     </div>
-  )
+  );
 }

@@ -8,13 +8,16 @@ import { fonts } from "@/lib/fonts";
 //styles
 import "./lastCta.css";
 
-export default function LastCta(){
-    return(
-        <section id="last-cta" className="no-max-width">
-            <div className="content desktop">
-                <h2>CLIVER.FR</h2>
-                <Btn path="https://cliver.fr">Voir le site<Icon picked="eye"/></Btn>
-            </div>
-        </section>
-    )
+export default function LastCta() {
+  return (
+    <section id="last-cta" className="no-max-width">
+      <div className="content desktop">
+        <h2>CLIVER.FR</h2>
+        <Btn path="https://cliver.fr">
+          Voir le site
+          <Icon picked="eye" />
+        </Btn>
+      </div>
+    </section>
+  );
 }

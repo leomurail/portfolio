@@ -6,10 +6,10 @@ interface Params<T> {
   className: string;
 }
 
-export function ComponentList<T extends { children?: React.ReactNode}>({
+export function ComponentList<T extends { children?: React.ReactNode }>({
   array,
   Comp,
-  className
+  className,
 }: Params<T>) {
   return (
     <ul className={className}>

@@ -22,12 +22,11 @@ export default function Btn<T>({
   onClick,
   className,
 }: Props<T>) {
-
   let borderColor = "";
   let backgroundColor = "";
   let backgroundColorHover = "";
 
-  switch (color){
+  switch (color) {
     case "glass":
       borderColor = `var(--white-color)`;
       backgroundColor = `rgba(235,235,235,0.15)`;
@@ -45,7 +44,6 @@ export default function Btn<T>({
       break;
   }
 
-
   const style = {
     "--color": `var(--dark-${color}-color)`,
     "--background-color": backgroundColor,
@@ -55,22 +53,19 @@ export default function Btn<T>({
 
   const content = path ? (
     <Link href={path} onClick={onClick}>
-      <div
-        style={style}
-        className={`btn ${color} ${className}`}
-      >
+      <div style={style} className={`btn ${color} ${className}`}>
         <div className="content">{children}</div>
       </div>
     </Link>
   ) : (
-    <button  
+    <button
       style={style}
       className={`btn ${color} ${className}`}
       onClick={onClick}
     >
       <div className="content">{children}</div>
-  </button>
+    </button>
   );
 
-  return (content);
+  return content;
 }

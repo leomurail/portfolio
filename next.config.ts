@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack'],
+      use: ["@svgr/webpack"],
     });
     // Optimisation radicale du polling pour Docker Compose Watch (Action: Sync)
     config.watchOptions = {

@@ -8,24 +8,25 @@ import "./filters.css";
 //types
 import { Category } from "../../type";
 
-interface props{
-    categories:Category[];
-    setCurrent:(param:string) => void;
+interface props {
+  categories: Category[];
+  setCurrent: (param: string) => void;
 }
 
-export default function Filters({categories,setCurrent}:props){
+export default function Filters({ categories, setCurrent }: props) {
+  const filterBtns = categories.map((param, index) => (
+    <li className="filter" key={index}>
+      <Btn
+        path={`#${param.slug}`}
+        color="grey"
+        onClick={() => {
+          setCurrent(param.slug);
+        }}
+      >
+        {param.name} <Icon picked="eye" />
+      </Btn>
+    </li>
+  ));
 
-    const filterBtns = categories.map((param,index) => (
-        <li className="filter" key={index}>
-            <Btn path={`#${param.slug}`} color="grey" onClick={() => {setCurrent(param.slug)}}> 
-                {param.name} <Icon picked="eye" />
-            </Btn>
-        </li>
-    ));
-
-    return(
-        <ul className="filters">
-            {filterBtns}
-        </ul>
-    )
+  return <ul className="filters">{filterBtns}</ul>;
 }

@@ -1,7 +1,7 @@
 export const contentAbout = [
-    {
-        title:"Une envie de faire de grandes choses​",
-        desc:`Je suis passionné par le monde du digital.
+  {
+    title: "Une envie de faire de grandes choses​",
+    desc: `Je suis passionné par le monde du digital.
 
             Mon objectif est de diriger une entreprise dans ce domaine, peu importe le secteur : développement web, design, vidéo, marketing ou création de contenu.
 
@@ -10,11 +10,11 @@ export const contentAbout = [
 
             Je rêve de créer une structure où je peux tester des idées, rencontrer des personnes inspirantes et faire évoluer mes projets.
             Un écosystème fondé sur l’innovation, la liberté et la collaboration.`,
-        img:"/img/pages/about/leo-murail-qui-parle.webp"
-    },
-    {
-        title:"Mes compétences",
-        desc:`J’ai commencé par apprendre le codage.
+    img: "/img/pages/about/leo-murail-qui-parle.webp",
+  },
+  {
+    title: "Mes compétences",
+    desc: `J’ai commencé par apprendre le codage.
 
             Aujourd’hui, ma compétence principale est le développement web, en back-end comme en front-end.
 
@@ -24,6 +24,6 @@ export const contentAbout = [
             J’ai aussi appris à me former seul, en dehors des cours.
 
             Grâce aux projets réalisés, j’ai développé des qualités clés : travail d’équipe, gestion de projet et collaboration.`,
-        img:"/img/pages/about/leo-murail-qui-allume-sa-camera.webp"
-    },
-]
+    img: "/img/pages/about/leo-murail-qui-allume-sa-camera.webp",
+  },
+];

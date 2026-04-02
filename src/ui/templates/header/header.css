@@ -1,8 +1,8 @@
-#back-header{
-    width:100vw;
-    background-color:var(--black-color);
+#back-header {
+  width: 100vw;
+  background-color: var(--black-color);
 }
 
-#back-header{
-    height:100px;
+#back-header {
+  height: 100px;
 }

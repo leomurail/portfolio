@@ -1,15 +1,16 @@
-#brand-content .top{
-    background:url("/img/pages/brand/brand-content-part-bg.webp");
-    background-position: center;
-    background-size:cover;
-    width:100vw;
+#brand-content .top {
+  background: url("/img/pages/brand/brand-content-part-bg.webp");
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
 }
 
-#brand-content .center, #brand-content .top{
-    padding-block:var(--three-xl-size);
+#brand-content .center,
+#brand-content .top {
+  padding-block: var(--three-xl-size);
 }
 
-#brand-content h2 span{
-    font-size:80px;
-    line-height: 0;
+#brand-content h2 span {
+  font-size: 80px;
+  line-height: 0;
 }

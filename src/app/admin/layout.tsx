@@ -1,10 +1,10 @@
-import { ThemeProvider } from "@/ui/components/theme-provider"
-import "./admin.css"
+import { ThemeProvider } from "@/ui/components/theme-provider";
+import "./admin.css";
 
 export default function AdminRootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <ThemeProvider
@@ -14,9 +14,7 @@ export default function AdminRootLayout({
       enableSystem={false}
       disableTransitionOnChange
     >
-      <div className="admin-root dark">
-        {children}
-      </div>
+      <div className="admin-root dark">{children}</div>
     </ThemeProvider>
-  )
+  );
 }

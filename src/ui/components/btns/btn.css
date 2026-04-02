@@ -1,67 +1,67 @@
-.btn{
-    display:grid;
-    place-items: center;
-    width:fit-content;
-    padding:var(--s-size);
-    border-radius:8px;
-    text-decoration: none;
-    font-weight:bold;
-    font-size:var(--m-font-size);
-    transition:all 0.4s;
+.btn {
+  display: grid;
+  place-items: center;
+  width: fit-content;
+  padding: var(--s-size);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: var(--m-font-size);
+  transition: all 0.4s;
 
-    background-color:var(--background-color);
-    border:solid 0.5px var(--border-color);
+  background-color: var(--background-color);
+  border: solid 0.5px var(--border-color);
 
-    backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
-.btn:hover{
-    background-color:var(--background-color-hover);
+.btn:hover {
+  background-color: var(--background-color-hover);
 }
 
-.btn div.content{
-    width:100%;
-    align-items: center;
-    justify-content: center;
-    display:flex;
-    gap:var(--three-xs-size);
-    padding:0 !important;
+.btn div.content {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: var(--three-xs-size);
+  padding: 0 !important;
 }
 
-.btn::after{
-    content:" ";
-    display: block;
-    width:4px;
-    height:2px;
-    margin:auto;
-    border-radius:var(--xl-size);
-    transition:all 0.2s;
-    background-color: white;
+.btn::after {
+  content: " ";
+  display: block;
+  width: 4px;
+  height: 2px;
+  margin: auto;
+  border-radius: var(--xl-size);
+  transition: all 0.2s;
+  background-color: white;
 }
 
-.btn:hover::after{
-    width:100%;
+.btn:hover::after {
+  width: 100%;
 }
 
-.btn svg{
-    fill:white;
+.btn svg {
+  fill: white;
 }
 
 /*Grey*/
 
-.grey::after{
-    background-color: var(--white-color);
+.grey::after {
+  background-color: var(--white-color);
 }
 /*--*/
 
 /*——————————————————RESPONSIVE——————————————————————*/
 
-@media(max-width:425px){
-    .btn{
-        padding:var(--xs-size);
-    }
+@media (max-width: 425px) {
+  .btn {
+    padding: var(--xs-size);
+  }
 
-    .btn div.content{
-        font-size:var(--s-font-size);
-    }
+  .btn div.content {
+    font-size: var(--s-font-size);
+  }
 }

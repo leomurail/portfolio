@@ -1,14 +1,14 @@
-.tag{
-    display:inline-block;
-    height:fit-content;
-    background-color: var(--dark-grey-color);
-    padding:var(--three-xs-size);
-    border-radius:var(--three-xs-size);
-    font-size:var(--s-font-size);
-    font-weight:400;
-    text-wrap:nowrap;
+.tag {
+  display: inline-block;
+  height: fit-content;
+  background-color: var(--dark-grey-color);
+  padding: var(--three-xs-size);
+  border-radius: var(--three-xs-size);
+  font-size: var(--s-font-size);
+  font-weight: 400;
+  text-wrap: nowrap;
 }
 
-.tag.glass{
-    background-color:var(--white-color-lowopac);
+.tag.glass {
+  background-color: var(--white-color-lowopac);
 }

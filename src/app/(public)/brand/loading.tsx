@@ -1,8 +1,6 @@
 //component
-import PageLoading from "@/ui/components/loading/page-loading/pageLoading"
+import PageLoading from "@/ui/components/loading/page-loading/pageLoading";
 
-export default function Loading(){
-    return(
-        <PageLoading/>
-    )
+export default function Loading() {
+  return <PageLoading />;
 }

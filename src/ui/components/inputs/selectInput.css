@@ -1,30 +1,30 @@
-.select-input{
-    position: relative;
+.select-input {
+  position: relative;
 }
 
-.select-input label{
-    display:none;
+.select-input label {
+  display: none;
 }
 
-.select-input select{
-    border:none;
-    -moz-appearance: none; 
-    -webkit-appearance: none; 
-    appearance: none;
-    border-bottom:solid 1px var(--white-color);
-    border-radius:0;
-    padding-left:0;
-    font-weight:600;
-    font-size:var(--l-font-size);
+.select-input select {
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-bottom: solid 1px var(--white-color);
+  border-radius: 0;
+  padding-left: 0;
+  font-weight: 600;
+  font-size: var(--l-font-size);
 }
 
-.select-input .icon{
-    position:absolute;
-    right:0;
-    top:calc(50% - 10px);
-    transform:rotate(90deg);
+.select-input .icon {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 10px);
+  transform: rotate(90deg);
 }
 
-.select-input .icon .loading{
-    transform:rotate(-90deg);
+.select-input .icon .loading {
+  transform: rotate(-90deg);
 }

@@ -8,16 +8,21 @@ import Iframe from "@/ui/components/iframe/iframe";
 import "./rowContent.css";
 
 interface props {
-    img:string;
-    iframe:string;
-    reverse?:boolean;
+  img: string;
+  iframe: string;
+  reverse?: boolean;
 }
 
-export default function RowContent({img,iframe,reverse = false}:props){
-    return(
-        <div className={`row-content ${reverse && "reverse"}`}>
-            <Image src={img} alt={`${img} du portfolio de Léo Murail`} width={450} height={450}/>
-            <Iframe src={iframe} height={600}/>
-        </div>
-    )
+export default function RowContent({ img, iframe, reverse = false }: props) {
+  return (
+    <div className={`row-content ${reverse && "reverse"}`}>
+      <Image
+        src={img}
+        alt={`${img} du portfolio de Léo Murail`}
+        width={450}
+        height={450}
+      />
+      <Iframe src={iframe} height={600} />
+    </div>
+  );
 }
