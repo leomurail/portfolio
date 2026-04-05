@@ -35,10 +35,6 @@
   gap: var(--two-xs-size);
 }
 
-#single-post img {
-  border-radius: var(--xs-size);
-}
-
 /*————————————————RESPONSIVE——————————————————-*/
 
 @media (max-width: 1024px) {

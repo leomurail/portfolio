@@ -1,13 +1,18 @@
+.hero-part-wrapper {
+  background-image: url("/img/backgrounds/hero-bg.webp");
+  background-size: cover;
+  background-position: center;
+}
+
 #hero-part {
   width: 100vw;
   height: 900px;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
   padding-bottom: 100px;
   overflow: hidden;
-  background-color: var(--black-color);
 }
 
 #hero-part .background-image {
@@ -25,7 +30,7 @@
   object-fit: cover;
 }
 
-#hero-part .content {
+#hero-part .hero-content {
   position: relative;
   z-index: 1;
   display: flex;
@@ -38,7 +43,7 @@
 #hero-part .title-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   gap: 10px;
 }
@@ -71,7 +76,7 @@
   width: 100%;
 }
 
-#hero-part .buttons > * {
+#hero-part .buttons>* {
   flex: 1;
 }
 
@@ -81,6 +86,7 @@
   #hero-part {
     height: 700px;
   }
+
   #hero-part .name {
     font-size: 200px;
   }
@@ -95,6 +101,7 @@
     height: 600px;
     padding-bottom: 50px;
   }
+
   #hero-part .name {
     font-size: 120px;
   }
@@ -102,7 +109,7 @@
   #hero-part .portfolio-text {
     font-size: 48px;
   }
-  
+
   #hero-part .buttons {
     flex-direction: column;
   }

@@ -2,7 +2,6 @@
   width: 20px;
   height: 20px;
   background-color: var(--purple-color);
-  border-radius: var(--xl-size);
   position: fixed;
   z-index: 20;
   pointer-events: none;

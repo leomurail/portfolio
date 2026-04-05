@@ -6,7 +6,6 @@
   gap: var(--l-size);
   padding: var(--l-size);
   background-color: var(--very-dark-grey-color);
-  border-radius: var(--m-size);
 }
 
 .partner-video .left {
@@ -17,10 +16,6 @@
 .partner-video .left .sub-title {
   font-weight: bold;
   font-size: var(--xl-font-size);
-}
-
-.partner-video iframe {
-  border-radius: var(--s-size);
 }
 
 /*—————————————————————RESPONSIVE———————————————————————-*/

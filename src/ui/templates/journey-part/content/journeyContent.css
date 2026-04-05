@@ -70,7 +70,6 @@
 
 #journey-content .totem-accent {
   background-color: var(--light-blue-color);
-  border-radius: 5px;
   position: absolute;
 }
 
@@ -107,7 +106,7 @@
   #journey-content .top .left h2 {
     font-size: 24px;
   }
-  
+
   #journey-content .top .left p.current-period {
     font-size: 40px;
   }

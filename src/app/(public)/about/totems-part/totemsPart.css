@@ -73,7 +73,6 @@
   pointer-events: all;
   padding: 20px;
   background-color: var(--grey-color);
-  border-radius: var(--xl-size);
   transition: all 0.3s;
 }
 

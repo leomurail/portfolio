@@ -68,7 +68,6 @@
   width: 120px;
   height: 120px;
   background-color: var(--light-blue-color);
-  border-radius: 5px;
 }
 
 /*——————————————————RESPONSIVE————————————————————*/
@@ -77,7 +76,7 @@
   #sentence-part .container {
     padding-inline: 40px;
   }
-  
+
   #sentence-part .looper-container {
     position: relative;
     right: auto;
@@ -91,7 +90,7 @@
   #sentence-part ul.sentence li.word {
     font-size: 32px;
   }
-  
+
   #sentence-part h2 span {
     font-size: 60px;
   }

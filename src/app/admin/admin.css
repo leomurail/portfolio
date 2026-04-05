@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+
   :root,
   .dark {
     --background: 240 10% 3.9%;
@@ -71,7 +72,6 @@
   .admin-root textarea {
     background-image: none !important;
     box-shadow: none !important;
-    border-radius: var(--radius) !important;
     border: 1px solid hsl(var(--input)) !important;
     background-color: transparent !important;
     padding: 0.5rem 0.75rem !important;
@@ -115,18 +115,16 @@
   .admin-root main {
     margin: 0 !important;
     border: none !important;
-    border-radius: 0 !important;
     box-shadow: none !important;
     background-color: hsl(var(--background)) !important;
   }
 
   /* Kill the SidebarInset special styles */
-  .admin-root [data-sidebar="sidebar"] + main,
+  .admin-root [data-sidebar="sidebar"]+main,
   .admin-root .peer-data-\[variant\=inset\]\:m-2 {
     margin: 0 !important;
     border: none !important;
     box-shadow: none !important;
-    border-radius: 0 !important;
   }
 
   /* Reset global.css section, main and desktop constraints */

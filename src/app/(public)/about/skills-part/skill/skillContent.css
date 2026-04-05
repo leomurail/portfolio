@@ -6,7 +6,6 @@
   padding: var(--s-size);
   margin-top: var(--three-xs-size);
   background-color: var(--dark-grey-color);
-  border-radius: var(--s-size);
 }
 
 .skill-content h3 {

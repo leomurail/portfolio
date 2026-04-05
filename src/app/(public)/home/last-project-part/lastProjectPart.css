@@ -38,11 +38,14 @@
 #last-project-part .content h2 {
   font-size: 32px;
   font-weight: 700;
-  text-align: center;
+}
+
+#last-project-part .content .btn {
+  width: fit-content;
 }
 
 #last-project-part .category-tag {
-  background-color: var(--very-dark-grey-color);
+  background-color: var(--dark-grey-color);
   padding: 5px 15px;
   align-self: flex-start;
 }
@@ -65,11 +68,11 @@
   #last-project-part .container {
     flex-direction: column;
   }
-  
+
   #last-project-part .image-container {
     height: 300px;
   }
-  
+
   #last-project-part .content {
     padding: 30px;
   }

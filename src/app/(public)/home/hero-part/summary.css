@@ -3,7 +3,6 @@
   width: fit-content;
   max-width: 800px;
   padding: var(--s-size);
-  border-radius: var(--m-size);
   z-index: 1;
 }
 

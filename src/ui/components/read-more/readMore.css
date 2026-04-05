@@ -31,7 +31,6 @@
   border: none;
   font-size: var(--m-font-size);
   padding: var(--two-xs-size);
-  border-radius: var(--three-xs-size);
   margin-top: var(--three-xs-size);
   transition: all 0.3s;
 }

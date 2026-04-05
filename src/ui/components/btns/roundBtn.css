@@ -2,7 +2,6 @@
   background-color: var(--grey-color);
   color: var(--white-color);
   transition: all 0.2s;
-  border-radius: var(--xl-size);
 
   text-decoration: none;
   font-weight: bold;

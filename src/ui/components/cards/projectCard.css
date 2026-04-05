@@ -4,7 +4,6 @@
   background-position: center;
   min-width: 500px;
   height: 350px;
-  border-radius: var(--xs-size);
   position: relative;
   overflow: hidden;
   padding: 20px;

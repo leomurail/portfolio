@@ -12,7 +12,6 @@
   -webkit-appearance: none;
   appearance: none;
   border-bottom: solid 1px var(--white-color);
-  border-radius: 0;
   padding-left: 0;
   font-weight: 600;
   font-size: var(--l-font-size);

@@ -1,6 +1,5 @@
 #contact .right {
   height: 500px;
-  border-radius: var(--l-size);
   background: linear-gradient(var(--white-color), var(--light-purple-color));
   padding: var(--l-size);
 

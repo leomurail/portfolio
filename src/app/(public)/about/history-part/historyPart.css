@@ -13,7 +13,6 @@
   align-items: center;
   grid-template-columns: 1fr 1fr;
   background-color: var(--very-dark-grey-color);
-  border-radius: var(--xs-size);
   padding: var(--l-size);
   gap: var(--l-size);
 }
@@ -31,12 +30,7 @@
   margin-block: var(--s-size);
 }
 
-#history .container .left .container-img img {
-  border-radius: var(--two-xs-size);
-}
-
-#history .container > img {
-  border-radius: var(--two-xs-size);
+#history .container>img {
   width: 100%;
   object-fit: 499 / 360;
   object-position: right;
@@ -51,7 +45,7 @@
     grid-template-columns: 1fr;
   }
 
-  #history .container > img {
+  #history .container>img {
     display: none !important;
   }
 }

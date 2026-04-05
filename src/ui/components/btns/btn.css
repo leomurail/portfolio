@@ -3,7 +3,6 @@
   place-items: center;
   width: 100%;
   padding: var(--s-size);
-  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   font-size: var(--m-font-size);
@@ -34,7 +33,6 @@
   width: 6px;
   height: 2px;
   margin: auto;
-  border-radius: var(--xl-size);
   transition: all 0.2s;
   background-color: white;
 }

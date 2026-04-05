@@ -1,7 +1,6 @@
 .skeleton-loading {
   width: var(--skeleton-width);
   height: var(--skeleton-height);
-  border-radius: var(--skeleton-border-radius);
   background-color: var(--very-dark-grey-color);
   animation-name: skeleton-anim;
   animation-duration: 2s;
