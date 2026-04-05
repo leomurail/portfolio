@@ -1,7 +1,7 @@
 .btn {
   display: grid;
   place-items: center;
-  width: fit-content;
+  width: 100%;
   padding: var(--s-size);
   border-radius: 8px;
   text-decoration: none;
@@ -19,7 +19,7 @@
   background-color: var(--background-color-hover);
 }
 
-.btn div.content {
+.btn div.btn-content {
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -31,7 +31,7 @@
 .btn::after {
   content: " ";
   display: block;
-  width: 4px;
+  width: 6px;
   height: 2px;
   margin: auto;
   border-radius: var(--xl-size);
@@ -52,6 +52,7 @@
 .grey::after {
   background-color: var(--white-color);
 }
+
 /*--*/
 
 /*——————————————————RESPONSIVE——————————————————————*/
@@ -61,7 +62,7 @@
     padding: var(--xs-size);
   }
 
-  .btn div.content {
+  .btn div.btn-content {
     font-size: var(--s-font-size);
   }
 }

@@ -1,80 +1,109 @@
-#hero-part.background {
+#hero-part {
   width: 100vw;
-  height: var(--full-height);
+  height: 900px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 100px;
+  overflow: hidden;
+  background-color: var(--black-color);
+}
 
-  background: url("/img/pages/home/background-hero-part.webp");
-  background-size: cover;
+#hero-part .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#hero-part .background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #hero-part .content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  width: 820px;
+}
+
+#hero-part .title-group {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
-  height: 100%;
-  padding-block: var(--xl-size);
-  position: relative;
+  width: 100%;
+  gap: 10px;
 }
 
-#hero-part .slider {
-  position: absolute;
-  right: 0;
-  top: 10%;
-}
-
-#hero-part h1 {
-  font-size: 120px;
+#hero-part .name {
+  font-size: 350px;
+  line-height: 0.75;
+  margin-bottom: -40px;
   text-align: center;
-  line-height: 70px;
 }
 
-#hero-part h1 span {
-  font-size: 90px;
+#hero-part .portfolio-text {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: -2px;
 }
 
 #hero-part p.text {
-  text-align: center;
-  font-size: var(--l-font-size);
-  max-width: 800px;
+  font-size: 18px;
+  width: 808px;
+  line-height: 1.4;
+  color: white;
 }
 
 #hero-part .buttons {
   display: flex;
-  gap: var(--two-xs-size);
+  gap: 20px;
+  width: 100%;
+}
+
+#hero-part .buttons > * {
+  flex: 1;
 }
 
 /*————————————————————————————————RESPONSIVE———————————————————————————————*/
 
 @media (max-width: 1024px) {
-  #hero-part h1 {
+  #hero-part {
+    height: 700px;
+  }
+  #hero-part .name {
+    font-size: 200px;
+  }
+
+  #hero-part .portfolio-text {
     font-size: 80px;
-    line-height: 50px;
-  }
-
-  #hero-part h1 span {
-    font-size: 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  #hero-part .content {
-    gap: 20px;
   }
 }
 
 @media (max-width: 425px) {
-  #hero-part h1 {
-    font-size: var(--h1-font-size);
+  #hero-part {
+    height: 600px;
+    padding-bottom: 50px;
+  }
+  #hero-part .name {
+    font-size: 120px;
   }
 
-  #hero-part p.text {
-    font-size: var(--m-font-size);
+  #hero-part .portfolio-text {
+    font-size: 48px;
   }
-
-  #hero-part .btn {
-    padding: var(--two-xs-size);
+  
+  #hero-part .buttons {
+    flex-direction: column;
   }
 }
-
-/*—————————————————————————————————————————————————————————————————————————*/

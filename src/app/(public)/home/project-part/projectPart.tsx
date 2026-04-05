@@ -7,7 +7,6 @@ import Icon from "@/ui/components/illu/icon";
 import { catsData } from "./constants";
 
 //fonts
-
 import { fonts } from "@/lib/fonts";
 
 //styles
@@ -24,14 +23,16 @@ export default function ProjectPart() {
   });
 
   return (
-    <section className="project-part no-max-width">
-      <div className="top desktop">
-        <h2 className={fonts.montserrat.className}>MES PROJETS</h2>
-        <Btn path="/projects" color="blue">
-          Tous les projets <Icon picked="eye" size={20} />
-        </Btn>
+    <section id="project-part" className="project-part no-max-width">
+      <div className="container">
+        <div className="top desktop">
+          <h2 className={fonts.montserrat.className}>MES PROJETS</h2>
+          <Btn path="/projects" color="blue">
+            Tous les projets <Icon picked="eye" size={20} />
+          </Btn>
+        </div>
+        <ul className="project-cats">{projectCats}</ul>
       </div>
-      <ul className="project-cats">{projectCats}</ul>
     </section>
   );
 }

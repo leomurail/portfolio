@@ -11,11 +11,10 @@ import {
 import { useRef } from "react";
 
 //components
-import Icon from "@/ui/components/illu/icon";
 import Word from "./word/word";
 
 //functions && var
-import { setIndexTop, setIconDisplay } from "./functions";
+import { setIndexTop } from "./functions";
 import { delay, styles, sentence } from "./constants";
 
 //fonts
@@ -24,10 +23,27 @@ import { fonts } from "@/lib/fonts";
 //styles
 import "./sentencePart.css";
 
+function LooperGroup() {
+  const rects = Array.from({ length: 10 }, (_, i) => i);
+  return (
+    <div className="looper-group">
+      {rects.map((i) => (
+        <div
+          key={i}
+          className="rect"
+          style={{
+            transform: `rotate(${i * 18 - 162}deg)`,
+            opacity: i / 10,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function SentencePart() {
   //element
   const sentencePartEl = useRef<HTMLElement | null>(null);
-  const iconsEl = useRef<HTMLDivElement | null>(null);
 
   //motion framer
   const indexTop = useMotionValue(0);
@@ -44,11 +60,9 @@ export default function SentencePart() {
     const current =
       sentencePartEl.current &&
       setIndexTop(sentencePartEl.current, sentence.nbWords, delay);
-    const icons = iconsEl.current?.getElementsByClassName("icon");
 
-    if (current && icons) {
+    if (current) {
       indexTop.set(current);
-      setIconDisplay(current, icons);
     }
   });
 
@@ -64,20 +78,19 @@ export default function SentencePart() {
     );
   });
 
-  //comp list
-  const sentenceEl = <ul className="sentence">{wordsEl}</ul>;
-
   return (
-    <motion.section id="sentence-part" ref={sentencePartEl}>
-      <h2 className={fonts.montserrat.className}>
-        En une <span className={fonts.imperial.className}>phrase</span>
-      </h2>
-      {sentenceEl}
-      <motion.div style={{ rotate, alignSelf: "end" }} ref={iconsEl}>
-        <Icon picked="l" color="var(--white-color)" size={200} />
-        <Icon picked="e" color="var(--white-color)" size={200} />
-        <Icon picked="o" color="var(--white-color)" size={200} />
-      </motion.div>
+    <motion.section id="sentence-part" ref={sentencePartEl} className="no-max-width">
+      <div className="container">
+        <h2 className={fonts.montserrat.className}>
+          En une <span className={fonts.imperial.className}>phrase</span>
+        </h2>
+        <ul className="sentence">
+          {wordsEl}
+        </ul>
+        <motion.div className="looper-container" style={{ rotate }}>
+          <LooperGroup />
+        </motion.div>
+      </div>
     </motion.section>
   );
 }

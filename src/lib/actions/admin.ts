@@ -40,11 +40,11 @@ const ProjectSchema = z.object({
 export const CategoryActions = {
   async getAll() {
     return await CategoryRepository.getAll();
-  };
+  },
 
   async getById(id: number) {
     return await CategoryRepository.getById(id);
-  };
+  },
 
   async delete(id: number) {
     try {
@@ -57,8 +57,8 @@ export const CategoryActions = {
         success: false,
         error: "Erreur, la catégorie est peut-être liée à un projet.",
       };
-    };
-  };
+    }
+  },
 
   async save(formData: FormData, id?: number) {
     try {
@@ -73,23 +73,23 @@ export const CategoryActions = {
         await CategoryRepository.update(id, parsed);
       } else {
         await CategoryRepository.create(parsed);
-      };
+      }
       revalidatePath("/admin/categories");
       return { success: true };
     } catch (error) {
       return { success: false, error: "Erreur lors de la sauvegarde." };
-    };
-  };
+    }
+  },
 };
 
 export const TagActions = {
   async getAll() {
     return await TagRepository.getAll();
-  };
+  },
 
   async getById(id: number) {
     return await TagRepository.getById(id);
-  };
+  },
 
   async delete(id: number) {
     try {
@@ -102,8 +102,8 @@ export const TagActions = {
         success: false,
         error: "Erreur, le tag est peut-être lié à un projet.",
       };
-    };
-  };
+    }
+  },
 
   async save(formData: FormData, id?: number) {
     try {
@@ -117,23 +117,23 @@ export const TagActions = {
         await TagRepository.update(id, parsed);
       } else {
         await TagRepository.create(parsed);
-      };
+      }
       revalidatePath("/admin/tags");
       return { success: true };
     } catch (error) {
       return { success: false, error: "Erreur lors de la sauvegarde." };
-    };
-  };
+    }
+  },
 };
 
 export const ThumbnailActions = {
   async getAll() {
     return await ThumbnailRepository.getAll();
-  };
+  },
 
   async getById(id: number) {
     return await ThumbnailRepository.getById(id);
-  };
+  },
 
   async delete(id: number) {
     try {
@@ -146,8 +146,8 @@ export const ThumbnailActions = {
         success: false,
         error: "Erreur, la miniature est liée à un projet.",
       };
-    };
-  };
+    }
+  },
 
   async save(formData: FormData, id?: number) {
     try {
@@ -163,23 +163,23 @@ export const ThumbnailActions = {
         await ThumbnailRepository.update(id, parsed);
       } else {
         await ThumbnailRepository.create(parsed);
-      };
+      }
       revalidatePath("/admin/thumbnails");
       return { success: true };
     } catch (error) {
       return { success: false, error: "Erreur lors de la sauvegarde." };
-    };
-  };
+    }
+  },
 };
 
 export const ProjectActions = {
   async getAll() {
     return await ProjectRepository.getAll();
-  };
+  },
 
   async getById(id: number) {
     return await ProjectRepository.getById(id);
-  };
+  },
 
   async save(formData: FormData, id?: number) {
     try {
@@ -200,15 +200,15 @@ export const ProjectActions = {
         await ProjectRepository.update(id, parsed, tagIds);
       } else {
         await ProjectRepository.create(parsed, tagIds);
-      };
+      }
 
       revalidatePath("/admin/projects");
       return { success: true };
     } catch (error) {
       console.error(error);
       return { success: false, error: "Erreur lors de la sauvegarde." };
-    };
-  };
+    }
+  },
 
   async delete(id: number) {
     try {
@@ -219,6 +219,6 @@ export const ProjectActions = {
     } catch (error) {
       console.error(error);
       return { success: false, error: "Erreur lors de la suppression." };
-    };
-  };
+    }
+  },
 };

@@ -9,7 +9,7 @@ import "./btn.css";
 
 interface Props<T> {
   children: React.ReactNode;
-  color?: "blue" | "glass" | "grey";
+  color?: "blue" | "glass" | "grey" | "dark-grey";
   path?: string;
   onClick?: () => T;
   className?: string;
@@ -37,6 +37,11 @@ export default function Btn<T>({
       backgroundColor = `var(--dark-grey-color)`;
       backgroundColorHover = `var(--grey-color)`;
       break;
+    case "dark-grey":
+      borderColor = `#333`;
+      backgroundColor = `var(--very-dark-grey-color)`;
+      backgroundColorHover = `var(--dark-grey-color)`;
+      break;
     default:
       borderColor = `var(--light-${color}-color)`;
       backgroundColor = `var(--${color}-color)`;
@@ -54,7 +59,7 @@ export default function Btn<T>({
   const content = path ? (
     <Link href={path} onClick={onClick}>
       <div style={style} className={`btn ${color} ${className}`}>
-        <div className="content">{children}</div>
+        <div className="btn-content">{children}</div>
       </div>
     </Link>
   ) : (
@@ -63,7 +68,7 @@ export default function Btn<T>({
       className={`btn ${color} ${className}`}
       onClick={onClick}
     >
-      <div className="content">{children}</div>
+      <div className="btn-content">{children}</div>
     </button>
   );
 

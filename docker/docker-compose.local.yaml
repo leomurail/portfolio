@@ -6,15 +6,15 @@ services:
     develop:
       watch:
         - action: sync
-          path: .
+          path: ../
           target: /app
           ignore:
             - node_modules
             - .next
         - action: rebuild
-          path: package.json
+          path: ../package.json
         - action: sync+restart
-          path: .env
+          path: ../.env
           target: /app/.env
 
   db:

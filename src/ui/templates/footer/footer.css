@@ -1,50 +1,133 @@
 #footer {
+  background-color: var(--black-color);
+  padding-block: var(--three-xl-size) var(--s-size);
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--very-dark-grey-color);
 }
 
-#footer h2 {
-  font-size: var(--h4-font-size);
-}
-
-#footer a {
-  display: block;
-  margin-block: var(--xs-size);
-}
-
-#footer .top {
+#footer .container {
   width: 100%;
+  max-width: var(--desktop-max-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--three-xl-size);
+  padding-inline: 10px;
+}
+
+#footer .main-footer-content {
   display: flex;
   justify-content: space-between;
-  padding-block: var(--three-xl-size);
+  align-items: flex-end;
 }
 
-#footer .bottom {
-  background-color: var(--light-blue-color);
-  padding-block: var(--two-xs-size);
-  font-weight: 500;
+#footer .logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
 }
 
-#footer .bottom {
-  text-align: center;
+#footer .footer-name {
+  font-size: 150px;
+  line-height: 0.5;
+  margin-bottom: 20px;
+  z-index: 2;
 }
 
-#footer .bottom,
-#footer .bottom strong {
+#footer .portfolio-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.8;
+}
+
+#footer .portfolio-title {
+  font-size: 100px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: var(--white-color);
+  z-index: 1;
+}
+
+#footer .portfolio-title.mirror {
+  transform: scaleY(-1);
+  opacity: 0.3;
+  margin-top: 5px;
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#footer .links-section {
+  display: flex;
+  gap: 100px;
+  padding-bottom: 50px;
+}
+
+#footer .item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#footer .item h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#footer .item a {
+  font-size: 16px;
+  color: var(--light-grey-color);
+  transition: color 0.3s;
+}
+
+#footer .item a:hover {
   color: var(--white-color);
 }
 
-/*———————————————————RESPONSIVE—————————————————————*/
+#footer .footer-bottom {
+  border-top: 1px solid var(--very-dark-grey-color);
+  padding-top: var(--m-size);
+  display: flex;
+  justify-content: center;
+}
 
-@media (max-width: 768px) {
-  #footer .top {
+#footer .footer-bottom p {
+  font-size: 14px;
+  color: var(--grey-color);
+}
+
+@media (max-width: 1024px) {
+  #footer .main-footer-content {
     flex-direction: column;
     align-items: center;
-    gap: var(--xl-size);
+    gap: 50px;
   }
+  
+  #footer .logo-section {
+    align-items: center;
+  }
+  
+  #footer .links-section {
+    gap: 50px;
+    padding-bottom: 0;
+  }
+}
 
-  #footer .top a,
-  #footer .bottom.p {
+@media (max-width: 425px) {
+  #footer .footer-name {
+    font-size: 80px;
+  }
+  
+  #footer .portfolio-title {
+    font-size: 40px;
+  }
+  
+  #footer .links-section {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    font-size: var(--m-font-size);
   }
 }
