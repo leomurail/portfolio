@@ -1,7 +1,11 @@
+//npm
+import { Suspense } from "react";
+
 //components
 import ProjectCat from "./projectCat";
 import Btn from "@/ui/components/btns/btn";
 import Icon from "@/ui/components/illu/icon";
+import SkeletonLoading from "@/ui/components/loading/skeleton-loading/skeletonLoading";
 
 //constants
 import { catsData } from "./constants";
@@ -17,7 +21,18 @@ export default function ProjectPart() {
     const key = param as keyof typeof catsData;
     return (
       <li key={key} className="project-cat-li">
-        <ProjectCat key={key} cat={key} />
+        <Suspense
+          fallback={
+            <SkeletonLoading
+              width="90vw"
+              height="440px"
+              borderRadius={20}
+              className="center"
+            />
+          }
+        >
+          <ProjectCat key={key} cat={key} />
+        </Suspense>
       </li>
     );
   });

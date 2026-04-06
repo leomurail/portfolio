@@ -31,3 +31,14 @@
 .card-slider .round-btn:last-child {
   right: 10px;
 }
+
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 440px;
+  width: 100%;
+  color: var(--white);
+  font-size: 1.2rem;
+  opacity: 0.7;
+}

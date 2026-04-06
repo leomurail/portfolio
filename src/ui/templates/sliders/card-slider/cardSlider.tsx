@@ -49,6 +49,14 @@ export default async function CardSlider({ categoryId, step }: Props) {
     },
   });
 
+  if (data.length === 0) {
+    return (
+      <div className="no-data">
+        <p>Aucun projet trouvé dans cette catégorie.</p>
+      </div>
+    );
+  }
+
   const projects = data.map((project, index) => (
     <ProjectCard
       key={index}
