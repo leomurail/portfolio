@@ -1,58 +1,115 @@
 "use client";
 
+// npm
+import { useRef, Suspense } from "react";
+import { MotionValue } from "motion";
+import { motion, useScroll, useTransform } from "motion/react";
+import { Canvas } from "@react-three/fiber";
+import { Environment, ContactShadows } from "@react-three/drei";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+
+// components
+import Star from "./star";
+import LoaderThree from "@/ui/components/3D/loader/loaderThree";
+
 // fonts
 import { fonts } from "@/lib/fonts";
+
+// constants
+import { PROCESS_STEPS } from "./constants";
 
 // styles
 import "./workProcessPart.css";
 
-const imgUntitled1 = "https://www.figma.com/api/mcp/asset/77531be3-9547-40ef-a787-9d410e234759";
+interface CardProps {
+  step: typeof PROCESS_STEPS[0];
+  index: number;
+  total: number;
+  scrollYProgress: MotionValue<number>;
+}
+
+function ProcessCard({ step, index, total, scrollYProgress }: CardProps) {
+  const stepSize = 1 / (total + 1);
+  const start = index * stepSize;
+  const nextStepStart = (index + 1) * stepSize;
+  
+  const y = useTransform(scrollYProgress, [start, start + stepSize * 0.5], [100, 0]);
+  const opacity = useTransform(scrollYProgress, [start, start + stepSize * 0.5], [0, 1]);
+  
+  const scale = useTransform(scrollYProgress, [nextStepStart, 1], [1, 0.85]);
+  const filter = useTransform(scrollYProgress, [nextStepStart, 1], ["brightness(1)", "brightness(0.3)"]);
+
+  return (
+    <motion.div
+      className="process-card"
+      style={{
+        y,
+        opacity,
+        scale,
+        filter,
+        top: `${index * 25}px`,
+        zIndex: index + 1,
+      }}
+    >
+      <h3>{step.title}</h3>
+      <div className="main-text">
+        <p>{step.description}</p>
+      </div>
+      <div className="ai-section">
+        <span className="ai-tag">{step.aiTag}</span>
+        <p className="ai-text">{step.aiText}</p>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function WorkProcessPart() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
   return (
-    <section id="work-process-part" className="no-max-width">
-      <div className="container">
-        <div className="process-info">
-          <h2 className={`${fonts.montserrat.className} section-title`}>
-            Mon process de travail
-          </h2>
-          <div className="cards-container">
-            <div className="process-card">
-              <h3>1. Cadrage et Déconstruction</h3>
-              <div className="main-text">
-                <p>
-                  Je décortique le besoin initial pour en extraire les
-                  véritables enjeux.
-                </p>
-              </div>
-              <div className="ai-section">
-                <span className="ai-tag">Et l’IA dans tout ça ?</span>
-                <p className="ai-text">
-                  J'utilise l'IA pour m'aider à synthétiser des documentations
-                  denses, explorer des angles morts ou générer des questions
-                  pour challenger le brief initial.
-                </p>
-              </div>
-            </div>
-            {/* Added a second card to match the figma visual stack effect if needed, but for now simple 2 items layout or list */}
-            <div className="process-card offset">
-               <h3>2. Conception et Design</h3>
-              <div className="main-text">
-                <p>
-                  Je traduis les enjeux en solutions visuelles et fonctionnelles cohérentes.
-                </p>
-              </div>
-              <div className="ai-section">
-                <span className="ai-tag">Et l’IA dans tout ça ?</span>
-                <p className="ai-text">
-                  Génération d'assets, aide à la mise en page et itérations rapides sur les concepts.
-                </p>
-              </div>
+    <section id="work-process-part" className="no-max-width" ref={containerRef}>
+      {/* 
+         On crée un wrapper sticky qui contient tout (3D + Cartes).
+         Ce wrapper reste en haut pendant les 400vh de scroll.
+      */}
+      <div className="sticky-wrapper">
+        <div className="canvas-wrapper">
+          <Canvas className="star-canvas-full">
+            <Suspense fallback={<LoaderThree />}>
+              <Star scrollYProgress={scrollYProgress} />
+              <ambientLight intensity={0.5} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} />
+              <Environment preset="city" />
+              <ContactShadows position={[0, -2.5, 0]} opacity={0.4} scale={10} blur={2.5} far={4} />
+              <EffectComposer>
+                <Bloom luminanceThreshold={0.2} mipmapBlur intensity={1.5} radius={0.4} />
+              </EffectComposer>
+            </Suspense>
+          </Canvas>
+        </div>
+
+        <div className="container">
+          <div className="process-info">
+            <h2 className={`${fonts.montserrat.className} section-title`}>
+              Mon process de travail
+            </h2>
+            <div className="cards-container">
+              {PROCESS_STEPS.map((step, index) => (
+                <ProcessCard
+                  key={step.id}
+                  step={step}
+                  index={index}
+                  total={PROCESS_STEPS.length}
+                  scrollYProgress={scrollYProgress}
+                />
+              ))}
             </div>
           </div>
-        </div>
-        <div className="illustration-container">
-          <img src={imgUntitled1} alt="Illustration 3D process" />
         </div>
       </div>
     </section>

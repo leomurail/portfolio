@@ -1,16 +1,50 @@
 #work-process-part {
   background-color: var(--black-color);
-  padding: var(--three-xl-size) var(--three-xl-size);
+  padding: 0;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  /* La section parent donne la zone de scroll */
+  height: 400vh;
+  position: relative;
+  width: 100vw;
+  overflow: clip;
+}
+
+#work-process-part .sticky-wrapper {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#work-process-part .canvas-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
 }
 
 #work-process-part .container {
   display: flex;
   width: 100%;
   max-width: var(--desktop-max-width);
+  margin: 0 auto;
+  padding: 0 var(--three-xl-size);
+  height: 100%;
+  position: relative;
   align-items: center;
+  z-index: 1; /* Par-dessus le canvas */
+}
+
+#work-process-part .star-canvas-full {
+  width: 100%;
+  height: 100% !important;
 }
 
 #work-process-part .process-info {
@@ -18,105 +52,118 @@
   display: flex;
   flex-direction: column;
   gap: var(--xl-size);
+  height: 100%;
+  justify-content: center;
 }
 
 #work-process-part .section-title {
-  color: var(--grey-color);
-  font-size: 28px;
-  font-weight: 500;
-  text-align: center;
+  color: var(--white-color);
+  font-size: 40px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: var(--m-size);
 }
 
 #work-process-part .cards-container {
   position: relative;
-  height: 500px;
+  width: 100%;
+  height: 550px;
+  perspective: 1000px;
 }
 
 #work-process-part .process-card {
   background-color: var(--very-dark-grey-color);
   border: 1px solid var(--dark-grey-color);
-  padding: var(--s-size);
+  padding: var(--xl-size);
   display: flex;
   flex-direction: column;
-  gap: var(--s-size);
-  width: 400px;
+  gap: var(--m-size);
+  width: 100%;
+  max-width: 550px;
   position: absolute;
-}
-
-#work-process-part .process-card:first-child {
   top: 0;
   left: 0;
-  z-index: 2;
-}
-
-#work-process-part .process-card.offset {
-  top: 100px;
-  left: 50px;
-  z-index: 1;
-  opacity: 0.6;
+  border-radius: 0;
 }
 
 #work-process-part .process-card h3 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--white-color);
 }
 
 #work-process-part .main-text {
   background-color: var(--dark-grey-color);
-  padding: 10px;
+  padding: 20px;
+  border-radius: 0;
 }
 
 #work-process-part .main-text p {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
+  line-height: 1.6;
 }
 
 #work-process-part .ai-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 #work-process-part .ai-tag {
-  background-color: var(--dark-grey-color);
-  padding: 5px 10px;
-  font-size: 15px;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  padding: 6px 14px;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 700;
   align-self: flex-start;
 }
 
 #work-process-part .ai-text {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--light-grey-color);
-}
-
-#work-process-part .illustration-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#work-process-part .illustration-container img {
-  max-width: 100%;
-  height: auto;
+  line-height: 1.6;
 }
 
 @media (max-width: 1024px) {
-  #work-process-part .container {
+  #work-process-part {
+    height: auto;
+    padding: var(--xl-size);
+  }
+
+  #work-process-part .sticky-wrapper {
+    position: static;
+    height: auto;
     flex-direction: column;
-    gap: var(--xl-size);
+  }
+
+  #work-process-part .container {
+    padding: 0;
+    height: auto;
+  }
+
+  #work-process-part .canvas-wrapper {
+    position: relative;
+    height: 400px;
+    width: 100%;
   }
   
   #work-process-part .cards-container {
     height: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
   }
   
   #work-process-part .process-card {
     position: static;
-    width: 100%;
+    max-width: 100%;
+  }
+
+  #work-process-part .section-title {
+    text-align: center;
+    font-size: 32px;
   }
 }
