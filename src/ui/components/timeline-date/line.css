@@ -3,15 +3,20 @@
   height: 4px;
   background-color: var(--light-blue-color);
   margin-block: var(--m-size);
+  position: relative;
   display: flex;
   align-items: center;
 }
 
 .line::before {
-  content: " ";
+  content: "";
+  position: absolute;
+  left: 0;
   display: block;
   width: 35px;
   height: 35px;
   background-color: var(--black-color);
   border: solid 4px var(--light-blue-color);
+  border-radius: 50%;
+  flex-shrink: 0;
 }

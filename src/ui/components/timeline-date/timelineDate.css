@@ -1,14 +1,16 @@
 .timeline-date {
-  min-width: 80vw;
+  min-width: 70vw;
   margin-block: var(--two-xl-size) var(--three-xl-size);
 }
 
 .timeline-date h3 {
   font-size: var(--xl-font-size);
+  padding-right: 50px;
 }
 
 .timeline-date .content {
   max-width: 600px;
+  padding-right: 50px;
 }
 
 .timeline-date .content h4 {

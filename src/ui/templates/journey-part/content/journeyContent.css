@@ -3,6 +3,11 @@
   padding-block: var(--three-xl-size);
   width: 100vw;
   overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 #journey-content .journey-wrapper {
@@ -40,7 +45,7 @@
 
 #journey-content .all-dates .container {
   display: flex;
-  gap: 100px;
+  gap: 0;
   width: max-content;
   align-items: flex-end;
   height: 500px;

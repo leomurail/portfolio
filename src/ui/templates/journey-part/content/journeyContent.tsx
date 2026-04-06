@@ -39,15 +39,21 @@ function TotemIcon() {
 export default function JourneyContent({ scrollY, target }: props) {
   const [xRange, setXRange] = useState(0);
 
-  const x = useTransform(scrollY, [0, 1], ["0", -xRange + "px"]);
+  const x = useTransform(scrollY, [0, 1], [0, -xRange]);
 
   useEffect(() => {
     const el = target.current?.querySelector(".all-dates .container");
-    if (el) {
-      const range = el.clientWidth - window.innerWidth;
-      setXRange(range);
-    }
-  }, [target, xRange]);
+    
+    const updateRange = () => {
+      if (el) {
+        setXRange(el.scrollWidth - window.innerWidth);
+      }
+    };
+
+    updateRange();
+    window.addEventListener("resize", updateRange);
+    return () => window.removeEventListener("resize", updateRange);
+  }, [target]);
 
   return (
     <section id="journey-content" className="no-max-width">
