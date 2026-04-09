@@ -1,12 +1,44 @@
-#skills .container-skills {
-  box-sizing: content-box;
-  height: fit-content;
+#skills {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-block: var(--xl-size);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: var(--black-color);
+}
+
+#skills .container-skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--l-size);
+  height: 600px;
 }
 
 #skills h2 {
+  font-size: 32px;
+  font-weight: 600;
   text-transform: uppercase;
+  color: var(--white-color);
+  margin-bottom: var(--l-size);
+}
+
+@media (max-width: 1024px) {
+  #skills {
+    padding-block: var(--four-xl-size);
+    height: fit-content;
+  }
+
+  #skills h2 {
+    text-align: center;
+  }
+
+  #skills {
+    height: fit-content;
+  }
+
+  #skills .container-skills {
+    height: auto;
+    flex-direction: column;
+  }
 }

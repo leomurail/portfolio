@@ -61,8 +61,8 @@ export default function JourneyContent({ scrollY, target }: props) {
         <div className="top desktop">
           <div className="left">
             <h2 className={fonts.montserrat.className}>Mon parcours</h2>
-            <p className={"current-period " + fonts.imperial.className}>
-              Professionnel
+            <p className={"current-period " + fonts.montserrat.className}>
+              Nom de la période
             </p>
           </div>
           <Btn color="blue" path="/about">

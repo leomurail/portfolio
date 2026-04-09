@@ -1,74 +1,65 @@
 .skill-content {
   width: 100%;
+}
+
+.skill-content-inner {
+  width: 100%;
+  height: 350px;
   display: flex;
   flex-direction: column;
-  gap: var(--xs-size);
-  padding: var(--s-size);
-  margin-top: var(--three-xs-size);
-  background-color: var(--dark-grey-color);
+  gap: var(--two-xs-size);
+  padding: var(--two-xs-size);
+  background-color: var(--very-dark-grey-color);
+  overflow: hidden;
 }
 
-.skill-content h3 {
-  font-size: var(--xl-font-size);
+.skill-content-inner h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--white-color);
 }
 
-.skill-content .skill-apps ul {
+.skill-content-inner .skill-apps {
+  position: relative;
+  width: 100%;
+}
+
+.skill-content-inner .skill-apps ul {
   display: flex;
-  justify-content: left;
-  overflow-x: scroll;
-  max-width: 100%;
-  gap: var(--three-xs-size);
-  position: relative;
+  gap: var(--two-xs-size);
+  overflow-x: auto;
+  padding-bottom: 5px;
 }
 
-.skill-content .skill-apps {
-  position: relative;
-}
-
-.skill-content .skill-apps::after {
-  content: " ";
-  display: block;
-  min-width: 30px;
-  min-height: 50px;
-  background: linear-gradient(270deg, var(--dark-grey-color), transparent);
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.skill-content .skill-apps ul::-webkit-scrollbar {
+.skill-content-inner .skill-apps ul::-webkit-scrollbar {
   display: none;
 }
 
-.skill-content .skill.app {
+.skill-content-inner .skill.app {
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--three-xs-size);
-  height: fit-content;
-  width: fit-content;
-  min-width: 70px;
+  gap: 5px;
+  width: auto;
+  height: auto;
+  min-width: unset;
 }
 
-.skill-content .skill.app p {
-  text-align: center;
+.skill-content-inner .skill.app p {
+  display: none;
+  /* Hide names in this view to match Figma better */
 }
 
-.skill-content p.desc {
-  max-height: 200px;
-  overflow-y: scroll;
+.skill-content-inner p.desc {
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-y: auto;
+  margin: 0;
+  color: var(--white-color);
 }
 
-.skill-content p.desc::after {
-  content: " ";
-  display: block;
-  height: 50px;
-  background: linear-gradient(360deg, var(--dark-grey-color) 20%, transparent);
-  position: sticky;
-  bottom: -5px;
-  right: 0;
-}
-
-.skill-content p.desc::-webkit-scrollbar {
+.skill-content-inner p.desc::-webkit-scrollbar {
   display: none;
 }

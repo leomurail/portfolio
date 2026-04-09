@@ -1,72 +1,105 @@
 #history {
-  padding-block: var(--three-xl-size);
-  position: relative;
+  padding: var(--three-xl-size) 0;
+  background-color: var(--black-color);
 }
 
-#history h2 {
-  text-transform: uppercase;
-}
-
-#history .container {
-  margin-top: var(--m-size);
+.container-history {
   display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 1fr;
-  background-color: var(--very-dark-grey-color);
-  padding: var(--l-size);
-  gap: var(--l-size);
+  grid-template-columns: 1fr 2fr;
+  gap: var(--s-size);
+  align-items: stretch;
 }
 
-#history .container .left h3 {
-  font-size: var(--xl-font-size);
-  margin-bottom: var(--s-size);
-}
-
-#history .container .left .container-img {
-  display: flex;
-  gap: var(--xs-size);
-  align-items: center;
-  flex-wrap: wrap;
-  margin-block: var(--s-size);
-}
-
-#history .container>img {
+.image-wrapper {
+  position: relative;
   width: 100%;
-  object-fit: 499 / 360;
-  object-position: right;
-  min-width: 300px;
-  height: auto;
+  height: 100%;
 }
 
-/*—————————————————RESPONSIVE———————————————————*/
+.history-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border: 1px solid var(--dark-grey-color);
+}
+
+.content-box {
+  background-color: var(--very-dark-grey-color);
+  border: 1px solid var(--dark-grey-color);
+  padding: var(--s-size);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-size);
+}
+
+.content-box h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.content-box p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* MESSOS LOGOS */
+
+.logos-container {
+  display: flex;
+  gap: 5px;
+  height: 147px;
+  width: 100%;
+}
+
+.logo-item {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.logo-img-rules {
+  object-fit: cover;
+}
+
+.logo-messo-final {
+  position: relative;
+  width: 180px;
+  height: 69px;
+}
+
+.logo-img-contain {
+  object-fit: contain;
+}
+
+/* RESPONSIVE */
 
 @media (max-width: 1024px) {
-  #history .container {
+  .container-history {
     grid-template-columns: 1fr;
+    padding: 0 var(--s-size);
   }
 
-  #history .container>img {
-    display: none !important;
+  .image-wrapper {
+    aspect-ratio: 16/9;
+    height: 300px;
   }
-}
 
-@media (max-width: 768px) {
-  #history .container {
-    display: flex;
+  .logos-container {
     flex-direction: column;
-  }
-
-  #history .container .right {
-    display: inline-block;
-    position: static;
-    width: 100%;
     height: auto;
-    margin-top: var(--m-size);
+    min-height: 300px;
   }
-}
 
-@media (max-width: 425px) {
-  #history .container .right {
-    display: none;
+  .logo-item {
+    height: 150px;
+    width: 100%;
+  }
+
+  .logo-messo-final {
+    width: 140px;
+    height: 54px;
   }
 }

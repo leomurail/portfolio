@@ -6,6 +6,10 @@
         "-y",
         "chrome-devtools-mcp@latest"
       ]
+    },
+    "playwright": {
+      "command": "npx -y @playwright/mcp@latest",
+      "args": []
     }
   }
 }

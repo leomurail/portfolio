@@ -30,12 +30,14 @@ export default function SkillContent({ picked }: props) {
 
   return (
     <div className="skill-content">
-      <h3>Je maîtrise</h3>
-      {/*to capitalize*/}
-      <div className="skill-apps">
-        <ul>{appsEl}</ul>
+      <div className="skill-content-inner">
+        <h3>Je maîtrise</h3>
+        {/*to capitalize*/}
+        <div className="skill-apps">
+          <ul>{appsEl}</ul>
+        </div>
+        <p className="desc">{picked.desc}</p>
       </div>
-      <p className="desc">{picked.desc}</p>
     </div>
   );
 }

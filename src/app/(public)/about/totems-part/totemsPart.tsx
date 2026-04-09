@@ -18,6 +18,9 @@ import LoaderThree from "@/ui/components/3D/loader/loaderThree";
 //const
 import { models, statesArray } from "./constants";
 
+//fonts
+import { fonts } from "@/lib/fonts";
+
 //styles
 import "./totemsPart.css";
 
@@ -44,29 +47,34 @@ export default function TotemsPart() {
 
   return (
     <section id="totems-part" className="no-max-width">
-      <Canvas style={{ width: "100%", height: "100vh" }} className="canvas">
-        <Suspense fallback={<LoaderThree />}>{modelsEl}</Suspense>
-        <ambientLight intensity={1} />
-        <directionalLight position={[5, 5, 50]} color="white" intensity={1} />
-        <OrthographicCamera
-          makeDefault
-          position={[0, 0, 20]}
-          zoom={30}
-          near={0.1}
-          far={500}
-        />
-        <EffectComposer>
-          <Bloom mipmapBlur luminanceThreshold={1} levels={9} intensity={1} />
-          <ToneMapping />
-        </EffectComposer>
-      </Canvas>
+      <div className="totems-header container">
+        <h2 className={fonts.montserrat.className}>Mes soft skills</h2>
+      </div>
+      <div className="canvas-container">
+        <Canvas style={{ width: "100%", height: "100%" }} className="canvas">
+          <Suspense fallback={<LoaderThree />}>{modelsEl}</Suspense>
+          <ambientLight intensity={1} />
+          <directionalLight position={[5, 5, 50]} color="white" intensity={1} />
+          <OrthographicCamera
+            makeDefault
+            position={[0, 0, 20]}
+            zoom={30}
+            near={0.1}
+            far={500}
+          />
+          <EffectComposer>
+            <Bloom mipmapBlur luminanceThreshold={1} levels={9} intensity={1} />
+            <ToneMapping />
+          </EffectComposer>
+        </Canvas>
 
-      <TotemsOverlay
-        oneIsShown={oneIsShown}
-        selected={selected}
-        allStates={allStates}
-        setAllStates={setAllStates}
-      />
+        <TotemsOverlay
+          oneIsShown={oneIsShown}
+          selected={selected}
+          allStates={allStates}
+          setAllStates={setAllStates}
+        />
+      </div>
     </section>
   );
 }
