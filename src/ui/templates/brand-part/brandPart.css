@@ -1,13 +1,12 @@
 #brand-part {
   background-color: var(--black-color);
   padding-block: var(--three-xl-size);
-  display: flex;
-  justify-content: center;
+  width: 100vw;
+  overflow: hidden;
 }
 
-#brand-part .container {
+.brand-container {
   width: 100%;
-  max-width: var(--desktop-max-width);
   display: flex;
   flex-direction: column;
   gap: var(--xl-size);
@@ -17,114 +16,202 @@
   font-size: 36px;
   font-weight: 700;
   text-transform: uppercase;
-  padding-inline: 10px;
+  padding-inline: 100px;
 }
 
-#brand-part .bento {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border: 2px solid var(--black-color);
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "hero hero"
+    "model collection";
+  width: 100%;
 }
 
-#brand-part .bento-item {
+.bento-item {
   position: relative;
   overflow: hidden;
-  border: 2px solid var(--black-color);
-}
-
-#brand-part .bento .top {
-  height: 463px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#brand-part .bento-item .bg {
+.item-hero {
+  grid-area: hero;
+  aspect-ratio: 21 / 9;
+  min-height: 400px;
+}
+
+.item-model {
+  grid-area: model;
+  aspect-ratio: 1 / 1;
+}
+
+.item-collection {
+  grid-area: collection;
+  aspect-ratio: 1.5 / 1;
+}
+
+.bg-image {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 0;
 }
 
-#brand-part .logo-container {
+/* Hero Content */
+.logo-overlay {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-#brand-part .logo-container .main-logo {
-  width: 426px;
-}
-
-#brand-part .logo-container .slogan {
-  width: 351px;
-}
-
-#brand-part .bottom {
-  display: flex;
-  height: 400px;
-}
-
-#brand-part .bottom .left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-#brand-part .bottom .left .fg {
-  position: relative;
-  z-index: 1;
-  height: 110%;
-  width: auto;
-}
-
-#brand-part .bottom .right {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 20px;
 }
 
-#brand-part .bottom .right p {
-  position: relative;
-  z-index: 1;
-  font-size: 32px;
+.main-logo {
+  width: 35vw;
+  max-width: 600px;
 }
 
-#brand-part .bottom .right .products {
+.slogan {
+  width: 28vw;
+  max-width: 500px;
+}
+
+/* Model Item */
+.model-image {
+  position: absolute;
+  bottom: 0;
+  height: 110%;
+  width: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* Collection Item */
+.collection-content {
   position: relative;
   z-index: 1;
   display: flex;
-  gap: 80px;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
 }
 
-#brand-part .bottom .right .products img {
-  height: 220px;
+.collection-content p {
+  font-size: 3vw;
+  font-weight: 500;
 }
 
-#brand-part .cta.bottom {
+.product-display {
   display: flex;
-  gap: var(--two-xs-size);
-  padding-inline: 10px;
+  gap: 4vw;
+}
+
+.product-display img {
+  height: 20vw;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+/* Actions */
+.brand-actions {
+  display: flex;
+  gap: var(--s-size);
+  padding-inline: 100px;
+  margin-top: var(--m-size);
 }
 
 @media (max-width: 1024px) {
-  #brand-part .bottom {
-    flex-direction: column;
-    height: auto;
+  #brand-part h2,
+  .brand-actions {
+    padding-inline: var(--l-size);
   }
-  
-  #brand-part .bottom .left, #brand-part .bottom .right {
-    height: 400px;
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero"
+      "model"
+      "collection";
+  }
+
+  .item-hero {
+    aspect-ratio: 16 / 9;
+  }
+
+  .item-model {
+    height: 500px;
+    aspect-ratio: auto;
+  }
+
+  .item-collection {
+    height: 500px;
+    aspect-ratio: auto;
+  }
+
+  .collection-content p {
+    font-size: 40px;
+  }
+
+  .product-display img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 425px) {
+  #brand-part h2,
+  .brand-actions {
+    padding-inline: var(--s-size);
+  }
+
+  .brand-actions {
+    flex-direction: column;
+  }
+
+  .brand-actions > * {
+    width: 100%;
+  }
+
+  .item-hero {
+    aspect-ratio: 4 / 3;
+    min-height: 300px;
+  }
+
+  .item-model {
+    height: 350px;
+  }
+
+  .item-collection {
+    height: auto;
+    padding-block: 60px;
+  }
+
+  .main-logo {
+    width: 65vw;
+  }
+
+  .slogan {
+    width: 55vw;
+  }
+
+  .collection-content p {
+    font-size: 28px;
+  }
+
+  .product-display {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-display img {
+    height: auto;
+    width: 70vw;
+    max-width: 250px;
   }
 }

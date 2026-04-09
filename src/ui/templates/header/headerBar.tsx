@@ -17,7 +17,7 @@ import { setOverlay, removeHeader } from "./functions";
 export default function HeaderBar() {
   return (
     <div id="header-bar">
-      <section id="child-header">
+      <section id="child-header" className="no-max-width">
         <Link href="/" onClick={removeHeader}>
           <Image
             src="/img/main-logo.svg"

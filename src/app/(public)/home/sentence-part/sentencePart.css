@@ -77,6 +77,14 @@
     padding-inline: 40px;
   }
 
+  #sentence-part ul.sentence li.word {
+    font-size: 32px;
+  }
+
+  #sentence-part h2 span {
+    font-size: 80px;
+  }
+
   #sentence-part .looper-container {
     position: relative;
     right: auto;
@@ -87,12 +95,30 @@
 }
 
 @media (max-width: 425px) {
+  #sentence-part .container {
+    padding-inline: 20px;
+  }
+
   #sentence-part ul.sentence li.word {
-    font-size: 32px;
+    font-size: 28px;
+  }
+
+  #sentence-part h2 {
+    font-size: 24px;
   }
 
   #sentence-part h2 span {
-    font-size: 60px;
+    font-size: 48px;
+  }
+
+  #sentence-part .looper-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  #sentence-part .rect {
+    width: 80px;
+    height: 80px;
   }
 }
 

@@ -68,22 +68,32 @@
   color: var(--white-color);
 }
 
+html {
+  background-color: var(--black-color);
+}
+
 body {
+  overflow-x: hidden;
+  background-color: var(--black-color);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-section,
+#home-page {
+  width: 100%;
+}
+
+section {
+  width: 100%;
+}
+
+.container,
 .desktop {
   max-width: var(--desktop-max-width);
   margin-inline: auto;
   padding-inline: 10px;
-  width: 100vw;
-}
-
-body {
-  background-color: var(--black-color);
+  width: 100%;
 }
 
 p {
@@ -125,6 +135,7 @@ span {
 label {
   font-size: var(--l-font-size);
 }
+
 /*——————————-----———————————*/
 
 /*——————————GLOBALS———————————*/
@@ -180,12 +191,14 @@ textarea {
 /*——————————CLASSES-——————————*/
 
 section.no-max-width {
+  width: 100vw;
   max-width: none;
   padding-inline: 0;
 }
 
 section.min-width {
   width: 100vw;
+  max-width: none;
 }
 
 .rotate-back {
@@ -235,4 +248,5 @@ section.min-width {
     font-size: var(--m-font-size);
   }
 }
+
 /*———————————————————————————————————————————————*/

@@ -37,6 +37,35 @@
 
 @media (max-width: 1024px) {
   #project-part .top {
-    padding-inline: 20px;
+    padding-inline: var(--l-size);
+  }
+
+  #project-part ul.project-cats {
+    gap: var(--two-xl-size);
+  }
+}
+
+@media (max-width: 425px) {
+  #project-part {
+    padding-block: var(--two-xl-size);
+  }
+
+  #project-part .top {
+    padding-inline: var(--s-size);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  #project-part .top > * {
+    width: 100%;
+  }
+
+  #project-part h2 {
+    font-size: 24px;
+  }
+
+  #project-part ul.project-cats {
+    gap: var(--xl-size);
   }
 }

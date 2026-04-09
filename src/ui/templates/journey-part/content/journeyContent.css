@@ -103,16 +103,44 @@
 
 @media (max-width: 1024px) {
   #journey-content .top {
-    padding-inline: 40px;
+    padding-inline: var(--l-size);
+  }
+
+  #journey-content .all-dates {
+    padding-left: var(--l-size);
+  }
+
+  #journey-content .all-dates .container {
+    height: 400px;
+    gap: 40px;
   }
 }
 
 @media (max-width: 425px) {
+  #journey-content .top {
+    padding-inline: var(--s-size);
+  }
+
   #journey-content .top .left h2 {
     font-size: 24px;
   }
 
   #journey-content .top .left p.current-period {
-    font-size: 40px;
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  #journey-content .all-dates {
+    padding-left: var(--s-size);
+  }
+
+  #journey-content .all-dates .container {
+    height: 350px;
+    gap: 20px;
+  }
+
+  #journey-content .totem-icon {
+    margin-top: 20px;
+    height: 150px;
   }
 }

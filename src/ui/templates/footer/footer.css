@@ -11,7 +11,6 @@
 #footer .bg-circle {
   position: absolute;
   border-radius: 100%;
-  z-index: -1;
 }
 
 /* Cercle 1 : Bleu Foncé (#0015C3) */
@@ -32,9 +31,8 @@
   background: #4D92FF;
 }
 
-#footer .container {
+#footer .footer-container {
   width: 100%;
-  max-width: var(--desktop-max-width);
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.01);

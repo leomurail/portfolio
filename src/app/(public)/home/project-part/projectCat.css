@@ -13,6 +13,27 @@
   font-weight: 500;
 }
 
+@media (max-width: 1024px) {
+  .project-cat .title {
+    padding-inline: var(--two-xl-size);
+  }
+}
+
+@media (max-width: 425px) {
+  .project-cat .title {
+    padding-inline: var(--s-size);
+  }
+
+  .project-cat .title h3 {
+    font-size: 20px;
+  }
+
+  .project-cat .title svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 .no-data {
   display: flex;
   justify-content: center;

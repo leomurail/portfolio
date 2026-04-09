@@ -39,7 +39,8 @@
   height: 100%;
   position: relative;
   align-items: center;
-  z-index: 1; /* Par-dessus le canvas */
+  z-index: 1;
+  /* Par-dessus le canvas */
 }
 
 #work-process-part .star-canvas-full {
@@ -130,7 +131,7 @@
 @media (max-width: 1024px) {
   #work-process-part {
     height: auto;
-    padding: var(--xl-size);
+    padding: var(--two-xl-size) 0;
   }
 
   #work-process-part .sticky-wrapper {
@@ -140,30 +141,64 @@
   }
 
   #work-process-part .container {
-    padding: 0;
+    padding: 0 var(--m-size);
     height: auto;
   }
 
   #work-process-part .canvas-wrapper {
     position: relative;
-    height: 400px;
-    width: 100%;
+    height: 350px;
+    width: 100vw;
   }
-  
+
   #work-process-part .cards-container {
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
-  
+
   #work-process-part .process-card {
     position: static;
     max-width: 100%;
+    gap: var(--s-size);
+    padding: var(--m-size);
   }
 
   #work-process-part .section-title {
     text-align: center;
     font-size: 32px;
+    margin-bottom: var(--l-size);
+  }
+
+  #work-process-part .main-text p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 425px) {
+  #work-process-part {
+    padding: var(--xl-size) 0;
+  }
+
+  #work-process-part .container {
+    padding: 0 var(--s-size);
+  }
+
+  #work-process-part .canvas-wrapper {
+    height: 250px;
+  }
+
+  #work-process-part .section-title {
+    font-size: 24px;
+    margin-bottom: var(--m-size);
+  }
+
+  #work-process-part .process-card h3 {
+    font-size: 20px;
+  }
+
+  #work-process-part .main-text {
+    padding: 15px;
   }
 }

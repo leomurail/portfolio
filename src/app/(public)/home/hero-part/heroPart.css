@@ -5,8 +5,9 @@
 }
 
 #hero-part {
+  padding-inline: var(--two-xl-size);
   width: 100vw;
-  height: 900px;
+  height: 100vh;
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -85,6 +86,16 @@
 @media (max-width: 1024px) {
   #hero-part {
     height: 700px;
+    padding-inline: var(--l-size);
+  }
+
+  #hero-part .hero-content {
+    width: 100%;
+    padding-inline: 0;
+  }
+
+  #hero-part p.text {
+    width: 100%;
   }
 
   #hero-part .name {
@@ -100,14 +111,15 @@
   #hero-part {
     height: 600px;
     padding-bottom: 50px;
+    padding-inline: var(--s-size);
   }
 
   #hero-part .name {
-    font-size: 120px;
+    font-size: 100px;
   }
 
   #hero-part .portfolio-text {
-    font-size: 48px;
+    font-size: 40px;
   }
 
   #hero-part .buttons {
