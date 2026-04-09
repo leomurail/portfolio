@@ -146,9 +146,7 @@
   }
 
   #work-process-part .canvas-wrapper {
-    position: relative;
-    height: 350px;
-    width: 100vw;
+    display: none;
   }
 
   #work-process-part .cards-container {

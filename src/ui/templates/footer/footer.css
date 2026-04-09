@@ -11,6 +11,7 @@
 #footer .bg-circle {
   position: absolute;
   border-radius: 100%;
+  filter: blur(20px);
 }
 
 /* Cercle 1 : Bleu Foncé (#0015C3) */
@@ -130,6 +131,12 @@
 @media (max-width: 1024px) {
   #footer .portfolio-title {
     font-size: 120px;
+    margin-top: -80px;
+  }
+
+  #footer .footer-name {
+    font-size: 200px;
+    top: 20px;
   }
 
   #footer .top-section {
@@ -138,25 +145,47 @@
   }
 
   #footer .main-footer-content {
-    padding-inline: 20px;
+    padding-inline: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  #footer .portfolio-title {
+    font-size: 80px;
+    margin-top: -40px;
+  }
+
+  #footer .portfolio-title.faded-1,
+  #footer .portfolio-title.faded-2,
+  #footer .footer-name {
+    display: none;
+  }
+
+  #footer .top-section {
+    align-items: flex-start;
+  }
+
+  #footer .item h3 {
+    font-size: 24px;
+  }
+
+  #footer .footer-bottom p {
+    text-align: center;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 425px) {
   #footer .portfolio-title {
-    font-size: 60px;
-  }
-
-  #footer .footer-name {
-    font-size: 80px;
+    font-size: 50px;
+    margin-top: -20px;
   }
 
   #footer .top-section {
-    flex-direction: column;
     gap: 30px;
   }
 
-  #footer .item h3 {
-    font-size: 24px;
+  #footer .main-footer-content {
+    padding-inline: 20px;
   }
 }
