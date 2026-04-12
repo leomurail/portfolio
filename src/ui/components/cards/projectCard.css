@@ -1,81 +1,139 @@
 .project-card {
-  background: var(--background-card-image);
-  background-size: cover;
-  background-position: center;
   width: 100%;
   height: 350px;
   position: relative;
   overflow: hidden;
-  padding: 20px;
-  transition: all 0.3s;
-  border: solid 2px transparent;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  background-color: #000;
 }
 
 .project-card.portrait {
-  height: 516px !important;
-  width: 100%;
+  height: 516px;
 }
 
 .project-card:hover {
-  transform: scale(1.01) translateY(-3px);
+  transform: translateY(-5px);
+  border-color: #7f7f7f;
 }
 
-.project-card::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(10px) brightness(0.6);
-  mask: linear-gradient(rgba(233, 194, 194, 0), rgb(255, 255, 255) 95%);
+/* Background blurred effect from Figma */
+.project-card-bg {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.project-card .card-layer {
+.project-card-bg-blur {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: var(--background-card-image);
+  background-size: cover;
+  background-position: center;
+  filter: blur(25px); /* blur-[25px] from Figma */
+  opacity: 0.8;
+}
+
+.project-card-bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); /* to-b from-transparent to-black/40 */
+}
+
+/* Content layout */
+.project-card-content {
+  position: relative;
   height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  padding: 20px;
+  z-index: 5;
 }
 
-.project-card .card-layer .left {
-  z-index: 1;
-}
-
-.project-card .card-layer .left h4 {
-  font-size: 24px;
-  font-weight: 300;
-  margin-bottom: var(--two-xs-size);
-}
-
-.project-card .card-layer .left .card-tags {
+.project-card-info {
+  flex: 1;
   display: flex;
-  gap: var(--three-xs-size);
-  overflow-x: scroll;
-  max-width: 300px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.project-card .card-layer .left .card-tags li {
-  width: fit-content;
-  min-width: fit-content;
+.project-card-title {
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 300; /* Light from Figma */
+  font-size: 24px;
+  color: #ebebeb;
+  margin: 0;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
-.project-card.portrait .card-layer .left .card-tags {
-  max-width: 220px !important;
+.project-card-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.project-card .card-layer .left .card-tags::-webkit-scrollbar {
-  display: none;
+.project-card-tag {
+  background-color: rgba(235, 235, 235, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 14px;
+  color: #ebebeb;
+  text-wrap: nowrap;
+}
+
+/* Action button area */
+.project-card-action {
+  flex-shrink: 0;
+}
+
+/* Btn overrides for project card */
+.project-card-btn {
+  /* Using color="glass" which already has backdrop-filter and transparency */
+  padding: 13px 20px !important;
+}
+
+.project-card-btn-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ebebeb;
+}
+
+.project-card-btn-icon {
+  width: 20px;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .project-card-title {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 425px) {
-  .project-card .card-layer .left .card-tags {
-    max-width: 250px !important;
-  }
-
   .project-card {
-    height: 516px !important;
-    min-width: calc(100vw - 20px);
+    height: 450px;
+  }
+  .project-card.portrait {
+    height: 450px;
   }
 }

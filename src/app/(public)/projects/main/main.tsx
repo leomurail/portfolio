@@ -20,7 +20,7 @@ export default function Main({ categories, projectsData }: props) {
 
   return (
     <>
-      <Filters setCurrent={setFilter} categories={categories} />
+      <Filters setCurrent={setFilter} categories={categories} current={filter} />
       <AllProjects current={filter} projectsData={projectsData} />
     </>
   );

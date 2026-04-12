@@ -11,9 +11,9 @@ export default function Page() {
     <section id="about" className="no-max-width">
       <AboutHero />
       <HistoryPart />
+      <JourneyPart />
       <SkillsPart />
       <TotemsPart />
-      <JourneyPart />
       <MorePart />
     </section>
   );

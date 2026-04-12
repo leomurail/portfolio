@@ -4,7 +4,6 @@ import Image from "next/image";
 //components
 import Tag from "../tags/tag";
 import Btn from "../btns/btn";
-import Icon from "../illu/icon";
 
 //css
 import "./projectCard.css";
@@ -25,6 +24,8 @@ export interface props {
   };
   href: string;
 }
+
+const imgVectorEye = "https://www.figma.com/api/mcp/asset/a1706090-2857-4d96-80a8-f0d2d92f8354";
 
 export default function ProjectCard({
   portrait = false,
@@ -49,8 +50,10 @@ export default function ProjectCard({
   } as React.CSSProperties;
 
   const tagsEl = tags.map((param, index) => (
-    <li key={index}>
-      <Tag style="glass">{param.name}</Tag>
+    <li key={index} className="project-card-tag-item">
+      <div className="project-card-tag">
+        {param.name}
+      </div>
     </li>
   ));
 
@@ -59,14 +62,30 @@ export default function ProjectCard({
       className={`project-card ${size}-size ${portrait ? "portrait" : ""}`}
       style={cssVar}
     >
-      <div className="card-layer">
-        <div className="left">
-          <h4>{title}</h4>
-          <div className="card-tags">{tagsEl}</div>
+      {/* Blurred background with gradient */}
+      <div className="project-card-bg">
+        <div className="project-card-bg-blur"></div>
+        <div className="project-card-bg-gradient"></div>
+      </div>
+
+      <div className="project-card-content">
+        <div className="project-card-info">
+          <h4 className="project-card-title">{title}</h4>
+          <ul className="project-card-tags-list">
+            {tagsEl}
+            <li className="project-card-tag-item">
+              <div className="project-card-tag">Professionnel</div>
+            </li>
+          </ul>
         </div>
-        <Btn color="glass" path={href}>
-          Voir <Icon picked="eye" />
-        </Btn>
+        <div className="project-card-action">
+          <Btn color="glass" path={href} className="project-card-btn">
+            <div className="project-card-btn-content">
+              <span>Voir</span>
+              <img src={imgVectorEye} alt="" className="project-card-btn-icon" />
+            </div>
+          </Btn>
+        </div>
       </div>
     </article>
   );

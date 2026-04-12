@@ -23,5 +23,9 @@ export default function AllProjects({ current, projectsData }: props) {
       );
     });
 
-  return <ul className="all-projects">{allProjectsEl}</ul>;
+  return (
+    <div className="all-projects-container">
+      <ul className="all-projects">{allProjectsEl}</ul>
+    </div>
+  );
 }

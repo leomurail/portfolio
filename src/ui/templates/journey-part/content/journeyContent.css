@@ -51,54 +51,11 @@
   height: 500px;
 }
 
-#journey-content .totem-icon {
+#journey-content .clock-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  height: 200px;
-}
-
-#journey-content .totem-container {
-  position: relative;
-  width: 86px;
-  height: 104px;
-}
-
-#journey-content .totem-bg {
-  position: absolute;
-  top: 18px;
-  left: 0;
-  width: 100%;
-  height: 86px;
-}
-
-#journey-content .totem-accent {
-  background-color: var(--light-blue-color);
-  position: absolute;
-}
-
-#journey-content .blue-rect {
-  top: 0;
-  left: 32px;
-  width: 22px;
-  height: 14px;
-}
-
-#journey-content .blue-slash-right {
-  top: 11px;
-  left: 58px;
-  width: 13px;
-  height: 5px;
-  transform: rotate(29.6deg);
-}
-
-#journey-content .blue-slash-left {
-  top: 11px;
-  left: 13px;
-  width: 13px;
-  height: 5px;
-  transform: rotate(151.38deg);
 }
 
 @media (max-width: 1024px) {
@@ -141,9 +98,4 @@
     height: 350px;
     gap: 0;
   }
-
-  #journey-content .totem-icon {
-    margin-top: 20px;
-    height: 150px;
   }
-}

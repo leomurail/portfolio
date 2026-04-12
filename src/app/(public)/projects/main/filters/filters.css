@@ -1,24 +1,71 @@
-.filters {
+.filters-container {
+  background-color: #0f0f0f;
+  padding-block: 100px;
+  padding-inline: 100px;
+  width: 100%;
+}
+
+.filters-list {
   display: flex;
-  align-items: start;
-  gap: var(--two-xs-size);
-  padding-block: var(--xl-size);
-  overflow-x: scroll;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.filters::-webkit-scrollbar {
-  display: none;
+.filter-btn-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.filters .btn {
-  min-width: fit-content;
-  text-wrap: nowrap;
+.filter-btn-name {
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  /* Removed uppercase as requested */
+  color: #ebebeb;
 }
 
-/*——————————————————RESPONSIVE———————————————————-*/
+.filter-btn-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+}
 
-@media (max-width: 425px) {
-  .filters {
-    padding-bottom: var(--xs-size);
+.filter-btn-icon {
+  height: 100%;
+  width: auto;
+}
+
+/* Persistent line for the selected state using the base Btn ::after logic */
+.filter-item.selected .btn::after {
+  width: 100% !important;
+}
+
+@media (min-width: 1440px) {
+  .filters-container {
+    padding-inline: calc((100vw - 1240px) / 2);
+  }
+}
+
+@media (max-width: 1024px) {
+  .filters-container {
+    padding-inline: 40px;
+    padding-block: 60px;
+  }
+  .filters-list {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filters-container {
+    padding-inline: 20px;
+    padding-block: 40px;
   }
 }

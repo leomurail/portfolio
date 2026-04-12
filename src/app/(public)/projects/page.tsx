@@ -2,7 +2,7 @@
 import prisma from "@/lib/prisma";
 
 //components
-import Banner from "@/ui/components/banner/banner";
+import Hero from "./main/hero/hero";
 import Main from "./main/main";
 
 //types
@@ -55,11 +55,7 @@ export default async function Page() {
 
   return (
     <section id="projects" className="no-max-width">
-      <Banner
-        title="MES PROJETS"
-        subTitle="Scolaires et personnels"
-        bgColor="yellow"
-      />
+      <Hero />
       <section className="projects-part">
         <Main projectsData={formattedProjectsData} categories={categories} />
       </section>

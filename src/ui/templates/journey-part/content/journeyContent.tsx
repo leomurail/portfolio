@@ -9,6 +9,7 @@ import { useState, useEffect, RefObject } from "react";
 import Btn from "@/ui/components/btns/btn";
 import Icon from "@/ui/components/illu/icon";
 import TimelineDate from "@/ui/components/timeline-date/timelineDate";
+import Clock from "../clock/clock";
 
 //fonts
 import { fonts } from "@/lib/fonts";
@@ -16,24 +17,9 @@ import { fonts } from "@/lib/fonts";
 //styles
 import "./journeyContent.css";
 
-const imgEllipse2 = "https://www.figma.com/api/mcp/asset/c2d5a128-2ee2-402e-9733-487a4f80fb1e";
-
 interface props {
   scrollY: MotionValue<number>;
   target: RefObject<HTMLElement | null>;
-}
-
-function TotemIcon() {
-  return (
-    <div className="totem-icon">
-      <div className="totem-container">
-        <img src={imgEllipse2} alt="Totem" className="totem-bg" />
-        <div className="totem-accent blue-rect" />
-        <div className="totem-accent blue-slash-right" />
-        <div className="totem-accent blue-slash-left" />
-      </div>
-    </div>
-  );
 }
 
 export default function JourneyContent({ scrollY, target }: props) {
@@ -89,7 +75,9 @@ export default function JourneyContent({ scrollY, target }: props) {
             />
           </motion.div>
         </div>
-        <TotemIcon />
+        <div className="clock-wrapper">
+          <Clock />
+        </div>
       </div>
     </section>
   );
