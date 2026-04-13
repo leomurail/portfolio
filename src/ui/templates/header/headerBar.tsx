@@ -33,14 +33,14 @@ export default function HeaderBar() {
               className="burger-menu"
               path="#"
               icon="burger-menu"
-              size="l"
+              size="m"
               display={true}
             />
             <RoundBtn
               className="cross-menu"
               path="#"
               icon="cross-menu"
-              size="l"
+              size="m"
               display={false}
             />
           </div>

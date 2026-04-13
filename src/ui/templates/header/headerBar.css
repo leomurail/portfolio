@@ -14,11 +14,11 @@
   pointer-events: auto; /* Re-enable clicks for the actual header */
   width: 90%;
   max-width: var(--desktop-max-width);
-  height: 70px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--m-size);
+  padding: 0 25px;
   
   /* Glassmorphism & Style */
   background: rgba(255, 255, 255, 0.05);
