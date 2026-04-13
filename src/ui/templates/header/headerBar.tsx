@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 //components
-import Btn from "../../components/btns/btn";
 import RoundBtn from "../../components/btns/roundBtn";
 
 //styles
@@ -17,19 +16,19 @@ import { setOverlay, removeHeader } from "./functions";
 export default function HeaderBar() {
   return (
     <div id="header-bar">
-      <section id="child-header" className="no-max-width">
+      <nav id="child-header" className="no-max-width">
         <Link href="/" onClick={removeHeader}>
           <Image
             src="/img/main-logo.svg"
             alt="Logo principal du portfolio Léo Murail"
-            width={78}
-            height={44}
+            width={70}
+            height={40}
+            style={{ objectFit: "contain" }}
           />
         </Link>
 
         <div className="right">
-          {/* <Btn path="/contact" color="grey" onClick={removeHeader}>Contact</Btn> */}
-          <div onClick={setOverlay} id="menu-btn">
+          <div onClick={setOverlay} id="menu-btn" style={{ cursor: "pointer" }}>
             <RoundBtn
               className="burger-menu"
               path="#"
@@ -46,7 +45,7 @@ export default function HeaderBar() {
             />
           </div>
         </div>
-      </section>
+      </nav>
     </div>
   );
 }
