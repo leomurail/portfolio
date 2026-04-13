@@ -21,8 +21,8 @@ export default function HeaderBar() {
           <Image
             src="/img/main-logo.svg"
             alt="Logo principal du portfolio Léo Murail"
-            width={78}
-            height={44}
+            width={60}
+            height={30}
           />
         </Link>
 
@@ -32,14 +32,14 @@ export default function HeaderBar() {
               className="burger-menu header-burger"
               path="#"
               icon="burger-menu"
-              size="m"
+              size="s"
               display={true}
             />
             <RoundBtn
               className="cross-menu header-burger"
               path="#"
               icon="cross-menu"
-              size="m"
+              size="s"
               display={false}
             />
           </div>
