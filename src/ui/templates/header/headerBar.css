@@ -6,29 +6,46 @@
   z-index: 10;
   display: flex;
   justify-content: center;
-  padding-top: 20px; /* Floating margin from top */
-  pointer-events: none; /* Let clicks pass through the full-width wrapper */
+  padding-top: 20px;
+  padding-inline: var(--s-size); /* Marge externe égale aux containers du site */
+  pointer-events: none;
 }
 
 #child-header {
-  pointer-events: auto; /* Re-enable clicks for the actual header */
-  width: 90%;
+  pointer-events: auto;
+  width: 100%;
   max-width: var(--desktop-max-width);
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 25px;
+  padding: 0 var(--s-size); /* Padding interne égal aux containers du site pour aligner le logo */
   
   /* Glassmorphism & Style */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 0; /* Sharp corners as requested */
+  border-radius: 0;
   
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+}
+
+/* Style spécifique pour le bouton burger dans le header */
+#header-bar .header-burger {
+  background-color: rgba(15, 15, 15, 0.5) !important;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+#header-bar .header-burger:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+#header-bar .header-burger:hover svg {
+  fill: var(--white-color) !important;
 }
 
 #header-bar div.right {

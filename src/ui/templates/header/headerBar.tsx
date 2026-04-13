@@ -21,23 +21,22 @@ export default function HeaderBar() {
           <Image
             src="/img/main-logo.svg"
             alt="Logo principal du portfolio Léo Murail"
-            width={70}
-            height={40}
-            style={{ objectFit: "contain" }}
+            width={78}
+            height={44}
           />
         </Link>
 
         <div className="right">
           <div onClick={setOverlay} id="menu-btn" style={{ cursor: "pointer" }}>
             <RoundBtn
-              className="burger-menu"
+              className="burger-menu header-burger"
               path="#"
               icon="burger-menu"
               size="m"
               display={true}
             />
             <RoundBtn
-              className="cross-menu"
+              className="cross-menu header-burger"
               path="#"
               icon="cross-menu"
               size="m"
