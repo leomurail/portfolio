@@ -81,7 +81,7 @@ export default function SentencePart() {
   return (
     <motion.section id="sentence-part" ref={sentencePartEl} className="no-max-width">
       <div className="container">
-        <h2 className={fonts.montserrat.className}>
+        <h2>
           En une <span className={fonts.imperial.className}>phrase</span>
         </h2>
         <ul className="sentence">

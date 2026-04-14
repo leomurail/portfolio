@@ -32,10 +32,6 @@
 
 #work-process-part .container {
   display: flex;
-  width: 100%;
-  max-width: var(--desktop-max-width);
-  margin: 0 auto;
-  padding: 0 var(--three-xl-size);
   height: 100%;
   position: relative;
   align-items: center;
@@ -141,7 +137,6 @@
   }
 
   #work-process-part .container {
-    padding: 0 var(--m-size);
     height: auto;
   }
 
@@ -179,9 +174,6 @@
     padding: var(--xl-size) 0;
   }
 
-  #work-process-part .container {
-    padding: 0 var(--s-size);
-  }
 
   #work-process-part .canvas-wrapper {
     height: 250px;

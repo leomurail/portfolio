@@ -4,9 +4,6 @@
 import Btn from "@/ui/components/btns/btn";
 import Icon from "@/ui/components/illu/icon";
 
-// fonts
-import { fonts } from "@/lib/fonts";
-
 // styles
 import "./lastProjectPart.css";
 
@@ -16,29 +13,31 @@ export default function LastProjectPart() {
   return (
     <section id="last-project-part" className="no-max-width">
       <div className="container">
-        <div className="image-container">
-          <img src={imgLeoQuiTravaille} alt="Léo qui travaille" />
-        </div>
-        <div className="content">
-          <h2 className={fonts.montserrat.className}>Dernier projet réalisé</h2>
-          <div className="category-tag">
-            <span className={fonts.montserrat.className}>Catégorie</span>
+        <div className="last-project-box">
+          <div className="image-container">
+            <img src={imgLeoQuiTravaille} alt="Léo qui travaille" />
           </div>
-          <p className={fonts.montserrat.className}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            finibus dignissim tellus non efficitur. Pellentesque magna mi,
-            lacinia nec fermentum id, ultrices sed augue. Pellentesque lorem
-            arcu, condimentum et vehicula vitae, vestibulum eu orci. Nunc eu
-            lacus imperdiet, porttitor ante sed, placerat orci.
-            <br />
-            <br />
-            Praesent aliquam et eros eu vulputate. Praesent vitae urna feugiat,
-            feugiat est vel, aliquam nunc. Ut consequat augue at risus facilisis
-            eleifend.
-          </p>
-          <Btn path="/projects/last" color="blue" className="action-btn">
-            Voir le projet <Icon picked="eye" size={20} />
-          </Btn>
+          <div className="content">
+            <h2>Dernier projet réalisé</h2>
+            <div className="category-tag">
+              <span>Catégorie</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              finibus dignissim tellus non efficitur. Pellentesque magna mi,
+              lacinia nec fermentum id, ultrices sed augue. Pellentesque lorem
+              arcu, condimentum et vehicula vitae, vestibulum eu orci. Nunc eu
+              lacus imperdiet, porttitor ante sed, placerat orci.
+              <br />
+              <br />
+              Praesent aliquam et eros eu vulputate. Praesent vitae urna feugiat,
+              feugiat est vel, aliquam nunc. Ut consequat augue at risus facilisis
+              eleifend.
+            </p>
+            <Btn path="/projects/last" color="blue" className="action-btn">
+              Voir le projet <Icon picked="eye" size={20} />
+            </Btn>
+          </div>
         </div>
       </div>
     </section>

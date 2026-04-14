@@ -12,9 +12,6 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import Star from "./star";
 import LoaderThree from "@/ui/components/3D/loader/loaderThree";
 
-// fonts
-import { fonts } from "@/lib/fonts";
-
 // constants
 import { PROCESS_STEPS } from "./constants";
 
@@ -126,7 +123,7 @@ export default function WorkProcessPart() {
 
         <div className="container">
           <div className="process-info">
-            <h2 className={`${fonts.montserrat.className} section-title`}>
+            <h2 className="section-title">
               Mon process de travail
             </h2>
             <div className="cards-container">

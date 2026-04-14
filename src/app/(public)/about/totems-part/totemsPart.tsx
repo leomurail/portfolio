@@ -18,9 +18,6 @@ import LoaderThree from "@/ui/components/3D/loader/loaderThree";
 //const
 import { models, statesArray } from "./constants";
 
-//fonts
-import { fonts } from "@/lib/fonts";
-
 //styles
 import "./totemsPart.css";
 
@@ -48,7 +45,7 @@ export default function TotemsPart() {
   return (
     <section id="totems-part" className="no-max-width">
       <div className="totems-header container">
-        <h2 className={fonts.montserrat.className}>Mes soft skills</h2>
+        <h2>Mes soft skills</h2>
       </div>
       <div className="canvas-container">
         <Canvas style={{ width: "100%", height: "100%" }} className="canvas">

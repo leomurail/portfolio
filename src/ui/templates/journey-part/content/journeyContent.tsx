@@ -11,9 +11,6 @@ import Icon from "@/ui/components/illu/icon";
 import TimelineDate from "@/ui/components/timeline-date/timelineDate";
 import Clock from "../clock/clock";
 
-//fonts
-import { fonts } from "@/lib/fonts";
-
 //styles
 import "./journeyContent.css";
 
@@ -28,7 +25,7 @@ export default function JourneyContent({ scrollY, target }: props) {
   const x = useTransform(scrollY, [0, 1], [0, -xRange]);
 
   useEffect(() => {
-    const el = target.current?.querySelector(".all-dates .container");
+    const el = target.current?.querySelector(".all-dates .scroll-container");
     
     const updateRange = () => {
       if (el) {
@@ -46,8 +43,8 @@ export default function JourneyContent({ scrollY, target }: props) {
       <div className="journey-wrapper">
         <div className="top desktop">
           <div className="left">
-            <h2 className={fonts.montserrat.className}>Mon parcours</h2>
-            <p className={"current-period " + fonts.montserrat.className}>
+            <h2>Mon parcours</h2>
+            <p className="current-period">
               Nom de la période
             </p>
           </div>
@@ -56,8 +53,8 @@ export default function JourneyContent({ scrollY, target }: props) {
             <Icon picked="arrow" />
           </Btn>
         </div>
-        <div className="all-dates desktop">
-          <motion.div className="container" style={{ x }}>
+        <div className="all-dates">
+          <motion.div className="scroll-container" style={{ x }}>
             <TimelineDate
               date="2020-2023"
               title="Lycée Notre-Dame Challans"

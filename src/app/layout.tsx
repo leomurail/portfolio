@@ -15,7 +15,7 @@ interface props {
 export default async function RootLayout({ children }: props) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={fonts.montserrat.className} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         {children}
       </body>
     </html>

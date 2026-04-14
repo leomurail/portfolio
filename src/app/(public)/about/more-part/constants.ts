@@ -10,7 +10,7 @@ export const contentAbout = [
 
             Je rêve de créer une structure où je peux tester des idées, rencontrer des personnes inspirantes et faire évoluer mes projets.
             Un écosystème fondé sur l’innovation, la liberté et la collaboration.`,
-    img: "/img/pages/about/leo-murail-qui-parle.webp",
+    img: "/img/pages/about/leo-travail.webp",
   },
   {
     title: "Mes compétences",

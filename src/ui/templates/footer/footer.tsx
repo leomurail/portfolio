@@ -17,16 +17,18 @@ export default function Footer() {
                 <h1 className={`${fonts.imperial.className} footer-name`}>Léo</h1>
               </div>
 
-              <div className="item">
-                <h3>Professionnel</h3>
-                <Link href="/projects">Projets scolaires</Link>
-                <Link href="/brand">Ma marque</Link>
-              </div>
+              <div className="nav-links-group">
+                <div className="item">
+                  <h3>Professionnel</h3>
+                  <Link href="/projects">Projets scolaires</Link>
+                  <Link href="/brand">Ma marque</Link>
+                </div>
 
-              <div className="item">
-                <h3>En savoir plus</h3>
-                <Link href="/contact">Contact</Link>
-                <Link href="/about">À propos</Link>
+                <div className="item">
+                  <h3>En savoir plus</h3>
+                  <Link href="/contact">Contact</Link>
+                  <Link href="/about">À propos</Link>
+                </div>
               </div>
             </div>
 

@@ -20,9 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 100px;
   width: 100%;
-  max-width: none;
 }
 
 #journey-content .top .left h2 {
@@ -40,10 +38,10 @@
 
 #journey-content .all-dates {
   width: 100vw;
-  padding-left: 100px;
+  padding-left: var(--l-size);
 }
 
-#journey-content .all-dates .container {
+#journey-content .all-dates .scroll-container {
   display: flex;
   gap: 0;
   width: max-content;
@@ -60,17 +58,12 @@
 
 @media (max-width: 1024px) {
   #journey-content .top {
-    padding-inline: var(--l-size);
     flex-direction: column;
     align-items: flex-start;
     gap: var(--xs-size);
   }
 
-  #journey-content .all-dates {
-    padding-left: var(--l-size);
-  }
-
-  #journey-content .all-dates .container {
+  #journey-content .all-dates .scroll-container {
     height: 400px;
     gap: 0;
   }
@@ -78,24 +71,21 @@
 
 @media (max-width: 425px) {
   #journey-content .top {
-    padding-inline: var(--s-size);
+    gap: 5px;
   }
 
   #journey-content .top .left h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   #journey-content .top .left p.current-period {
-    font-size: 36px;
-    line-height: 1.2;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 500;
   }
 
-  #journey-content .all-dates {
-    padding-left: var(--s-size);
-  }
-
-  #journey-content .all-dates .container {
-    height: 350px;
+  #journey-content .all-dates .scroll-container {
+    height: 320px;
     gap: 0;
   }
   }

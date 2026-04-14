@@ -4,8 +4,6 @@
 }
 
 #project-part .container {
-  max-width: var(--desktop-max-width);
-  margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: var(--xl-size);
@@ -36,10 +34,6 @@
 }
 
 @media (max-width: 1024px) {
-  #project-part .top {
-    padding-inline: var(--l-size);
-  }
-
   #project-part ul.project-cats {
     gap: var(--two-xl-size);
   }
@@ -51,7 +45,6 @@
   }
 
   #project-part .top {
-    padding-inline: var(--s-size);
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;

@@ -46,41 +46,53 @@
 
 #footer .main-footer-content {
   padding-top: 50px;
-  padding-inline: 100px;
+  padding-inline: clamp(20px, 8vw, 100px);
 }
 
 #footer .top-section {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 50px;
   width: 100%;
+  gap: 30px;
+}
+
+#footer .nav-links-group {
+  display: flex;
+  gap: clamp(30px, 5vw, 100px);
+  margin-top: 20px;
 }
 
 #footer .item {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: fit-content;
 }
 
 #footer .item h3 {
   color: #EBEBEB;
-  font-size: 32px;
+  font-size: clamp(24px, 3vw, 32px);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 #footer .item a {
   color: #EBEBEB;
-  font-size: 18px;
+  font-size: clamp(14px, 1.5vw, 18px);
   font-weight: 400;
   transition: opacity 0.3s;
+  white-space: nowrap;
 }
 
 #footer .footer-name {
-  font-size: 400px;
+  font-size: clamp(150px, 30vw, 400px);
   line-height: 0.5;
   position: relative;
-  top: 50px;
+  top: clamp(10px, 3vw, 50px);
+  margin-left: clamp(-100px, -6vw, 0px);
+  width: fit-content;
 }
 
 #footer .portfolio-group {
@@ -90,18 +102,18 @@
   width: 100%;
 }
 
-#footer .portfolio-title:first-child {
-  margin-top: 0;
-}
-
 #footer .portfolio-title {
-  font-size: 208px;
+  font-size: clamp(40px, 14vw, 208px);
   /* Taille exacte du design */
   font-weight: 700;
   color: #EBEBEB;
   line-height: 0.9;
-  margin-top: -150px;
+  margin-top: clamp(-150px, -11vw, -30px);
   text-align: center;
+}
+
+#footer .portfolio-title:first-child {
+  margin-top: 0;
 }
 
 #footer .portfolio-title.faded-1 {
@@ -119,41 +131,44 @@
 }
 
 #footer .footer-bottom p {
-  font-size: 18px;
+  font-size: clamp(12px, 1.5vw, 18px);
   color: #EBEBEB;
+  text-align: center;
 }
 
 #footer .bold {
   font-weight: 700;
 }
 
-/* Responsivité simplifiée pour mobile */
-@media (max-width: 1024px) {
-  #footer .portfolio-title {
-    font-size: 120px;
-    margin-top: -80px;
-  }
-
+/* Breakpoints for specific layout changes */
+@media (max-width: 1300px) {
   #footer .footer-name {
-    font-size: 200px;
-    top: 20px;
+    margin-left: 0;
   }
+}
 
+@media (max-width: 1200px) {
   #footer .top-section {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 50px;
   }
 
-  #footer .main-footer-content {
-    padding-inline: 40px;
+  #footer .logo-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  #footer .nav-links-group {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0;
   }
 }
 
 @media (max-width: 768px) {
-  #footer .portfolio-title {
-    font-size: 80px;
-    margin-top: -40px;
-  }
 
   #footer .portfolio-title.faded-1,
   #footer .portfolio-title.faded-2,
@@ -162,30 +177,25 @@
   }
 
   #footer .top-section {
-    align-items: flex-start;
-  }
-
-  #footer .item h3 {
-    font-size: 24px;
-  }
-
-  #footer .footer-bottom p {
-    text-align: center;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 425px) {
-  #footer .portfolio-title {
-    font-size: 50px;
-    margin-top: -20px;
-  }
-
-  #footer .top-section {
+    flex-direction: column;
+    align-items: center;
     gap: 30px;
   }
 
-  #footer .main-footer-content {
-    padding-inline: 20px;
+  #footer .nav-links-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  #footer .item {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #footer .portfolio-title {
+    font-size: clamp(30px, 12vw, 50px);
+    margin-top: -10px;
   }
 }

@@ -14,8 +14,8 @@ interface Props {
 
 export default function Iframe({ src, width, height }: Props) {
   return (
-    <div className="iframe-container" style={{ height: height }}>
-      <SkeletonLoading height="600px" width="100%" borderRadius={20} />
+    <div className="iframe-container">
+      <SkeletonLoading height={`${height}px`} width="100%" borderRadius={20} />
       <iframe
         src={src}
         width={width}

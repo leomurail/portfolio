@@ -5,8 +5,7 @@
   overflow: hidden;
 }
 
-.brand-container {
-  width: 100%;
+.container {
   display: flex;
   flex-direction: column;
   gap: var(--xl-size);
@@ -15,8 +14,6 @@
 #brand-part h2 {
   font-size: 36px;
   font-weight: 700;
-  text-transform: uppercase;
-  padding-inline: 100px;
 }
 
 .bento-grid {
@@ -123,16 +120,10 @@
 .brand-actions {
   display: flex;
   gap: var(--s-size);
-  padding-inline: 100px;
   margin-top: var(--m-size);
 }
 
 @media (max-width: 1024px) {
-  #brand-part h2,
-  .brand-actions {
-    padding-inline: var(--l-size);
-  }
-
   .bento-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -165,13 +156,13 @@
 }
 
 @media (max-width: 425px) {
-  #brand-part h2,
-  .brand-actions {
-    padding-inline: var(--s-size);
+  #brand-part h2 {
+    font-size: 24px;
   }
 
   .brand-actions {
     flex-direction: column;
+    gap: 12px;
   }
 
   .brand-actions > * {
@@ -180,38 +171,42 @@
 
   .item-hero {
     aspect-ratio: 4 / 3;
-    min-height: 300px;
+    min-height: 250px;
   }
 
   .item-model {
-    height: 350px;
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
 
   .item-collection {
     height: auto;
-    padding-block: 60px;
+    padding-block: 40px;
   }
 
   .main-logo {
-    width: 65vw;
+    width: 70vw;
+    max-width: 280px;
   }
 
   .slogan {
-    width: 55vw;
+    width: 60vw;
+    max-width: 240px;
   }
 
   .collection-content p {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .product-display {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 
   .product-display img {
     height: auto;
-    width: 70vw;
-    max-width: 250px;
+    width: 60vw;
+    max-width: 180px;
   }
 }

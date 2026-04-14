@@ -18,7 +18,7 @@ export default function Star({ scrollYProgress }: props) {
   // Création d'un matériau cristal violet personnalisé
   const crystalMaterial = useMemo(() => {
     return new MeshPhysicalMaterial({
-      color: new Color("#a855f7"), // Violet vibrant
+      color: new Color("#0045f3"), // Bleu DA
       metalness: 0.1,
       roughness: 0.05,
       transmission: 1, // Transparence physique
@@ -27,7 +27,7 @@ export default function Star({ scrollYProgress }: props) {
       iridescence: 1,
       iridescenceIOR: 1.3,
       sheen: 1,
-      sheenColor: new Color("#d8b4fe"),
+      sheenColor: new Color("#4d92ff"),
       transparent: true,
       opacity: 1,
     });
@@ -57,7 +57,7 @@ export default function Star({ scrollYProgress }: props) {
   });
 
   return (
-    <group ref={starRef} scale={[1.6, 1.6, 1.6]} position={[2.0, 0, 0]}>
+    <group ref={starRef} scale={[1.3, 1.3, 1.3]} position={[2.0, 0, 0]}>
       <primitive object={scene} />
     </group>
   );

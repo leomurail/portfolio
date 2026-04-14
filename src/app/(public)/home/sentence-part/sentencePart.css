@@ -2,20 +2,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-block: var(--three-xl-size) var(--three-xl-size);
+  padding-block: var(--xl-size) var(--four-xl-size);
   background-color: var(--black-color);
   min-height: 800px;
+  position: relative;
 }
 
 #sentence-part .container {
   display: flex;
   flex-direction: column;
   gap: var(--xl-size);
-  max-width: var(--desktop-max-width);
-  margin-inline: auto;
-  position: relative;
-  width: 100%;
-  padding-inline: 100px;
 }
 
 #sentence-part h2 {
@@ -46,7 +42,7 @@
 #sentence-part .looper-container {
   position: absolute;
   right: 100px;
-  bottom: 0;
+  bottom: 40px;
   width: 200px;
   height: 200px;
   display: flex;
@@ -73,10 +69,6 @@
 /*——————————————————RESPONSIVE————————————————————*/
 
 @media (max-width: 1024px) {
-  #sentence-part .container {
-    padding-inline: 40px;
-  }
-
   #sentence-part ul.sentence li.word {
     font-size: 32px;
   }
@@ -95,30 +87,44 @@
 }
 
 @media (max-width: 425px) {
+  #sentence-part {
+    min-height: 600px;
+    padding-block: var(--xl-size) var(--two-xl-size);
+  }
+
   #sentence-part .container {
-    padding-inline: 20px;
+    gap: var(--m-size);
+  }
+
+  #sentence-part ul.sentence {
+    gap: 8px 12px;
   }
 
   #sentence-part ul.sentence li.word {
-    font-size: 28px;
-  }
-
-  #sentence-part h2 {
     font-size: 24px;
   }
 
+  #sentence-part h2 {
+    font-size: 20px;
+  }
+
   #sentence-part h2 span {
-    font-size: 48px;
+    font-size: 40px;
   }
 
   #sentence-part .looper-container {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+    margin-top: 40px;
+    align-self: center;
+    position: relative;
+    right: auto;
+    bottom: auto;
   }
 
   #sentence-part .rect {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 }
 

@@ -1,0 +1,106 @@
+<h2>Header à Angles Droits</h2>
+<p class="subtitle">Version flottante, compacte, avec fond flouté et angles vifs (pas de border-radius).</p>
+
+<style>
+  .preview-container {
+    background: #0f0f0f;
+    padding: 100px 20px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .mock-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, #0015c3 0%, #8e15cf 50%, #000 100%);
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .header-mockup {
+    z-index: 1;
+    width: 90%;
+    max-width: 800px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Pas de border-radius */
+    border-radius: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  }
+
+  .logo-text {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .burger-placeholder {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .burger-line {
+    width: 18px;
+    height: 1px;
+    background: #fff;
+    position: relative;
+  }
+  .burger-line::before, .burger-line::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 1px;
+    background: #fff;
+    left: 0;
+  }
+  .burger-line::before { top: -6px; }
+  .burger-line::after { top: 6px; }
+
+  .option-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    z-index: 1;
+    color: #ccc;
+  }
+</style>
+
+<div class="preview-container">
+  <div class="mock-bg"></div>
+
+  <div class="header-mockup">
+    <div class="logo-text">LÉO MURAIL</div>
+    <div class="burger-placeholder">
+      <div class="burger-line"></div>
+    </div>
+  </div>
+
+  <div class="option-card">
+    <p>Ce style "angles vifs" apporte une touche plus architecturale et technique, qui s'accorde bien avec une DA orientée développement/digital.</p>
+    <ul>
+      <li><strong>Angles droits :</strong> 0px de border-radius sur le conteneur.</li>
+      <li><strong>Contrastes :</strong> La bordure fine ressortira davantage sur les angles.</li>
+    </ul>
+  </div>
+</div>

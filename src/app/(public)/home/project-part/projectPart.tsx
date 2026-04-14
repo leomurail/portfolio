@@ -10,9 +10,6 @@ import SkeletonLoading from "@/ui/components/loading/skeleton-loading/skeletonLo
 //constants
 import { catsData } from "./constants";
 
-//fonts
-import { fonts } from "@/lib/fonts";
-
 //styles
 import "./projectPart.css";
 
@@ -41,7 +38,7 @@ export default function ProjectPart() {
     <section id="project-part" className="project-part no-max-width">
       <div className="container">
         <div className="top desktop">
-          <h2 className={fonts.montserrat.className}>MES PROJETS</h2>
+          <h2>MES PROJETS</h2>
           <Btn path="/projects" color="blue">
             Tous les projets <Icon picked="eye" size={20} />
           </Btn>

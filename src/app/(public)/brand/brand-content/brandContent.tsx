@@ -12,14 +12,15 @@ export default function BrandContent() {
   return (
     <section id="brand-content" className="no-max-width">
       <div className="top">
-        <div className="content desktop">
-          <h2>
-            LA CRÉATION DE{" "}
-            <span className={fonts.imperial.className}>contenu</span>
-          </h2>
+        <div className="container">
+          <div className="content">
+            <h2>
+              La création de <span className={fonts.imperial.className}>contenu</span>
+            </h2>
+          </div>
         </div>
       </div>
-      <div className="center desktop">
+      <div className="center">
         <PartnerVideo />
       </div>
 

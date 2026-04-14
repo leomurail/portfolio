@@ -19,8 +19,8 @@ const imgMannequinImage4 = "/img/brand/cliver-product-2.png";
 export default function BrandPart() {
   return (
     <section id="brand-part" className="no-max-width">
-      <div className="brand-container">
-        <h2 className={fonts.montserrat.className}>MA MARQUE</h2>
+      <div className="container">
+        <h2>Ma marque</h2>
         <div className="bento-grid">
           <div className="bento-item item-hero">
             <img src={imgBackgroundWelcomeCliverWebsite} alt="Background" className="bg-image" />

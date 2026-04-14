@@ -1,9 +1,6 @@
 //npm
 import Image from "next/image";
 
-//fonts
-import { fonts } from "@/lib/fonts";
-
 //styles
 import "./historyPart.css";
 
@@ -13,15 +10,15 @@ export default function HistoryPart() {
       <div className="desktop container-history">
         <div className="image-wrapper">
           <Image
-            src="/img/pages/about/leo-travail.webp"
-            alt="Léo Murail travaillant sur son bureau"
+            src="/img/pages/about/leo-murail-qui-parle.webp"
+            alt="Léo Murail parlant face caméra"
             fill
             className="history-img"
           />
         </div>
         <div className="content-box">
-          <h3 className={fonts.montserrat.className}>Enchanté, je m'appelle Léo Murail.</h3>
-          <p className={fonts.montserrat.className}>
+          <h3>Enchanté, je m'appelle Léo Murail.</h3>
+          <p>
             Mon aventure a commencé en première, en 2022, lorsque j'ai voulu
             créer une application pour composer des tenues. L’application aurait
             dû s’appeler messo, un mélange entre mood et dress. Voici le tout
@@ -45,7 +42,7 @@ export default function HistoryPart() {
               />
             </div>
           </div>
-          <p className={fonts.montserrat.className}>
+          <p>
             Dû à mon manque d'expérience en codage, j'ai été forcé à apprendre
             le HTML, CSS, JavaScript et d'autres langages, ce qui m'a ouvert les
             portes du digital : design web/print, développement web, marketing

@@ -13,7 +13,7 @@ export default function JourneyPart() {
   const [dynamicHeight, setDynamicHeight] = useState(3000);
 
   useEffect(() => {
-    const container = target.current?.querySelector(".all-dates .container");
+    const container = target.current?.querySelector(".all-dates .scroll-container");
     if (!container) return;
 
     const updateHeight = () => {

@@ -2,55 +2,65 @@
   width: 100vw;
   position: fixed;
   left: 0;
-  top: 20px; /* Distance du haut */
+  top: 0;
+  /* Distance du haut */
   z-index: 10;
   display: flex;
   justify-content: center;
   pointer-events: none;
+  padding-top: var(--xs-size);
 }
 
 #child-header {
   pointer-events: auto;
-  width: auto; /* Largeur s'adapte au contenu */
-  min-width: 200px; /* Taille minimum pour l'élégance */
-  height: 60px; /* Hauteur réduite pour le côté compact */
+  width: 250px;
+  /* Largeur capsule pour l'écartement */
   display: flex;
   align-items: center;
-  gap: 40px; /* Espace entre le logo et le menu */
-  padding: 0 20px;
-  
+  justify-content: space-between;
+  padding: var(--two-xs-size) var(--xs-size);
+
   /* Glassmorphism & Style */
-  background: rgba(15, 15, 15, 0.4); /* Fond plus sombre pour mieux voir le flou */
+  background: rgba(15, 15, 15, 0.4);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0; /* On garde les angles droits */
-  
+  border-radius: 0;
+
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
 
-/* Style spécifique pour le bouton burger dans le header */
-#header-bar .header-burger {
-  background-color: transparent !important; /* Pas de fond pour le bouton lui-même */
-  border: none !important;
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
+#child-header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#header-bar .header-burger svg {
-  width: 20px !important;
+#header-bar .header-burger {
+  --border-color: #333;
+  background-color: var(--very-dark-grey-color) !important;
+  border: 0.5px solid var(--border-color) !important;
+  border-radius: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  transition: all 0.2s ease;
+}
+
+#header-bar .header-burger:hover {
+  background-color: var(--dark-grey-color) !important;
+  border-color: var(--grey-color) !important;
+}
+
+#header-bar .header-burger:hover svg {
+  fill: var(--white-color) !important;
 }
 
 #header-bar div.right {
   display: flex;
   align-items: center;
-}
-
-#header-bar .cross-menu svg {
-  width: 18px;
 }
 
 #header-bar .cross-menu svg {
@@ -60,14 +70,9 @@
 /*———————————————————RESPONSIVE—————————————————————*/
 
 @media (max-width: 425px) {
-  #header-bar {
-    padding-top: 10px;
-  }
-
   #child-header {
-    width: 95%;
-    height: 60px;
-    padding-inline: var(--s-size);
+    margin-inline: var(--s-size);
+    width: 100%;
   }
 
   #header-bar .right .btn {

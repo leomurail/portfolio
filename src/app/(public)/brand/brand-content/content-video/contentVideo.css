@@ -1,5 +1,62 @@
-.content-video ul {
-  padding-block: var(--two-xl-size);
+.content-video {
+  padding-block: var(--three-xl-size);
+  background-color: var(--black-color);
+  color: var(--white-color);
+  width: 100%;
+}
+
+.content-video-header {
+  margin-bottom: var(--xl-size);
+}
+
+.content-video-header h3 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.content-video-header .sub-title {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.content-video-grid {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--two-xl-size);
+  width: 100%;
+}
+
+.grid-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.grid-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+
+/* Ensure Iframe also has the same aspect ratio */
+.grid-item iframe {
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .content-video-grid {
+    gap: var(--l-size);
+  }
+}
+
+@media (max-width: 768px) {
+  .content-video-grid {
+    grid-template-columns: 1fr;
+    gap: var(--l-size);
+  }
 }

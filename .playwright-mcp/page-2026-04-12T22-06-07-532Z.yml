@@ -1,0 +1,234 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - link "Logo principal du portfolio Léo Murail" [ref=e4] [cursor=pointer]:
+      - /url: /
+      - img "Logo principal du portfolio Léo Murail" [ref=e5]
+    - link [ref=e8] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e10]
+  - generic [ref=e12]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "Ma marque" [level=2] [ref=e17]
+        - heading "Cliver" [level=1] [ref=e18]
+      - paragraph [ref=e19]: Cliver est une marque de streetwear avant-gardiste qui allie qualité premium et souci d'évolution personnelle. Découvrez l'univers de ma marque, ses créations et sa vision.
+    - generic [ref=e21]:
+      - heading "Ma marque" [level=2] [ref=e22]
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - img "Background" [ref=e25]
+          - generic [ref=e26]:
+            - img "CLIVER Logo" [ref=e27]
+            - img "Self Evolution Begins" [ref=e28]
+        - generic [ref=e29]:
+          - img "Background" [ref=e30]
+          - img "Cliver Posing" [ref=e31]
+        - generic [ref=e32]:
+          - img "Background" [ref=e33]
+          - generic [ref=e34]:
+            - paragraph [ref=e35]: Première collection
+            - generic [ref=e36]:
+              - img "Product 1" [ref=e37]
+              - img "Product 2" [ref=e38]
+              - img "Product 1 duplicate" [ref=e39]
+      - generic [ref=e40]:
+        - link "cliver.fr" [ref=e41] [cursor=pointer]:
+          - /url: https://cliver.fr
+          - generic [ref=e43]: cliver.fr
+        - link [ref=e44] [cursor=pointer]:
+          - /url: https://instagram.com/cliverproject
+          - img [ref=e48]
+    - generic [ref=e51]:
+      - heading "La création de contenu" [level=2] [ref=e54]:
+        - text: La création de
+        - generic: contenu
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - heading "Vidéo en partenariat avec @RIZZOTO" [level=3] [ref=e58]
+          - paragraph [ref=e59]: ©made by @etienne.mck
+          - link "Voir le compte" [ref=e60] [cursor=pointer]:
+            - /url: https://instagram.com/cliverproject
+            - generic [ref=e62]:
+              - text: Voir le compte
+              - img [ref=e64]
+        - iframe [ref=e69]:
+          - generic [ref=f1e5]:
+            - generic [ref=f1e6]:
+              - generic [ref=f1e7]:
+                - link "cliverproject" [ref=f1e8] [cursor=pointer]:
+                  - /url: https://www.instagram.com/_rizzoto_/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                  - img "cliverproject" [ref=f1e9]
+                - link "cliverproject" [ref=f1e10] [cursor=pointer]:
+                  - /url: https://www.instagram.com/cliverproject/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                  - img "cliverproject" [ref=f1e11]
+              - generic [ref=f1e12]:
+                - generic [ref=f1e13]:
+                  - link "cliverproject" [ref=f1e14] [cursor=pointer]:
+                    - /url: https://www.instagram.com/cliverproject/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                    - generic [ref=f1e15]: cliverproject
+                  - generic [ref=f1e16]: and
+                  - link "_rizzoto_" [ref=f1e17] [cursor=pointer]:
+                    - /url: https://www.instagram.com/_rizzoto_/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                    - generic [ref=f1e18]: _rizzoto_
+                - generic [ref=f1e19]: Original audio
+              - link "View profile" [ref=f1e21] [cursor=pointer]:
+                - /url: https://www.instagram.com/cliverproject/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+            - generic [ref=f1e22]:
+              - link "Instagram post shared by @cliverproject" [ref=f1e23] [cursor=pointer]:
+                - /url: https://www.instagram.com/reel/C79e3oXM0--/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                - img "Instagram post shared by @cliverproject"
+              - generic [ref=f1e25]:
+                - button "Play" [ref=f1e29]
+                - button "Control" [ref=f1e30] [cursor=pointer]
+            - generic [ref=f1e31]:
+              - link "cliverproject cliverproject 8 posts · 192 followers" [ref=f1e32] [cursor=pointer]:
+                - /url: https://www.instagram.com/cliverproject/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                - generic [ref=f1e33]:
+                  - img "cliverproject" [ref=f1e34]
+                  - generic [ref=f1e35]:
+                    - generic [ref=f1e37]: cliverproject
+                    - generic [ref=f1e39]: 8 posts · 192 followers
+                - generic [ref=f1e40]:
+                  - img [ref=f1e41]
+                  - img [ref=f1e42]
+              - link "View more on Instagram" [ref=f1e44] [cursor=pointer]:
+                - /url: https://www.instagram.com/cliverproject/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+            - generic [ref=f1e45]:
+              - link "Like" [ref=f1e46] [cursor=pointer]:
+                - /url: https://www.instagram.com/reel/C79e3oXM0--/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                - generic: Like
+              - link "Comment" [ref=f1e48] [cursor=pointer]:
+                - /url: https://www.instagram.com/reel/C79e3oXM0--/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                - generic [ref=f1e50]: Comment
+              - link "Share" [ref=f1e51] [cursor=pointer]:
+                - /url: https://www.instagram.com/reel/C79e3oXM0--/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                - generic [ref=f1e53]: Share
+              - link "Save" [ref=f1e54] [cursor=pointer]:
+                - /url: https://www.instagram.com/reel/C79e3oXM0--/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                - generic [ref=f1e56]: Save
+            - link "707 likes" [ref=f1e58] [cursor=pointer]:
+              - /url: https://www.instagram.com/reel/C79e3oXM0--/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+            - generic [ref=f1e59]:
+              - link "Add a comment..." [ref=f1e60] [cursor=pointer]:
+                - /url: https://www.instagram.com/reel/C79e3oXM0--/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+              - link "Instagram" [ref=f1e61] [cursor=pointer]:
+                - /url: https://www.instagram.com/reel/C79e3oXM0--/?utm_source=ig_embed&ig_rid=48a43af3-dbce-4859-950e-c0ec490c30fa
+                - generic [ref=f1e63]: Instagram
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - heading "Brand content" [level=3] [ref=e72]
+          - paragraph [ref=e73]: "@made by @leomurail"
+        - generic [ref=e74]:
+          - img "Product image 0" [ref=e76]
+          - iframe [ref=e80]:
+            - generic [active] [ref=f2e1]:
+              - generic "YouTube Video Player" [ref=f2e3]
+              - generic [ref=f2e5]:
+                - generic:
+                  - generic:
+                    - button "Play video" [ref=f2e10] [cursor=pointer]:
+                      - generic [ref=f2e13]:
+                        - img
+                    - button "Hide player controls" [ref=f2e14] [cursor=pointer]
+                    - generic [ref=f2e21]:
+                      - generic [ref=f2e22]:
+                        - link "Process tee" [ref=f2e23] [cursor=pointer]:
+                          - /url: https://www.youtube.com/shorts/sVH37zZR8j8
+                        - link "Léo Murail" [ref=f2e24] [cursor=pointer]:
+                          - /url: /channel/UCKsYyOk905RLlB_jP-yAaiw
+                          - generic [ref=f2e25]: Léo Murail
+                      - generic [ref=f2e26]:
+                        - button [ref=f2e27] [cursor=pointer]
+                        - generic [ref=f2e29]:
+                          - generic: Léo Murail
+                          - generic: 23 subscribers
+          - img "Product image 2" [ref=e82]
+          - iframe [ref=e86]:
+            - generic [active] [ref=f3e1]:
+              - generic "YouTube Video Player" [ref=f3e3]
+              - generic [ref=f3e5]:
+                - generic:
+                  - generic:
+                    - button "Play video" [ref=f3e10] [cursor=pointer]:
+                      - generic [ref=f3e13]:
+                        - img
+                    - button "Hide player controls" [ref=f3e14] [cursor=pointer]
+                    - generic [ref=f3e21]:
+                      - generic [ref=f3e22]:
+                        - link "Achieve more sweatshirt" [ref=f3e23] [cursor=pointer]:
+                          - /url: https://www.youtube.com/shorts/EPttaijosF0
+                        - link "Léo Murail" [ref=f3e24] [cursor=pointer]:
+                          - /url: /channel/UCKsYyOk905RLlB_jP-yAaiw
+                          - generic [ref=f3e25]: Léo Murail
+                      - generic [ref=f3e26]:
+                        - button [ref=f3e27] [cursor=pointer]
+                        - generic [ref=f3e29]:
+                          - generic: Léo Murail
+                          - generic: 23 subscribers
+          - iframe [ref=e90]:
+            - generic [active] [ref=f4e1]:
+              - generic "YouTube Video Player" [ref=f4e3]
+              - generic [ref=f4e5]:
+                - generic:
+                  - generic:
+                    - button "Play video" [ref=f4e10] [cursor=pointer]:
+                      - generic [ref=f4e13]:
+                        - img
+                    - button "Hide player controls" [ref=f4e14] [cursor=pointer]
+                    - generic [ref=f4e21]:
+                      - generic [ref=f4e22]:
+                        - link "Demand excellence hoodie" [ref=f4e23] [cursor=pointer]:
+                          - /url: https://www.youtube.com/shorts/oD46i8WfHAQ
+                        - link "Léo Murail" [ref=f4e24] [cursor=pointer]:
+                          - /url: /channel/UCKsYyOk905RLlB_jP-yAaiw
+                          - generic [ref=f4e25]: Léo Murail
+                      - generic [ref=f4e26]:
+                        - button [ref=f4e27] [cursor=pointer]
+                        - generic [ref=f4e29]:
+                          - generic: Léo Murail
+                          - generic: 23 subscribers
+          - img "Product image 5" [ref=e92]
+    - generic [ref=e94]:
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - heading "L'histoire" [level=3] [ref=e97]
+          - generic [ref=e98]:
+            - paragraph [ref=e99]: Ce rêve de trois lycéens de créer leur propre marque de vêtements a commencé en 2022.
+            - paragraph [ref=e100]: Nous voulions révolutionner le monde du streetwear en créant une marque de streetwear premium. Depuis, le projet a évolué de manière significative.
+            - paragraph [ref=e101]: Au fil du temps, nous avons commencé à abandonner l’idée de continuer avec la marque en raison de notre manque de sérieux, de connaissances et d’expérience.
+            - paragraph [ref=e102]: Cependant, en entrant dans l’enseignement supérieur, j’ai décidé de relancer le projet et de le mener à bien jusqu’au succès.
+        - img "image du portfolio de Léo Murail" [ref=e103]
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - heading "La vision" [level=3] [ref=e106]
+          - generic [ref=e107]:
+            - paragraph [ref=e108]: Cliver est bien plus qu’une simple marque de vêtements—c’est un mouvement ancré dans l’auto-évolution.
+            - paragraph [ref=e109]: Chaque pièce de Cliver est le reflet de ce parcours, conçue comme une œuvre d’art pour inspirer la croissance.
+            - paragraph [ref=e110]: Lorsque vous portez Cliver, vous embrassez la conviction que vous n’êtes pas destiné à des rêves ordinaires. Vous visez à accomplir ce que d’autres jugeraient impossible et aspirez à rêver grand.
+            - paragraph [ref=e111]: Malgré le fait d’avoir entendu toute votre vie que vous n’atteindrez peut-être jamais vos objectifs, vous avez confiance en vous et en votre potentiel.
+            - paragraph [ref=e112]: "C’est pourquoi notre slogan, « Self Evolution begins », résonne profondément : il rappelle que la véritable transformation commence de l’intérieur."
+        - img "image du portfolio de Léo Murail" [ref=e113]
+  - generic [ref=e118]:
+    - generic [ref=e119]:
+      - generic [ref=e120]:
+        - heading "Léo" [level=1] [ref=e122]
+        - generic [ref=e123]:
+          - heading "Professionnel" [level=3] [ref=e124]
+          - link "Projets scolaires" [ref=e125] [cursor=pointer]:
+            - /url: /projects
+          - link "Ma marque" [ref=e126] [cursor=pointer]:
+            - /url: /brand
+        - generic [ref=e127]:
+          - heading "En savoir plus" [level=3] [ref=e128]
+          - link "Contact" [ref=e129] [cursor=pointer]:
+            - /url: /contact
+          - link "À propos" [ref=e130] [cursor=pointer]:
+            - /url: /about
+      - generic [ref=e131]:
+        - heading "PORTFOLIO" [level=2] [ref=e132]
+        - heading "PORTFOLIO" [level=2] [ref=e133]
+        - heading "PORTFOLIO" [level=2] [ref=e134]
+    - paragraph [ref=e136]: © Made by Léo Murail - Politique de confidentialité - Mentions légales - 2025
+  - button "Open Next.js Dev Tools" [ref=e142] [cursor=pointer]:
+    - img [ref=e143]
+  - alert [ref=e146]

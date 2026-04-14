@@ -1,0 +1,184 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Logo principal du portfolio Léo Murail" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - img "Logo principal du portfolio Léo Murail" [ref=e4]
+    - link [ref=e7] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e9]
+  - generic [ref=e11]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - heading "Léo" [level=1] [ref=e16]
+        - heading "PORTFOLIO" [level=2] [ref=e17]
+      - paragraph [ref=e18]: Je ne suis pas du genre à me contenter de ce que j‘ai déjà, mais plutôt à aller plus loin dans mes objectifs. Ma seule raison de rater c’est pour mieux faire par la suite.
+      - generic [ref=e19]:
+        - link "Mon histoire" [ref=e20] [cursor=pointer]:
+          - /url: /about
+          - generic [ref=e22]: Mon histoire
+        - link "Ma marque" [ref=e23] [cursor=pointer]:
+          - /url: /brand
+          - generic [ref=e25]: Ma marque
+        - link "Mes projets" [ref=e26] [cursor=pointer]:
+          - /url: /projects
+          - generic [ref=e28]: Mes projets
+    - generic [ref=e30]:
+      - heading "En une phrase" [level=2] [ref=e31]:
+        - text: En une
+        - generic [ref=e32]: phrase
+      - list [ref=e33]:
+        - listitem [ref=e34]: Passionné
+        - listitem [ref=e35]: par
+        - listitem [ref=e36]: le
+        - listitem [ref=e37]: monde
+        - listitem [ref=e38]: du
+        - listitem [ref=e39]: digital
+        - listitem [ref=e40]: et
+        - listitem [ref=e41]: de
+        - listitem [ref=e42]: l'entrepreneuriat
+    - generic [ref=e57]:
+      - img "Léo qui travaille" [ref=e59]
+      - generic [ref=e60]:
+        - heading "Dernier projet réalisé" [level=2] [ref=e61]
+        - generic [ref=e62]: Catégorie
+        - paragraph [ref=e63]:
+          - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas finibus dignissim tellus non efficitur. Pellentesque magna mi, lacinia nec fermentum id, ultrices sed augue. Pellentesque lorem arcu, condimentum et vehicula vitae, vestibulum eu orci. Nunc eu lacus imperdiet, porttitor ante sed, placerat orci.
+          - text: Praesent aliquam et eros eu vulputate. Praesent vitae urna feugiat, feugiat est vel, aliquam nunc. Ut consequat augue at risus facilisis eleifend.
+        - link "Voir le projet" [ref=e64] [cursor=pointer]:
+          - /url: /projects/last
+          - generic [ref=e66]:
+            - text: Voir le projet
+            - img [ref=e68]
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - heading "Mon parcours" [level=2] [ref=e76]
+          - paragraph [ref=e77]: Nom de la période
+        - link "En entier" [ref=e78] [cursor=pointer]:
+          - /url: /about
+          - generic [ref=e80]:
+            - text: En entier
+            - img [ref=e82]
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - heading "2020-2023" [level=3] [ref=e87]
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - heading "Lycée Notre-Dame Challans" [level=4] [ref=e92]
+              - text: J’ai passé 3 ans en bac général scientifique (Maths, Physique-Chimie, SVT). J’étais très intéressé par ces domaines, et mes notes le reflétaient, car j’avais environ 15 de moyenne générale. Mais à ce moment-là, ma volonté de devenir ingénieur se transformait petit à petit, car je découvrais le monde du digital.
+            - button "[Lire plus...]" [ref=e93]
+        - generic [ref=e94]:
+          - heading "2023" [level=3] [ref=e95]
+          - generic [ref=e98]:
+            - generic [ref=e99]:
+              - heading "Rentrée à My Digital School - Bachelor cycle web et multimédia" [level=4] [ref=e100]
+              - text: Alors que tout le monde se dirigeait vers PARCOURSUP, j’ai décidé d’emprunter un chemin différent. J’ai donc visité des écoles dans le domaine qui me plaisait, et c’est ainsi que j’ai découvert My Digital School. Je suis maintenant en Bachelor 2 dans cette école.
+            - button "[Lire plus...]" [ref=e101]
+        - generic [ref=e102]:
+          - heading "Janvier 2024" [level=3] [ref=e103]
+          - generic [ref=e106]:
+            - generic [ref=e107]:
+              - heading "Création de ma micro-entreprise - Pour ma marque de vêtements CLIVER" [level=4] [ref=e108]
+              - text: Mon premier projet professionnel concret est ma marque de vêtements nommée CLIVER, une marque de streetwear dont le slogan est Self Evolution Begins, l’évolution de soi. Autrement dit, c’est une marque basée sur le développement personnel dans l’univers du streetwear.
+            - button "[Lire plus...]" [ref=e109]
+      - generic [ref=e111]:
+        - img "horloge pour parcours leo murail portfolio" [ref=e112]
+        - img "horloge pour parcours leo murail portfolio" [ref=e113]
+    - generic [ref=e115]:
+      - heading "Ma marque" [level=2] [ref=e116]
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - img "Background" [ref=e119]
+          - generic [ref=e120]:
+            - img "CLIVER Logo" [ref=e121]
+            - img "Self Evolution Begins" [ref=e122]
+        - generic [ref=e123]:
+          - img "Background" [ref=e124]
+          - img "Cliver Posing" [ref=e125]
+        - generic [ref=e126]:
+          - img "Background" [ref=e127]
+          - generic [ref=e128]:
+            - paragraph [ref=e129]: Première collection
+            - generic [ref=e130]:
+              - img "Product 1" [ref=e131]
+              - img "Product 2" [ref=e132]
+      - generic [ref=e133]:
+        - link "cliver.fr" [ref=e134] [cursor=pointer]:
+          - /url: https://cliver.fr
+          - generic [ref=e136]: cliver.fr
+        - link [ref=e137] [cursor=pointer]:
+          - /url: https://instagram.com/cliverproject
+          - img [ref=e141]
+    - generic [ref=e150]:
+      - heading "Mon process de travail" [level=2] [ref=e151]
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - heading "1. Cadrage et Déconstruction" [level=3] [ref=e154]
+          - paragraph [ref=e156]: Je décortique le besoin initial pour en extraire les véritables enjeux.
+          - generic [ref=e157]:
+            - generic [ref=e158]: Et l’IA dans tout ça ?
+            - paragraph [ref=e159]: J'utilise l'IA pour m'aider à synthétiser des documentations denses, explorer des angles morts ou générer des questions pour challenger le brief initial.
+        - generic [ref=e160]:
+          - heading "2. Conception et Design" [level=3] [ref=e161]
+          - paragraph [ref=e163]: Je traduis les enjeux en solutions visuelles et fonctionnelles cohérentes.
+          - generic [ref=e164]:
+            - generic [ref=e165]: Et l’IA dans tout ça ?
+            - paragraph [ref=e166]: Génération d'assets, aide à la mise en page et itérations rapides sur les concepts.
+        - generic [ref=e167]:
+          - heading "3. Développement et Itérations" [level=3] [ref=e168]
+          - paragraph [ref=e170]: Je construis la solution technique en m'assurant de la qualité du code et des performances.
+          - generic [ref=e171]:
+            - generic [ref=e172]: Et l’IA dans tout ça ?
+            - paragraph [ref=e173]: Accélération de l'écriture du code, aide au débogage et optimisation des algorithmes.
+        - generic [ref=e174]:
+          - heading "4. Lancement et Optimisation" [level=3] [ref=e175]
+          - paragraph [ref=e177]: Je livre le projet et je m'assure qu'il répond aux objectifs fixés tout en l'améliorant.
+          - generic [ref=e178]:
+            - generic [ref=e179]: Et l’IA dans tout ça ?
+            - paragraph [ref=e180]: Analyse des feedbacks, automatisation du déploiement et maintenance prédictive.
+    - generic [ref=e182]:
+      - generic [ref=e183]:
+        - heading "MES PROJETS" [level=2] [ref=e184]
+        - link "Tous les projets" [ref=e185] [cursor=pointer]:
+          - /url: /projects
+          - generic [ref=e187]:
+            - text: Tous les projets
+            - img [ref=e189]
+      - list [ref=e192]:
+        - listitem [ref=e193]:
+          - generic [ref=e194]:
+            - heading "Développement web" [level=3] [ref=e201]
+            - paragraph [ref=e203]: Aucun projet trouvé dans cette catégorie.
+        - listitem [ref=e204]:
+          - generic [ref=e205]:
+            - heading "Design web" [level=3] [ref=e212]
+            - paragraph [ref=e214]: Aucun projet trouvé dans cette catégorie.
+        - listitem [ref=e215]:
+          - generic [ref=e216]:
+            - heading "Design print" [level=3] [ref=e223]
+            - paragraph [ref=e225]: Aucun projet trouvé dans cette catégorie.
+  - generic [ref=e230]:
+    - generic [ref=e231]:
+      - generic [ref=e232]:
+        - heading "Léo" [level=1] [ref=e234]
+        - generic [ref=e235]:
+          - generic [ref=e236]:
+            - heading "Professionnel" [level=3] [ref=e237]
+            - link "Projets scolaires" [ref=e238] [cursor=pointer]:
+              - /url: /projects
+            - link "Ma marque" [ref=e239] [cursor=pointer]:
+              - /url: /brand
+          - generic [ref=e240]:
+            - heading "En savoir plus" [level=3] [ref=e241]
+            - link "Contact" [ref=e242] [cursor=pointer]:
+              - /url: /contact
+            - link "À propos" [ref=e243] [cursor=pointer]:
+              - /url: /about
+      - generic [ref=e244]:
+        - heading "PORTFOLIO" [level=2] [ref=e245]
+        - heading "PORTFOLIO" [level=2] [ref=e246]
+        - heading "PORTFOLIO" [level=2] [ref=e247]
+    - paragraph [ref=e249]: © Made by Léo Murail - Politique de confidentialité - Mentions légales - 2025
+  - button "Open Next.js Dev Tools" [ref=e255] [cursor=pointer]:
+    - img [ref=e256]
+  - alert [ref=e259]

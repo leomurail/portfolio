@@ -11,7 +11,7 @@ export default function heroPart() {
   return (
     <div className="hero-part-wrapper">
       <section id="hero-part" className="no-max-width">
-        <div className="hero-content">
+        <div className="hero-content container">
           <div className="title-group">
             <h1 className={`${fonts.imperial.className} name`}>Léo</h1>
             <h2 className="portfolio-text">PORTFOLIO</h2>

@@ -1,0 +1,175 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - link "Logo principal du portfolio Léo Murail" [ref=e4] [cursor=pointer]:
+      - /url: /
+      - img "Logo principal du portfolio Léo Murail" [ref=e5]
+    - link [ref=e8] [cursor=pointer]:
+      - /url: "#"
+  - generic [ref=e14]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - heading "À propos" [level=2] [ref=e19]
+        - heading "Mon histoire" [level=1] [ref=e20]
+      - paragraph [ref=e21]: Je m'appelle Léo Murail et voici comment mon aventure a commencé. Découvrez mon parcours, mes compétences et ma passion pour le digital.
+    - generic [ref=e23]:
+      - img "Léo Murail travaillant sur son bureau" [ref=e25]
+      - generic [ref=e26]:
+        - heading "Enchanté, je m'appelle Léo Murail." [level=3] [ref=e27]
+        - paragraph [ref=e28]: "Mon aventure a commencé en première, en 2022, lorsque j'ai voulu créer une application pour composer des tenues. L’application aurait dû s’appeler messo, un mélange entre mood et dress. Voici le tout premier logo que j’ai réalisé :"
+        - generic [ref=e29]:
+          - img "Premier logo de Léo Murail fait sur figma avec les règles" [ref=e31]
+          - img "Premier logo de Léo Murail fait sur figma" [ref=e33]
+        - paragraph [ref=e34]: "Dû à mon manque d'expérience en codage, j'ai été forcé à apprendre le HTML, CSS, JavaScript et d'autres langages, ce qui m'a ouvert les portes du digital : design web/print, développement web, marketing digital, et e-commerce. Encore mineur, j'ai profité de ce temps pour me former. Mon rêve d'ingénieur a évolué vers le numérique, et j'ai rejoint My Digital School pour débuter cette aventure."
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - heading "Mon parcours" [level=2] [ref=e40]
+          - paragraph [ref=e41]: Nom de la période
+        - link "En entier" [ref=e42] [cursor=pointer]:
+          - /url: /about
+          - generic [ref=e44]: En entier
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - heading "2020-2023" [level=3] [ref=e53]
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - heading "Lycée Notre-Dame Challans" [level=4] [ref=e58]
+              - text: J’ai passé 3 ans en bac général scientifique (Maths, Physique-Chimie, SVT). J’étais très intéressé par ces domaines, et mes notes le reflétaient, car j’avais environ 15 de moyenne générale. Mais à ce moment-là, ma volonté de devenir ingénieur se transformait petit à petit, car je découvrais le monde du digital.
+            - button "[Lire plus...]" [ref=e59]
+        - generic [ref=e60]:
+          - heading "2023" [level=3] [ref=e61]
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - heading "Rentrée à My Digital School - Bachelor cycle web et multimédia" [level=4] [ref=e66]
+              - text: Alors que tout le monde se dirigeait vers PARCOURSUP, j’ai décidé d’emprunter un chemin différent. J’ai donc visité des écoles dans le domaine qui me plaisait, et c’est ainsi que j’ai découvert My Digital School. Je suis maintenant en Bachelor 2 dans cette école.
+            - button "[Lire plus...]" [ref=e67]
+        - generic [ref=e68]:
+          - heading "Janvier 2024" [level=3] [ref=e69]
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - heading "Création de ma micro-entreprise - Pour ma marque de vêtements CLIVER" [level=4] [ref=e74]
+              - text: Mon premier projet professionnel concret est ma marque de vêtements nommée CLIVER, une marque de streetwear dont le slogan est Self Evolution Begins, l’évolution de soi. Autrement dit, c’est une marque basée sur le développement personnel dans l’univers du streetwear.
+            - button "[Lire plus...]" [ref=e75]
+      - generic [ref=e77]:
+        - img "horloge pour parcours leo murail portfolio" [ref=e78]
+        - img "horloge pour parcours leo murail portfolio" [ref=e79]
+    - generic [ref=e80]:
+      - heading "Mes hard skills" [level=2] [ref=e81]
+      - generic [ref=e82]:
+        - generic [ref=e84] [cursor=pointer]:
+          - generic [ref=e99]:
+            - heading "Je maîtrise" [level=3] [ref=e100]
+            - list [ref=e102]:
+              - listitem [ref=e103]:
+                - img "icône de l'application HTML que Léo Murail maitrise" [ref=e104]
+              - listitem [ref=e105]:
+                - img "icône de l'application CSS que Léo Murail maitrise" [ref=e106]
+              - listitem [ref=e107]:
+                - img "icône de l'application Javascript que Léo Murail maitrise" [ref=e108]
+              - listitem [ref=e109]:
+                - img "icône de l'application PHP que Léo Murail maitrise" [ref=e110]
+              - listitem [ref=e111]:
+                - img "icône de l'application MySQL que Léo Murail maitrise" [ref=e112]
+              - listitem [ref=e113]:
+                - img "icône de l'application ReactJS que Léo Murail maitrise" [ref=e114]
+              - listitem [ref=e115]:
+                - img "icône de l'application NextJS que Léo Murail maitrise" [ref=e116]
+              - listitem [ref=e117]:
+                - img "icône de l'application ThreeJS que Léo Murail maitrise" [ref=e118]
+              - listitem [ref=e119]:
+                - img "icône de l'application Astro que Léo Murail maitrise" [ref=e120]
+              - listitem [ref=e121]:
+                - img "icône de l'application Wordpress que Léo Murail maitrise" [ref=e122]
+              - listitem [ref=e123]:
+                - img "icône de l'application Godot que Léo Murail maitrise" [ref=e124]
+              - listitem [ref=e125]:
+                - img "icône de l'application Symfony que Léo Murail maitrise" [ref=e126]
+              - listitem [ref=e127]:
+                - img "icône de l'application Twig que Léo Murail maitrise" [ref=e128]
+              - listitem [ref=e129]:
+                - img "icône de l'application Docker que Léo Murail maitrise" [ref=e130]
+            - paragraph [ref=e131]: Passionné par le développement web, j’ai acquis des compétences solides en HTML, CSS, JavaScript et PHP, SQL, et je connais très bien WordPress. Grâce à mes compétences, je crée des sites web dynamiques et personnalisés, parfaitement adaptés aux besoins spécifiques de chaque personnes. Que ce soit pour la gestion de contenu, l’intégration de fonctionnalités ou la création de sites sur mesure, je suis capable de transformer des idées en solutions digitales efficaces et professionnelles. Avec une approche orientée résultats et une maîtrise des outils modernes, je suis prêt à répondre aux défis les plus ambitieux dans le domaine du web.
+          - paragraph [ref=e132]: Développement web
+        - generic [ref=e134] [cursor=pointer]:
+          - generic [ref=e149]:
+            - heading "Je maîtrise" [level=3] [ref=e150]
+            - list [ref=e152]:
+              - listitem [ref=e153]:
+                - img "icône de l'application Figma que Léo Murail maitrise" [ref=e154]
+            - paragraph [ref=e155]: Le web design est une compétence autre compétence que je maîtrise. J’utilise Figma en appliquant l’approche moléculaire pour créer des maquettes cohérentes et efficaces. Je maîtrise l’auto layout pour structurer des interfaces complexes et adaptatives, et j’utilise les composants et variables pour optimiser mes créations. je suis également capable de prototyper des maquettes interactives, offrant ainsi une vision claire de l’expérience utilisateur. Mon approche garantit des designs fonctionnels, esthétiques et adaptés à chaque projet.
+          - paragraph [ref=e156]: Web design
+        - generic [ref=e158] [cursor=pointer]:
+          - generic [ref=e173]:
+            - heading "Je maîtrise" [level=3] [ref=e174]
+            - list [ref=e176]:
+              - listitem [ref=e177]:
+                - img "icône de l'application Illustrator que Léo Murail maitrise" [ref=e178]
+              - listitem [ref=e179]:
+                - img "icône de l'application Photoshop que Léo Murail maitrise" [ref=e180]
+              - listitem [ref=e181]:
+                - img "icône de l'application Indesign que Léo Murail maitrise" [ref=e182]
+            - paragraph [ref=e183]: Au cours de ma formation à My Digital School. J’ai appris maîtriser Illustrator et Photoshop, et je perfectionne actuellement mes compétences sur InDesign. J’ai une bonne compréhension des bases du print, telles que l’utilisation de fichiers à 300 dpi, les couleurs CMJN, les fonds perdus, les marges et la gestion des vides. Grâce à cette compétence, je suis capable de créer des visuels imprimés de haute qualité, qu’il s’agisse de brochures, d’affiches ou d’autres supports, tout en respectant les contraintes techniques et les exigences esthétiques du print.
+          - paragraph [ref=e184]: Design print
+        - generic [ref=e186] [cursor=pointer]:
+          - generic [ref=e201]:
+            - heading "Je maîtrise" [level=3] [ref=e202]
+            - list [ref=e204]:
+              - listitem [ref=e205]:
+                - img "icône de l'application Premiere pro que Léo Murail maitrise" [ref=e206]
+              - listitem [ref=e207]:
+                - img "icône de l'application Davinci que Léo Murail maitrise" [ref=e208]
+              - listitem [ref=e209]:
+                - img "icône de l'application Capcut que Léo Murail maitrise" [ref=e210]
+            - paragraph [ref=e211]: Le montage vidéo est un domaine que je maîtrise aussi. Je suis capable de travailler sur des projets de A à Z, en utilisant des techniques de color grading, d’effets visuels et de sound design pour donner vie à chaque création. Je maîtrise très bien les logiciels Premiere Pro et CapCut, ce qui me permet de produire des vidéos de haute qualité, adaptées aux standards professionnels. Que ce soit pour créer des vidéos percutantes pour les réseaux sociaux ou des contenus plus élaborés, je sais comment captiver l’audience et optimiser l’impact visuel et sonore de chaque projet.
+          - paragraph [ref=e212]: Montage vidéo
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - paragraph [ref=e216]: En savoir
+        - paragraph [ref=e217]: un peu plus
+      - generic [ref=e218]:
+        - generic [ref=e219]:
+          - heading "Pourquoi le digital ?" [level=3] [ref=e220]
+          - paragraph [ref=e221]: La première raison est que c’est un domaine, dans le cadre de l’entrepreneuriat, qui permet de créer des projets ayant un impact considérable dans notre monde, sans nécessiter des levées de fonds à 1 million d’euros, et offrant un fort potentiel de scalabilité énorme. Ensuite, j’ai toujours aimé travailler sur un ordinateur. Enfin, j’ai développé une véritable passion pour les différents domaines qui composent ce secteur.
+        - generic [ref=e222]:
+          - heading "Comment j’ai découvert ce domaine ?" [level=3] [ref=e223]
+          - paragraph [ref=e224]: "Comme je l’ai mentionné précédemment, j’ai découvert le domaine du digital en cherchant à lancer une application pour résoudre un problème que j’avais au lycée : s’habiller rapidement et efficacement, sans avoir à trop réchercher. Cependant, ce projet s’est avéré bien plus complexe que prévu. Néanmoins, cette expérience m’a permis de développer une véritable passion pour le codage, le design, la création de vidéos et bien d’autres aspects du digital."
+    - generic [ref=e225]:
+      - generic [ref=e226]:
+        - generic [ref=e227]:
+          - heading "Une envie de faire de grandes choses" [level=3] [ref=e228]
+          - generic [ref=e229]:
+            - paragraph [ref=e230]: Je suis passionné par le monde du digital.
+            - paragraph [ref=e231]: "Mon objectif est de diriger une entreprise dans ce domaine, peu importe le secteur : développement web, design, vidéo, marketing ou création de contenu."
+            - paragraph [ref=e232]: Ce que j’aime, c’est travailler depuis mon ordinateur, explorer de nouveaux univers et apprendre chaque jour. Le digital me permet de me former en continu et de repousser mes limites.
+            - paragraph [ref=e233]: Je rêve de créer une structure où je peux tester des idées, rencontrer des personnes inspirantes et faire évoluer mes projets. Un écosystème fondé sur l’innovation, la liberté et la collaboration.
+        - img "image du portfolio de Léo Murail" [ref=e234]
+      - generic [ref=e235]:
+        - generic [ref=e236]:
+          - heading "Mes compétences" [level=3] [ref=e237]
+          - generic [ref=e238]:
+            - paragraph [ref=e239]: J’ai commencé par apprendre le codage.
+            - paragraph [ref=e240]: Aujourd’hui, ma compétence principale est le développement web, en back-end comme en front-end.
+            - paragraph [ref=e241]: "En lançant ma marque de vêtements, j’ai élargi mes connaissances : design print, web design, vidéo, communication, storytelling et marketing digital."
+            - paragraph [ref=e242]: Avec My Digital School, j’ai renforcé ces compétences et acquis une vision plus globale. J’ai aussi appris à me former seul, en dehors des cours.
+            - paragraph [ref=e243]: "Grâce aux projets réalisés, j’ai développé des qualités clés : travail d’équipe, gestion de projet et collaboration."
+        - img "image du portfolio de Léo Murail" [ref=e244]
+  - generic [ref=e249]:
+    - generic [ref=e250]:
+      - generic [ref=e251]:
+        - generic [ref=e252]:
+          - heading "Professionnel" [level=3] [ref=e253]
+          - link "Projets scolaires" [ref=e254] [cursor=pointer]:
+            - /url: /projects
+          - link "Ma marque" [ref=e255] [cursor=pointer]:
+            - /url: /brand
+        - generic [ref=e256]:
+          - heading "En savoir plus" [level=3] [ref=e257]
+          - link "Contact" [ref=e258] [cursor=pointer]:
+            - /url: /contact
+          - link "À propos" [ref=e259] [cursor=pointer]:
+            - /url: /about
+      - heading "PORTFOLIO" [level=2] [ref=e261]
+    - paragraph [ref=e263]: © Made by Léo Murail - Politique de confidentialité - Mentions légales - 2025
+  - button "Open Next.js Dev Tools" [ref=e269] [cursor=pointer]:
+    - img [ref=e270]
+  - alert [ref=e273]

@@ -1,0 +1,145 @@
+<h2>Style du Nouveau Header</h2>
+<p class="subtitle">Une version flottante, compacte et élégante, inspirée de Mastercard tout en restant fidèle à votre DA.</p>
+
+<style>
+  .preview-container {
+    background: #0f0f0f;
+    padding: 100px 20px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .mock-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, #0015c3 0%, #8e15cf 50%, #000 100%);
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .header-mockup {
+    z-index: 1;
+    width: 90%;
+    max-width: 800px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+  }
+
+  .header-mockup:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .logo-placeholder {
+    width: 40px;
+    height: 24px;
+    background: #fff;
+    mask: url('/img/main-logo.svg') no-repeat center;
+    -webkit-mask: url('/img/main-logo.svg') no-repeat center;
+    background-color: #fff;
+  }
+
+  /* Si le logo SVG n'est pas accessible directement par le serveur local */
+  .logo-text {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  .burger-placeholder {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .burger-line {
+    width: 14px;
+    height: 2px;
+    background: #fff;
+    position: relative;
+  }
+  .burger-line::before, .burger-line::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background: #fff;
+    left: 0;
+  }
+  .burger-line::before { top: -5px; }
+  .burger-line::after { top: 5px; }
+
+  .option-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    z-index: 1;
+  }
+
+  .option-card h3 { margin-top: 0; }
+  .option-card ul { padding-left: 20px; margin-bottom: 0; }
+</style>
+
+<div class="preview-container">
+  <div class="mock-bg"></div>
+
+  <div class="header-mockup">
+    <div class="logo-text">LM.</div>
+    <div class="burger-placeholder">
+      <div class="burger-line"></div>
+    </div>
+  </div>
+
+  <div class="option-card">
+    <h3>Caractéristiques Proposées :</h3>
+    <ul>
+      <li><strong>Conteneur Flottant :</strong> Le header ne touche plus les bords de l'écran, il "flotte" avec une marge en haut et sur les côtés.</li>
+      <li><strong>Effet Glassmorphism :</strong> Background semi-transparent avec un flou (blur) important pour laisser transparaître les éléments 3D en dessous.</li>
+      <li><strong>Bordure Fine :</strong> Une bordure de 1px très subtile pour définir la forme sans alourdir.</li>
+      <li><strong>Coins Arrondis :</strong> Un style "pilule" (pill-shaped) très moderne, similaire aux interfaces haut de gamme actuelles.</li>
+      <li><strong>Responsive :</strong> Le header s'adapte à la largeur de l'écran tout en gardant ses proportions compactes.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="options" data-multiselect>
+  <div class="option" data-choice="pill" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Style "Pilule" (Pill)</h3>
+      <p>Bords très arrondis, look ultra-moderne et dynamique.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="rounded" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Style "Rectangle Arrondi"</h3>
+      <p>Bords plus droits (ex: 12px), look plus structuré et sobre.</p>
+    </div>
+  </div>
+</div>

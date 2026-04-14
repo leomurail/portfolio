@@ -3,14 +3,54 @@
   background-position: center;
   background-size: cover;
   width: 100vw;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-#brand-content .center,
-#brand-content .top {
-  padding-block: var(--three-xl-size);
+#brand-content .top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#brand-content .content {
+  position: relative;
+  z-index: 2;
+}
+
+#brand-content h2 {
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--white-color);
 }
 
 #brand-content h2 span {
-  font-size: 80px;
+  font-size: 100px;
   line-height: 0;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#brand-content .center {
+  background-color: var(--black-color);
+  padding-block: var(--three-xl-size);
+}
+
+@media (max-width: 768px) {
+  #brand-content .top {
+    height: 300px;
+  }
+
+  #brand-content h2 {
+    font-size: 40px;
+  }
+
+  #brand-content h2 span {
+    font-size: 70px;
+  }
 }

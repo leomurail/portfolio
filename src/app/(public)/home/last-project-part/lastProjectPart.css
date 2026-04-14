@@ -1,15 +1,13 @@
 #last-project-part {
   background-color: var(--black-color);
-  padding: var(--three-xl-size) var(--three-xl-size);
   display: flex;
   justify-content: center;
 }
 
-#last-project-part .container {
+#last-project-part .last-project-box {
   background: rgba(235, 235, 235, 0.05);
   display: flex;
   width: 100%;
-  max-width: var(--desktop-max-width);
   min-height: 600px;
 }
 
@@ -65,11 +63,7 @@
 }
 
 @media (max-width: 1024px) {
-  #last-project-part {
-    padding: var(--two-xl-size) var(--l-size);
-  }
-
-  #last-project-part .container {
+  #last-project-part .last-project-box {
     flex-direction: column;
     min-height: auto;
   }
@@ -77,6 +71,7 @@
   #last-project-part .image-container {
     height: 350px;
     width: 100%;
+    flex: auto;
   }
 
   #last-project-part .content {
@@ -85,23 +80,30 @@
 }
 
 @media (max-width: 425px) {
-  #last-project-part {
-    padding: var(--xl-size) var(--s-size);
-  }
-
   #last-project-part .image-container {
-    height: 250px;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 
   #last-project-part .content {
     padding: var(--m-size);
+    gap: 15px;
   }
 
   #last-project-part .content h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   #last-project-part .content p {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  #last-project-part .category-tag {
+    padding: 4px 12px;
+  }
+
+  #last-project-part .category-tag span {
+    font-size: 14px;
   }
 }

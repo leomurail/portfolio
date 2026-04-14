@@ -1,8 +1,5 @@
 "use client";
 
-//fonts
-import { fonts } from "@/lib/fonts";
-
 //npm
 import Link from "next/link";
 import Image from "next/image";
@@ -24,7 +21,7 @@ export default function HeaderLink({ children, path, icon }: props) {
     <Link
       onClick={removeHeader}
       href={path}
-      className={`header-link ${fonts.montserrat.className}`}
+      className="header-link"
     >
       {children}
     </Link>
