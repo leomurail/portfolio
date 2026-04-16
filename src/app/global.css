@@ -106,7 +106,7 @@ section {
 @media (max-width: 1024px) {
   .container,
   .desktop {
-    padding-inline: var(--l-size);
+    padding-inline: var(--m-size);
   }
 }
 

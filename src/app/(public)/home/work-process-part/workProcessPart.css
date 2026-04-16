@@ -17,26 +17,115 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-#work-process-part .canvas-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  pointer-events: none;
+  background-color: #0F0F0F;
 }
 
 #work-process-part .container {
   display: flex;
+  flex-direction: row;
   height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 100px;
   position: relative;
   align-items: center;
   z-index: 1;
-  /* Par-dessus le canvas */
+}
+
+#work-process-part .process-info {
+  width: 620px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  padding-top: 130px;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+#work-process-part .section-title {
+  color: #999999;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: left;
+  text-transform: none;
+  width: 100%;
+  padding: 0 95px;
+  margin-bottom: 0;
+}
+
+#work-process-part .cards-container {
+  position: relative;
+  width: 430px;
+  height: 716px;
+  overflow: hidden;
+}
+
+#work-process-part .process-card {
+  background-color: #171717;
+  border: 1px solid #262626;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  border-radius: 0;
+}
+
+#work-process-part .process-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white-color);
+}
+
+#work-process-part .main-text {
+  background-color: #262626;
+  padding: 10px;
+  border-radius: 0;
+}
+
+#work-process-part .main-text p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #EBEBEB;
+}
+
+#work-process-part .ai-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#work-process-part .ai-tag {
+  background-color: #262626;
+  color: var(--white-color);
+  padding: 5px 10px;
+  border-radius: 0;
+  font-size: 15px;
+  font-weight: 400;
+  align-self: flex-start;
+}
+
+#work-process-part .ai-text {
+  font-size: 18px;
+  color: #EBEBEB;
+  line-height: 1.6;
+}
+
+#work-process-part .canvas-wrapper {
+  flex: 1.5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  pointer-events: none;
 }
 
 #work-process-part .star-canvas-full {
@@ -44,128 +133,92 @@
   height: 100% !important;
 }
 
-#work-process-part .process-info {
-  flex: 1.2;
-  display: flex;
-  flex-direction: column;
-  gap: var(--xl-size);
-  height: 100%;
-  justify-content: center;
-}
-
-#work-process-part .section-title {
-  color: var(--white-color);
-  font-size: 40px;
-  font-weight: 700;
-  text-align: left;
-  text-transform: uppercase;
-  margin-bottom: var(--m-size);
-}
-
-#work-process-part .cards-container {
-  position: relative;
-  width: 100%;
-  height: 550px;
-  perspective: 1000px;
-}
-
-#work-process-part .process-card {
-  background-color: var(--very-dark-grey-color);
-  border: 1px solid var(--dark-grey-color);
-  padding: var(--xl-size);
-  display: flex;
-  flex-direction: column;
-  gap: var(--m-size);
-  width: 100%;
-  max-width: 550px;
+/* Gradient overlay at bottom of cards column */
+#work-process-part .process-info::after {
+  content: "";
   position: absolute;
-  top: 0;
+  width: 620px;
+  height: 308px;
   left: 0;
-  border-radius: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, #0F0F0F 64%, rgba(15, 15, 15, 0) 100%);
+  pointer-events: none;
+  z-index: 2;
 }
 
-#work-process-part .process-card h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--white-color);
-}
+@media (max-width: 1200px) {
+  #work-process-part .container {
+    padding: 0 var(--l-size);
+    gap: var(--l-size);
+  }
 
-#work-process-part .main-text {
-  background-color: var(--dark-grey-color);
-  padding: 20px;
-  border-radius: 0;
-}
+  #work-process-part .process-info {
+    width: 500px;
+  }
 
-#work-process-part .main-text p {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-#work-process-part .ai-section {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-#work-process-part .ai-tag {
-  background-color: var(--blue-color);
-  color: var(--white-color);
-  padding: 6px 14px;
-  border-radius: 0;
-  font-size: 14px;
-  font-weight: 700;
-  align-self: flex-start;
-}
-
-#work-process-part .ai-text {
-  font-size: 16px;
-  color: var(--light-grey-color);
-  line-height: 1.6;
+  #work-process-part .section-title {
+    padding: 0 var(--l-size);
+  }
 }
 
 @media (max-width: 1024px) {
   #work-process-part {
     height: auto;
     padding: var(--two-xl-size) 0;
+    overflow: visible;
   }
 
   #work-process-part .sticky-wrapper {
     position: static;
     height: auto;
     flex-direction: column;
+    background-color: transparent;
   }
 
   #work-process-part .container {
     height: auto;
+    flex-direction: column;
+    padding: 0 var(--l-size);
+    gap: var(--xl-size);
   }
 
   #work-process-part .canvas-wrapper {
     display: none;
   }
 
-  #work-process-part .cards-container {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  #work-process-part .process-info {
+    width: 100%;
+    padding-top: 0;
+    align-items: center;
   }
 
-  #work-process-part .process-card {
-    position: static;
-    max-width: 100%;
-    gap: var(--s-size);
-    padding: var(--m-size);
+  #work-process-part .process-info::after {
+    display: none;
   }
 
   #work-process-part .section-title {
     text-align: center;
-    font-size: 32px;
+    padding: 0;
+    font-size: 24px;
     margin-bottom: var(--l-size);
   }
 
-  #work-process-part .main-text p {
-    font-size: 16px;
+  #work-process-part .cards-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--l-size);
+    perspective: none;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  #work-process-part .process-card {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    padding: var(--l-size);
   }
 }
 
@@ -174,21 +227,27 @@
     padding: var(--xl-size) 0;
   }
 
-
-  #work-process-part .canvas-wrapper {
-    height: 250px;
+  #work-process-part .container {
+    padding: 0 var(--s-size);
   }
 
   #work-process-part .section-title {
-    font-size: 24px;
-    margin-bottom: var(--m-size);
+    font-size: 20px;
+  }
+
+  #work-process-part .process-card {
+    padding: var(--m-size);
   }
 
   #work-process-part .process-card h3 {
     font-size: 20px;
   }
 
-  #work-process-part .main-text {
-    padding: 15px;
+  #work-process-part .main-text p {
+    font-size: 16px;
+  }
+
+  #work-process-part .ai-text {
+    font-size: 15px;
   }
 }

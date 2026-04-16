@@ -1,5 +1,6 @@
 .timeline-date {
   min-width: 70vw;
+  max-width: 90vw;
   margin-block: var(--two-xl-size) var(--three-xl-size);
 }
 

@@ -137,18 +137,18 @@
   }
 
   #hero-part .name {
-    font-size: 64px;
-    margin-bottom: 0;
+    font-size: 100px;
+    margin-bottom: -15px;
     text-align: left;
-    line-height: 1;
+    line-height: 0.8;
     opacity: 0.95;
   }
 
   #hero-part .portfolio-text {
-    font-size: 42px;
+    font-size: 32px;
     text-align: left;
     letter-spacing: -1px;
-    line-height: 0.9;
+    line-height: 1;
     color: var(--white-color);
   }
 

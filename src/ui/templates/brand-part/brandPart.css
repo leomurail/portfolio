@@ -5,7 +5,7 @@
   overflow: hidden;
 }
 
-.container {
+#brand-part .container {
   display: flex;
   flex-direction: column;
   gap: var(--xl-size);
@@ -134,6 +134,7 @@
 
   .item-hero {
     aspect-ratio: 16 / 9;
+    min-height: auto;
   }
 
   .item-model {

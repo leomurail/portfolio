@@ -57,7 +57,7 @@ export default function Star({ scrollYProgress }: props) {
   });
 
   return (
-    <group ref={starRef} scale={[1.3, 1.3, 1.3]} position={[2.0, 0, 0]}>
+    <group ref={starRef} scale={[1.5, 1.5, 1.5]} position={[0, 0, 0]}>
       <primitive object={scene} />
     </group>
   );

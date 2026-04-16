@@ -104,23 +104,6 @@ export default function WorkProcessPart() {
          Ce wrapper reste en haut pendant les 400vh de scroll.
       */}
       <div className="sticky-wrapper">
-        {!isMobile && (
-          <div className="canvas-wrapper">
-            <Canvas className="star-canvas-full">
-              <Suspense fallback={<LoaderThree />}>
-                <Star scrollYProgress={scrollYProgress} />
-                <ambientLight intensity={0.5} />
-                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} />
-                <Environment preset="city" />
-                <ContactShadows position={[0, -2.5, 0]} opacity={0.4} scale={10} blur={2.5} far={4} />
-                <EffectComposer>
-                  <Bloom luminanceThreshold={0.2} mipmapBlur intensity={1.5} radius={0.4} />
-                </EffectComposer>
-              </Suspense>
-            </Canvas>
-          </div>
-        )}
-
         <div className="container">
           <div className="process-info">
             <h2 className="section-title">
@@ -139,6 +122,23 @@ export default function WorkProcessPart() {
               ))}
             </div>
           </div>
+
+          {!isMobile && (
+            <div className="canvas-wrapper">
+              <Canvas className="star-canvas-full">
+                <Suspense fallback={<LoaderThree />}>
+                  <Star scrollYProgress={scrollYProgress} />
+                  <ambientLight intensity={0.5} />
+                  <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} />
+                  <Environment preset="city" />
+                  <ContactShadows position={[0, -2.5, 0]} opacity={0.4} scale={10} blur={2.5} far={4} />
+                  <EffectComposer>
+                    <Bloom luminanceThreshold={0.2} mipmapBlur intensity={1.5} radius={0.4} />
+                  </EffectComposer>
+                </Suspense>
+              </Canvas>
+            </div>
+          )}
         </div>
       </div>
     </section>

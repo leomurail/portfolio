@@ -37,7 +37,7 @@ export default function ProjectPart() {
   return (
     <section id="project-part" className="project-part no-max-width">
       <div className="container">
-        <div className="top desktop">
+        <div className="top">
           <h2>MES PROJETS</h2>
           <Btn path="/projects" color="blue">
             Tous les projets <Icon picked="eye" size={20} />

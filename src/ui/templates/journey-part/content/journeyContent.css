@@ -6,7 +6,8 @@
   top: 0;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: var(--three-xl-size);
 }
 
 #journey-content .journey-wrapper {
